@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/backgroundColor">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/wintec_logo"
+            android:layout_width="214dp"
+            android:layout_height="73dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"/>
+
+        <ImageView
+            android:id="@+id/role_selection"
+            android:layout_width="322dp"
+            android:layout_height="234dp"
+            android:layout_below="@+id/wintec_logo"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/role_selection" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/role_selection"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Please Select\nYour Role" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_student"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_wintec_yellow"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="Student"/>
+
+    <Button
+        android:id="@+id/btn_manager"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_wintec_yellow"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="Manager"/>
+
+</LinearLayout>
