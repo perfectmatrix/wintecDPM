@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.myapps.wintecdpm"
+        applicationId "com.wintec.degreemap"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1

@@ -1,4 +1,4 @@
-package com.myapps.wintecdpm;
+package com.wintec.degreemap;
 
 import org.junit.Test;
 
