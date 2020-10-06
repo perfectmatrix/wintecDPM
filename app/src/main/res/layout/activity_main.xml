@@ -53,7 +53,8 @@
         android:textAllCaps="false"
         android:textSize="20dp"
         android:textColor="@color/black"
-        android:text="Student"/>
+        android:text="Student"
+        android:onClick="jumpTo"/>
 
     <Button
         android:id="@+id/btn_manager"
@@ -65,6 +66,7 @@
         android:textAllCaps="false"
         android:textSize="20dp"
         android:textColor="@color/black"
-        android:text="Manager"/>
+        android:text="Manager"
+        android:onClick="jumpTo"/>
 
 </LinearLayout>

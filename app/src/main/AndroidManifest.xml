@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.myapps.wintecdpm">
+    package="com.wintec.degreemap">
 
     <application
         android:allowBackup="true"
@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Manager_Home"></activity>
-        <activity android:name=".Student_Home" />
+        <activity android:name=".Manager_Home"
+            android:label="Manager Home"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Student_Home"
+            android:label="Student Home"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -23,7 +27,8 @@
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:label="Role Selection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

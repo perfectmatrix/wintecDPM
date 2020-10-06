@@ -1,4 +1,4 @@
-package com.myapps.wintecdpm;
+package com.wintec.degreemap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
