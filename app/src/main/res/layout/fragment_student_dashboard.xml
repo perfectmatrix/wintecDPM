@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:background="@color/colorPrimary"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kia Ora!"
+        android:textSize="24sp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/gray"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Pathway"
+        android:textSize="16sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false">
+        
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_network"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/purple"
+            app:cardCornerRadius="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_pathway_circle_background"
+                    android:src="@drawable/ic_pathway_network"
+                    android:padding="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="14dp"
+                    android:text="Network\nEngineering"
+                    android:textSize="16dp"
+                    android:textColor="@color/lightGray"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_web"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/blue"
+            app:cardCornerRadius="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_pathway_circle_background"
+                    android:src="@drawable/ic_pathway_web"
+                    android:padding="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="14dp"
+                    android:text="Web\nDevelopment"
+                    android:textSize="16dp"
+                    android:textColor="@color/lightGray"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_database"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/green"
+            app:cardCornerRadius="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_pathway_circle_background"
+                    android:src="@drawable/ic_pathway_database"
+                    android:padding="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="14dp"
+                    android:text="Database\nArchitecture"
+                    android:textSize="16dp"
+                    android:textColor="@color/lightGray"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_software"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/red"
+            app:cardCornerRadius="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_pathway_circle_background"
+                    android:src="@drawable/ic_pathway_software"
+                    android:padding="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="14dp"
+                    android:text="Software\nEngineering"
+                    android:textSize="16dp"
+                    android:textColor="@color/lightGray"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

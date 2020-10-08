@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Manager_Home extends AppCompatActivity {
+public class Student_Pathway_Database extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_home);
+        setContentView(R.layout.activity_student_pathway_database);
     }
 }
