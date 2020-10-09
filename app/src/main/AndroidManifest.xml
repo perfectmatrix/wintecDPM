@@ -9,27 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Student_Pathway_Database"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".Student_Pathway_Software"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".Student_Pathway_Web"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".Student_Pathway_Network"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".Manager_Password"></activity>
+        <activity android:name=".Student_Pathway_Database" />
+        <activity android:name=".Student_Pathway_Software" />
+        <activity android:name=".Student_Pathway_Web" />
+        <activity android:name=".Student_Pathway_Network" />
         <activity
             android:name=".Manager_Home"
             android:label="Manager"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Student_Home"
             android:label="Student"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +31,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Role Selection"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:label="Role Selection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

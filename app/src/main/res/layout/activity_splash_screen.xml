@@ -22,6 +22,6 @@
         android:textColor="#454545"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:text="(c) Perfect Matrix" />
+        android:text="© Perfect Matrix" />
 
 </RelativeLayout>

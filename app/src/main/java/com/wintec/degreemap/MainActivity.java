@@ -23,7 +23,7 @@ import android.widget.Button;
                  startActivity(i);
                  break;
              case R.id.btn_manager:
-                 i = new Intent(this, Manager_Home.class);
+                 i = new Intent(this, Manager_Password.class);
                  startActivity(i);
                  break;
 
