@@ -38,9 +38,31 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        NavController navController = Navigation.findNavController(v);
-        navController.navigate(R.id.action_dashboardFragment_to_courseFragment);
+        // TODO: add constants for pathway
+        String pathway = "";
 
-        // TODO: Pass args to display courseFragment with the selected pathway configuration
+        switch (v.getId()) {
+            case R.id.card_network:
+                pathway = "network";
+                break;
+            case R.id.card_web:
+                pathway = "web";
+                break;
+            case R.id.card_database:
+                pathway = "database";
+                break;
+            case R.id.card_software:
+
+                pathway = "software";
+                break;
+        }
+
+        // set pathway to selected value
+        Bundle bundle = new Bundle();
+        bundle.putString("pathway", pathway);
+
+        // navigate to course fragment
+        NavController navController = Navigation.findNavController(v);
+        navController.navigate(R.id.action_dashboardFragment_to_courseFragment, bundle);
     }
 }

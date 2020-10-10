@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,6 +49,35 @@ public class CourseFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        // set pathway title and background color
+        setPathwayTextViewFormatting(view);
+
         return view;
+    }
+
+    private void setPathwayTextViewFormatting(View view) {
+        TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
+        String pathway = getArguments().getString("pathway");
+
+        // TODO: add constants for pathway
+        switch (pathway) {
+            case "network":
+                pathwayTextView.setText("Network Engineering");
+                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.purple, getContext().getTheme()));
+                break;
+            case "web":
+                pathwayTextView.setText("Web Development");
+                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.blue, getContext().getTheme()));
+                break;
+            case "database":
+                pathwayTextView.setText("Database Architecture");
+                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.green, getContext().getTheme()));
+                break;
+            case "software":
+                pathwayTextView.setText("Software Engineering");
+                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.red, getContext().getTheme()));
+                break;
+        }
+
     }
 }

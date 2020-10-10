@@ -5,7 +5,12 @@
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.wintec.degreemap.ui.course.CourseFragment"
-        android:label="CourseFragment" />
+        android:label="CourseFragment" >
+        <argument
+            android:name="pathway"
+            app:argType="string"
+            android:defaultValue="network" />
+    </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.wintec.degreemap.ui.dashboard.DashboardFragment"

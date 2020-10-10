@@ -7,15 +7,14 @@
     android:background="@color/backgroundColor">
 
     <TextView
+        android:id="@+id/pathwayTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Courses"
-        android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:padding="16dp"
         android:layout_marginBottom="10dp"
         android:textSize="24sp"
-        android:textColor="@color/black"/>
+        android:textColor="#fff"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_all_courses"

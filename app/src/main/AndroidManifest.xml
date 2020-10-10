@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.login.LoginActivity"></activity>
-        <activity android:name=".Student_Pathway_Database" />
-        <activity android:name=".Student_Pathway_Software" />
-        <activity android:name=".Student_Pathway_Web" />
-        <activity android:name=".Student_Pathway_Network" />
         <activity
             android:name=".Manager_Home"
             android:label="Manager"
