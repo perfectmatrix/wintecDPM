@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.data.models.CourseItem;
+import com.wintec.degreemap.data.model.CourseItem;
 
 import java.util.ArrayList;
 
