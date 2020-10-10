@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.data.models;
 
 public class CourseItem {
 

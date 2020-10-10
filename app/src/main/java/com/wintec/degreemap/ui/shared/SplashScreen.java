@@ -1,10 +1,12 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.shared;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.wintec.degreemap.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                Intent i = new Intent(SplashScreen.this, RoleSelection.class);
                 startActivity(i);
                 finish();
             }

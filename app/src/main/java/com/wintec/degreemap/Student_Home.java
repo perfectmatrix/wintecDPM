@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.wintec.degreemap.ui.course.CourseFragment;
+import com.wintec.degreemap.ui.dashboard.DashboardFragment;
+import com.wintec.degreemap.ui.profile.ProfileFragment;
 
 public class Student_Home extends AppCompatActivity {
 
@@ -22,7 +25,7 @@ public class Student_Home extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         // set the default fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Student_Dashboard_Fragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DashboardFragment()).commit();
     }
 
     // bottom navigation item selected listener
@@ -34,13 +37,13 @@ public class Student_Home extends AppCompatActivity {
 
                     switch (menuItem.getItemId()) {
                         case R.id.nav_dashboard:
-                            selectedFragment = new Student_Dashboard_Fragment();
+                            selectedFragment = new DashboardFragment();
                             break;
                         case R.id.nav_course:
-                            selectedFragment = new Student_Course_Fragment();
+                            selectedFragment = new CourseFragment();
                             break;
                         case R.id.nav_profile:
-                            selectedFragment = new Student_Profile_Fragment();
+                            selectedFragment = new ProfileFragment();
                             break;
                     }
 

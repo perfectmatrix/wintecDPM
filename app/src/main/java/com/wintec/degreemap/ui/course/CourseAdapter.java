@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.course;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.data.models.CourseItem;
 
 import java.util.ArrayList;
 

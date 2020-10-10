@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.course;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.data.models.CourseItem;
+
 import java.util.ArrayList;
 
-public class Student_Course_Fragment extends Fragment {
+public class CourseFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -22,7 +25,7 @@ public class Student_Course_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_student_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_course, container, false);
 
         ArrayList<CourseItem> exampleCourseList = new ArrayList<>();
         exampleCourseList.add(new CourseItem("COMP501", "Information Technology Operations"));

@@ -1,4 +1,4 @@
- package com.wintec.degreemap;
+ package com.wintec.degreemap.ui.shared;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
- public class MainActivity extends AppCompatActivity {
+import com.wintec.degreemap.Manager_Password;
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.Student_Home;
+
+ public class RoleSelection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_role_selection);
     }
 
      public void jumpTo(View view) {

@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +11,20 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-public class Student_Dashboard_Fragment extends Fragment implements View.OnClickListener {
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.Student_Pathway_Database;
+import com.wintec.degreemap.Student_Pathway_Network;
+import com.wintec.degreemap.Student_Pathway_Software;
+import com.wintec.degreemap.Student_Pathway_Web;
+
+public class DashboardFragment extends Fragment implements View.OnClickListener {
 
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_student_dashboard, container, false);
+        View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         networkCard = v.findViewById(R.id.card_network);
         webCard = v.findViewById(R.id.card_web);
