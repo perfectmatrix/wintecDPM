@@ -1,6 +1,5 @@
 package com.wintec.degreemap.ui.dashboard;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.Student_Pathway_Database;
-import com.wintec.degreemap.Student_Pathway_Network;
-import com.wintec.degreemap.Student_Pathway_Software;
-import com.wintec.degreemap.Student_Pathway_Web;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
 
@@ -41,24 +38,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Intent i = null;
-        switch (v.getId()) {
-            case R.id.card_network:
-                i = new Intent(getActivity(), Student_Pathway_Network.class);
-                startActivity(i);
-                break;
-            case R.id.card_web:
-                i = new Intent(getActivity(), Student_Pathway_Web.class);
-                startActivity(i);
-                break;
-            case R.id.card_database:
-                i = new Intent(getActivity(), Student_Pathway_Database.class);
-                startActivity(i);
-                break;
-            case R.id.card_software:
-                i = new Intent(getActivity(), Student_Pathway_Software.class);
-                startActivity(i);
-                break;
-        }
+        NavController navController = Navigation.findNavController(v);
+        navController.navigate(R.id.action_dashboardFragment_to_courseFragment);
+
+        // TODO: Pass args to display courseFragment with the selected pathway configuration
     }
 }

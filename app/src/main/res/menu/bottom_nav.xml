@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_dashboard"
+        android:id="@+id/dashboardFragment"
         android:icon="@drawable/ic_student_home"
         android:title="Dashboard"
         />
 
     <item
-        android:id="@+id/nav_course"
+        android:id="@+id/courseFragment"
         android:icon="@drawable/ic_student_course"
         android:title="Courses"/>
 
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_student_profile"
         android:title="Profile"/>
 </menu>
