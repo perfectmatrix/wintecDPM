@@ -8,7 +8,7 @@ import android.os.Handler;
 
 import com.wintec.degreemap.R;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, RoleSelection.class);
+                Intent i = new Intent(SplashScreenActivity.this, RoleSelectionActivity.class);
                 startActivity(i);
                 finish();
             }

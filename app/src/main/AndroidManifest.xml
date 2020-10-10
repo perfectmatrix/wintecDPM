@@ -17,12 +17,12 @@
         <activity
             android:name=".Manager_Home"
             android:label="Manager"
-            android:parentActivityName=".ui.shared.RoleSelection" />
+            android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity
             android:name=".Student_Home"
             android:label="Student"
-            android:parentActivityName=".ui.shared.RoleSelection" />
-        <activity android:name=".ui.shared.SplashScreen">
+            android:parentActivityName=".ui.shared.RoleSelectionActivity" />
+        <activity android:name=".ui.shared.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.shared.RoleSelection"
+            android:name=".ui.shared.RoleSelectionActivity"
             android:label="Role Selection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,7 +11,7 @@ import com.wintec.degreemap.Manager_Password;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.Student_Home;
 
- public class RoleSelection extends AppCompatActivity {
+ public class RoleSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

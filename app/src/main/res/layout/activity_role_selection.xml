@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.shared.RoleSelection"
+    tools:context=".ui.shared.RoleSelectionActivity"
     android:background="@color/backgroundColor">
 
     <RelativeLayout
