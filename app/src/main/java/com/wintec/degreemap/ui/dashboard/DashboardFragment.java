@@ -13,9 +13,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
+import com.wintec.degreemap.data.model.CourseItem;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
-
+    public static final String BUNDLE_PATHWAY = "BundlePathway";
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable
@@ -38,28 +39,27 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        // TODO: add constants for pathway
-        String pathway = "";
+        // set network as default pathway
+        int pathway = CourseItem.PATHWAY_NETWORK_ENGINEERING;
 
         switch (v.getId()) {
             case R.id.card_network:
-                pathway = "network";
+                pathway = CourseItem.PATHWAY_NETWORK_ENGINEERING;
                 break;
             case R.id.card_web:
-                pathway = "web";
+                pathway = CourseItem.PATHWAY_WEB_DEVELOPMENT;
                 break;
             case R.id.card_database:
-                pathway = "database";
+                pathway = CourseItem.PATHWAY_DATABASE_ARCHITECTURE;
                 break;
             case R.id.card_software:
-
-                pathway = "software";
+                pathway = CourseItem.PATHWAY_SOFTWARE_ENGINEERING;
                 break;
         }
 
         // set pathway to selected value
         Bundle bundle = new Bundle();
-        bundle.putString("pathway", pathway);
+        bundle.putInt(BUNDLE_PATHWAY, pathway);
 
         // navigate to course fragment
         NavController navController = Navigation.findNavController(v);

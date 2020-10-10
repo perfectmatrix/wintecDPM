@@ -43,8 +43,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         CourseItem currentItem = mCourseList.get(position);
-        holder.mModuleCode.setText(currentItem.getText1());
-        holder.mModuleLongName.setText(currentItem.getText2());
+        holder.mModuleCode.setText(currentItem.getModuleCode());
+        holder.mModuleLongName.setText(currentItem.getModuleLongName());
     }
 
     @Override

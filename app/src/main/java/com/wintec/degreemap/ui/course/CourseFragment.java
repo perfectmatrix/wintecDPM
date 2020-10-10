@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.CourseItem;
+import com.wintec.degreemap.ui.dashboard.DashboardFragment;
 
 import java.util.ArrayList;
 
@@ -57,27 +58,25 @@ public class CourseFragment extends Fragment {
 
     private void setPathwayTextViewFormatting(View view) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-        String pathway = getArguments().getString("pathway");
+        int pathway = getArguments().getInt(DashboardFragment.BUNDLE_PATHWAY);
 
-        // TODO: add constants for pathway
         switch (pathway) {
-            case "network":
+            case CourseItem.PATHWAY_NETWORK_ENGINEERING:
                 pathwayTextView.setText("Network Engineering");
                 pathwayTextView.setBackgroundColor(getResources().getColor(R.color.purple, getContext().getTheme()));
                 break;
-            case "web":
+            case CourseItem.PATHWAY_WEB_DEVELOPMENT:
                 pathwayTextView.setText("Web Development");
                 pathwayTextView.setBackgroundColor(getResources().getColor(R.color.blue, getContext().getTheme()));
                 break;
-            case "database":
+            case CourseItem.PATHWAY_DATABASE_ARCHITECTURE:
                 pathwayTextView.setText("Database Architecture");
                 pathwayTextView.setBackgroundColor(getResources().getColor(R.color.green, getContext().getTheme()));
                 break;
-            case "software":
+            case CourseItem.PATHWAY_SOFTWARE_ENGINEERING:
                 pathwayTextView.setText("Software Engineering");
                 pathwayTextView.setBackgroundColor(getResources().getColor(R.color.red, getContext().getTheme()));
                 break;
         }
-
     }
 }
