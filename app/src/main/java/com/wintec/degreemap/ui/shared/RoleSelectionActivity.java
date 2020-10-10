@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-import com.wintec.degreemap.Manager_Password;
+import com.wintec.degreemap.ui.login.LoginActivity;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.Student_Home;
 
@@ -27,7 +26,7 @@ import com.wintec.degreemap.Student_Home;
                  startActivity(i);
                  break;
              case R.id.btn_manager:
-                 i = new Intent(this, Manager_Password.class);
+                 i = new Intent(this, LoginActivity.class);
                  startActivity(i);
                  break;
 

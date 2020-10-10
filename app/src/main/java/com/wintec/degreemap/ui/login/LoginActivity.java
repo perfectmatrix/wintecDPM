@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Manager_Password extends AppCompatActivity {
+import com.wintec.degreemap.Manager_Home;
+import com.wintec.degreemap.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     EditText  mPassword;
     Button btnSubmit;
@@ -17,7 +20,7 @@ public class Manager_Password extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_password);
+        setContentView(R.layout.activity_login);
 
         mPassword = findViewById(R.id.edittext_password);
         btnSubmit = findViewById(R.id.btn_submit);
