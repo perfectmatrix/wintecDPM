@@ -9,13 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.data.model.CourseItem;
+import com.wintec.degreemap.data.model.Module;
 
 import java.util.ArrayList;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
-    private ArrayList<CourseItem> mCourseList;
+    private ArrayList<Module> mCourseList;
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
         public TextView mModuleCode;
@@ -28,7 +28,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         }
     }
 
-    public CourseAdapter(ArrayList<CourseItem> courseList) {
+    public CourseAdapter(ArrayList<Module> courseList) {
         mCourseList = courseList;
     }
 
@@ -42,7 +42,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        CourseItem currentItem = mCourseList.get(position);
+        Module currentItem = mCourseList.get(position);
         holder.mModuleCode.setText(currentItem.getModuleCode());
         holder.mModuleLongName.setText(currentItem.getModuleLongName());
     }
