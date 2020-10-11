@@ -4,7 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +22,7 @@ import com.wintec.degreemap.ui.dashboard.DashboardFragment;
 
 import java.util.ArrayList;
 
-public class CourseFragment extends Fragment {
+public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -28,6 +32,14 @@ public class CourseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_course, container, false);
+
+
+        Spinner spinner = view.findViewById(R.id.spinner_year);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
+                R.array.chooseYear, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         ArrayList<CourseItem> exampleCourseList = new ArrayList<>();
         exampleCourseList.add(new CourseItem("COMP501", "Information Technology Operations"));
@@ -78,5 +90,15 @@ public class CourseFragment extends Fragment {
                 pathwayTextView.setBackgroundColor(getResources().getColor(R.color.red, getContext().getTheme()));
                 break;
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
     }
 }
