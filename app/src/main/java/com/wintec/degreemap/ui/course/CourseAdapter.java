@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
-    private List<Course> courseList;
+    private List<Course> mCourseList;
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
         public TextView courseCodeTextView;
@@ -28,8 +28,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         }
     }
 
-    public CourseAdapter(List<Course> courseList) {
-        this.courseList = courseList;
+    public void setCourses(List<Course> courseList) {
+        this.mCourseList = courseList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -42,13 +43,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        Course currentItem = courseList.get(position);
+        Course currentItem = mCourseList.get(position);
         holder.courseCodeTextView.setText(currentItem.getCode());
         holder.courseNameTextView.setText(currentItem.getLongName());
     }
 
     @Override
     public int getItemCount() {
-        return courseList.size();
+        return mCourseList == null ? 0 : mCourseList.size();
     }
 }

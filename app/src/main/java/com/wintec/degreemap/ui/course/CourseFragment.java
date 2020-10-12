@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +28,7 @@ import java.util.List;
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CourseAdapter mCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Nullable
@@ -42,17 +43,24 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        mCourseAdapter = new CourseAdapter();
+
         // get all course data
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        List<Course> courses = courseViewModel.getCourses();
+        courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
+
+            @Override
+            public void onChanged(List<Course> courseList) {
+                mCourseAdapter.setCourses(courseList);
+            }
+        });
 
         // set recyclerView data
         mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(view.getContext());
-        mAdapter = new CourseAdapter(courses);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setAdapter(mCourseAdapter);
 
         // set pathway title and background color
         setPathwayTextViewFormatting(view);

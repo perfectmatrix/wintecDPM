@@ -1,5 +1,7 @@
 package com.wintec.degreemap.viewmodel;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.wintec.degreemap.data.model.Course;
@@ -9,14 +11,17 @@ import java.util.List;
 
 public class CourseViewModel extends ViewModel {
     private CourseRepository courseRepository;
-    public List<Course> courseList;
+    public LiveData<List<Course>> courseList;
 
     public CourseViewModel() {
-        this.courseRepository = new CourseRepository();
-        courseList = courseRepository.getCourses();
+        this.courseRepository = CourseRepository.getInstance();
     }
 
-    public List<Course> getCourses() {
+    public LiveData<List<Course>> getCourseList() {
+        if (courseList == null) {
+            courseList = courseRepository.getCourseList();
+        }
+
         return courseList;
     }
 }

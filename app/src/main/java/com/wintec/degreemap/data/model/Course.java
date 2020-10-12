@@ -9,6 +9,9 @@ public class Course {
     private String code;
     private String longName;
 
+    public Course() {
+    }
+
     public Course(String code, String longName) {
         this.code = code;
         this.longName = longName;
