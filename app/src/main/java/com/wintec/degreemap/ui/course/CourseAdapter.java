@@ -9,27 +9,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.data.model.Module;
+import com.wintec.degreemap.data.model.Course;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
-    private ArrayList<Module> mCourseList;
+    private List<Course> courseList;
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
-        public TextView mModuleCode;
-        public TextView mModuleLongName;
+        public TextView courseCodeTextView;
+        public TextView courseNameTextView;
 
         public CourseViewHolder(View itemView) {
             super(itemView);
-            mModuleCode = itemView.findViewById(R.id.moduleCode);
-            mModuleLongName = itemView.findViewById(R.id.moduleLongName);
+            courseCodeTextView = itemView.findViewById(R.id.courseCode);
+            courseNameTextView = itemView.findViewById(R.id.courseLongName);
         }
     }
 
-    public CourseAdapter(ArrayList<Module> courseList) {
-        mCourseList = courseList;
+    public CourseAdapter(List<Course> courseList) {
+        this.courseList = courseList;
     }
 
     @NonNull
@@ -42,13 +42,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        Module currentItem = mCourseList.get(position);
-        holder.mModuleCode.setText(currentItem.getModuleCode());
-        holder.mModuleLongName.setText(currentItem.getModuleLongName());
+        Course currentItem = courseList.get(position);
+        holder.courseCodeTextView.setText(currentItem.getCode());
+        holder.courseNameTextView.setText(currentItem.getLongName());
     }
 
     @Override
     public int getItemCount() {
-        return mCourseList.size();
+        return courseList.size();
     }
 }
