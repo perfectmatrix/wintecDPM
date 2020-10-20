@@ -10,7 +10,7 @@
     <item
         android:id="@+id/courseFragment"
         android:icon="@drawable/ic_student_course"
-        android:title="Courses"/>
+        android:title="My Courses"/>
 
     <item
         android:id="@+id/profileFragment"

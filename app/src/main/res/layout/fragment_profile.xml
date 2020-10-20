@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Profile"
+        android:fontFamily="@font/source_sans_pro"
         android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:padding="16dp"
@@ -40,6 +41,7 @@
             android:layout_width="280dp"
             android:layout_height="match_parent"
             android:text="My Contact Detail"
+            android:fontFamily="@font/source_sans_pro"
             android:gravity="start"
             android:layout_marginLeft="40dp"
             android:textColor="@color/black"
@@ -62,6 +64,7 @@
             android:layout_width="280dp"
             android:layout_height="match_parent"
             android:text="The Developer Group"
+            android:fontFamily="@font/source_sans_pro"
             android:gravity="start"
             android:layout_marginLeft="40dp"
             android:textColor="@color/black"
@@ -84,6 +87,7 @@
             android:layout_width="280dp"
             android:layout_height="match_parent"
             android:text="Client"
+            android:fontFamily="@font/source_sans_pro"
             android:gravity="start"
             android:layout_marginLeft="40dp"
             android:textColor="@color/black"
@@ -101,7 +105,8 @@
         android:textColor="@color/normalGray"
         android:layout_marginLeft="40dp"
         android:textSize="16sp"
-        android:text="APP Version: V1.0"/>
+        android:text="APP Version: V1.0"
+        android:fontFamily="@font/source_sans_pro"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,7 +114,8 @@
         android:textColor="@color/normalGray"
         android:layout_marginLeft="40dp"
         android:textSize="16sp"
-        android:text="API Version: 7.0"/>
+        android:text="API Version: 7.0"
+        android:fontFamily="@font/source_sans_pro"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -117,7 +123,8 @@
         android:textColor="@color/normalGray"
         android:layout_marginLeft="40dp"
         android:textSize="16sp"
-        android:text="OS: Android"/>
+        android:text="OS: Android"
+        android:fontFamily="@font/source_sans_pro"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,6 +133,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         android:textSize="12sp"
-        android:text="© Perfect Matrix | Wintec"/>
+        android:text="© Perfect Matrix | Wintec"
+        android:fontFamily="@font/source_sans_pro"/>
 
 </LinearLayout>
