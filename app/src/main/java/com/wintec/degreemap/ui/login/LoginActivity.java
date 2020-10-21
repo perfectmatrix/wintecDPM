@@ -28,7 +28,9 @@ public class LoginActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mPassword.getText().toString().equals("WinITDMP01")) {
+                // Password Should Be: WinITDMP01
+                // But for our convenience, changed it to: 1
+                if (mPassword.getText().toString().equals("1")) {
                     jumpTo();
                 } else {
                     Toast.makeText(getApplicationContext(),

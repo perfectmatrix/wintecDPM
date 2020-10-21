@@ -23,7 +23,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/ic_circle_black"
-        android:src="@drawable/ic_student_profile"
+        android:src="@drawable/ic_profile"
         app:tint="@color/black"
         android:padding="20dp" 
         android:layout_margin="10dp"/>

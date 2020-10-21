@@ -62,7 +62,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/ic_pathway_circle_background"
+                    android:background="@drawable/bg_circle_white"
                     android:src="@drawable/ic_pathway_network"
                     android:padding="16dp"/>
                 <TextView
@@ -92,7 +92,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/ic_pathway_circle_background"
+                    android:background="@drawable/bg_circle_white"
                     android:src="@drawable/ic_pathway_web"
                     android:padding="16dp"/>
                 <TextView
@@ -131,7 +131,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/ic_pathway_circle_background"
+                    android:background="@drawable/bg_circle_white"
                     android:src="@drawable/ic_pathway_database"
                     android:padding="16dp"/>
                 <TextView
@@ -163,7 +163,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/ic_pathway_circle_background"
+                    android:background="@drawable/bg_circle_white"
                     android:src="@drawable/ic_pathway_software"
                     android:padding="16dp"/>
                 <TextView
