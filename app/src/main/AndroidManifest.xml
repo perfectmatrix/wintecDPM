@@ -11,7 +11,11 @@
         android:roundIcon="@drawable/icon_degree_mapper"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ManagerManageStudents"></activity>
+        <activity android:name=".ManagerManageCourseSoftware"></activity>
+        <activity android:name=".ManagerManageCourseDatabase" />
+        <activity android:name=".ManagerManageCourseWeb" />
+        <activity android:name=".ManagerManageCourseNetwork" />
+        <activity android:name=".ui.ManagerManageStudents" />
         <activity android:name=".ui.ManagerManageCourses" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity
