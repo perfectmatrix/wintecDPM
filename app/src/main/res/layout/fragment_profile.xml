@@ -29,6 +29,8 @@
         android:layout_margin="10dp"/>
 
     <LinearLayout
+        android:onClick="jumpTo"
+        android:id="@+id/student_contact_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -53,6 +55,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:onClick="jumpTo"
+        android:id="@+id/developer_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -76,6 +80,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:onClick="jumpTo"
+        android:id="@+id/about_us"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -86,7 +92,7 @@
         <TextView
             android:layout_width="280dp"
             android:layout_height="match_parent"
-            android:text="Client"
+            android:text="About us"
             android:fontFamily="@font/source_sans_pro"
             android:gravity="start"
             android:layout_marginLeft="40dp"
