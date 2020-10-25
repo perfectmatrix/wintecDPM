@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/backgroundColor">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">\
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/logo_wintec" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/logo_degree_mapper" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/icon_warning_sign"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="@font/source_sans_pro"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:text="Disclaimer"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:text="The DPM App is a Prototype version of a degree planner only and NOT an official study plan. It is intended that students
+shall use this to get an understanding of the pathways offered and then discuss study plans with a Wintec representative.
+Pathways may change accordingly making older versions redundant – Wintec takes no responsibility of outdated pathways
+or information displayed on the app."/>
+
+            <Button
+                android:id="@+id/btn_get_started"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Get Started"
+                android:textAllCaps="false"
+                android:fontFamily="@font/source_sans_pro_black"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_wintec_yellow"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

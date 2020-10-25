@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.wintec.degreemap.ManagerManageCourseDatabase;
-import com.wintec.degreemap.ManagerManageCourseNetwork;
-import com.wintec.degreemap.ManagerManageCourseSoftware;
-import com.wintec.degreemap.ManagerManageCourseWeb;
 import com.wintec.degreemap.R;
 
 public class ManagerManageCourses extends AppCompatActivity {
@@ -20,6 +16,7 @@ public class ManagerManageCourses extends AppCompatActivity {
         setContentView(R.layout.activity_manager_manage_courses);
     }
 
+    // Method for managers to select a pathway when they manage courses:
     public void jumpTo(View view) {
         Intent i = null;
         switch (view.getId()) {

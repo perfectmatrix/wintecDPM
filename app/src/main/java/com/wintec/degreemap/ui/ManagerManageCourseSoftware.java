@@ -1,8 +1,10 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.wintec.degreemap.R;
 
 public class ManagerManageCourseSoftware extends AppCompatActivity {
 

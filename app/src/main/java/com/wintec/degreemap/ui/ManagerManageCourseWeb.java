@@ -1,14 +1,16 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ManagerManageCourseNetwork extends AppCompatActivity {
+import com.wintec.degreemap.R;
+
+public class ManagerManageCourseWeb extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_manage_course_network);
+        setContentView(R.layout.activity_manager_manage_course_web);
     }
 }

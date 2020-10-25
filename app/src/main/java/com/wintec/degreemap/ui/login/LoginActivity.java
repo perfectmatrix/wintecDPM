@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.wintec.degreemap.Manager_Home;
+import com.wintec.degreemap.ui.Manager_Home;
 import com.wintec.degreemap.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,11 +25,12 @@ public class LoginActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.edittext_password);
         btnSubmit = findViewById(R.id.btn_submit);
 
+        // Method to check password
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Password Should Be: WinITDMP01
-                // But for our convenience, changed it to: 1
+                // If password is valid, jump to managers' homepage
+                // * Password Should Be: WinITDMP01, but for our convenience, it's now: 1
                 if (mPassword.getText().toString().equals("1")) {
                     jumpTo();
                 } else {
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // Method to jump to managers' homepage
     public void jumpTo() {
         Intent i = new Intent(this, Manager_Home.class);
         startActivity(i);
