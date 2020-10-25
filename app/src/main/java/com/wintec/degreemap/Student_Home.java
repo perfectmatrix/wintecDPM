@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wintec.degreemap.ui.AboutUs;
+import com.wintec.degreemap.ui.Developers;
 import com.wintec.degreemap.ui.ManagerManageCourses;
 import com.wintec.degreemap.ui.ManagerManageStudents;
 
@@ -30,12 +31,16 @@ public class Student_Home extends AppCompatActivity {
 
     }
 
-    // Method for students to select their action: [Manage Students] or [Manage Courses]
+    // Method to select actions in profile page: [Contact Details], [About us] or [Developers]
     public void jumpTo(View view) {
         Intent i = null;
         switch (view.getId()) {
             case R.id.about_us:
                 i = new Intent(this, AboutUs.class);
+                startActivity(i);
+                break;
+            case R.id.developer_group:
+                i = new Intent(this, Developers.class);
                 startActivity(i);
                 break;
         }
