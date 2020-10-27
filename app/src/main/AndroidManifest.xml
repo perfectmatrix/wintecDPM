@@ -11,21 +11,24 @@
         android:roundIcon="@drawable/icon_degree_mapper"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Developers"></activity>
-        <activity android:name=".ui.AboutUs" />
-        <activity android:name=".ui.ManagerManageCourseSoftware" />
-        <activity android:name=".ui.ManagerManageCourseDatabase" />
-        <activity android:name=".ui.ManagerManageCourseWeb" />
-        <activity android:name=".ui.ManagerManageCourseNetwork" />
-        <activity android:name=".ui.ManagerManageStudents" />
-        <activity android:name=".ui.ManagerManageCourses" />
-        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.shared.TutorialPart2"></activity>
+        <activity android:name=".ui.shared.TutorialPart1" />
+        <activity android:name=".ui.student.student_profile.StudentProfile_ContactDetail" />
+        <activity android:name=".ui.student.student_profile.StudentProfile_Developers" />
+        <activity android:name=".ui.student.student_profile.StudentProfile_AboutUs" />
+        <activity android:name=".ui.manager.manage_courses.ManageCourse_Software" />
+        <activity android:name=".ui.manager.manage_courses.ManageCourse_Database" />
+        <activity android:name=".ui.manager.manage_courses.ManageCourse_Web" />
+        <activity android:name=".ui.manager.manage_courses.ManageCourse_Network" />
+        <activity android:name=".ui.manager.manage_students.ManageStudentsHome" />
+        <activity android:name=".ui.manager.manage_courses.ManageCoursesHome" />
+        <activity android:name=".ui.manager.ManagerLogin" />
         <activity
-            android:name=".ui.Manager_Home"
+            android:name=".ui.manager.Manager_Home"
             android:label="Manager"
             android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity
-            android:name=".Student_Home"
+            android:name=".ui.student.Student_Home"
             android:label="Student"
             android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity android:name=".ui.shared.SplashScreenActivity">

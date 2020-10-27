@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui;
+package com.wintec.degreemap.ui.student.student_profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.VideoView;
 
 import com.wintec.degreemap.R;
 
-public class AboutUs extends AppCompatActivity {
+public class StudentProfile_AboutUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

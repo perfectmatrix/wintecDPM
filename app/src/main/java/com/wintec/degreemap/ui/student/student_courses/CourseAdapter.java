@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui.course;
+package com.wintec.degreemap.ui.student.student_courses;
 
 import android.view.LayoutInflater;
 import android.view.View;

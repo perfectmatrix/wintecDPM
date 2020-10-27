@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/role_selection"
-            android:layout_width="299dp"
-            android:layout_height="289dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:layout_below="@+id/wintec_logo"
             android:layout_centerHorizontal="true"
             android:background="@drawable/icon_select_role" />

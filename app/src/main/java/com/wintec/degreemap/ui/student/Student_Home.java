@@ -1,4 +1,4 @@
-package com.wintec.degreemap;
+package com.wintec.degreemap.ui.student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.wintec.degreemap.ui.AboutUs;
-import com.wintec.degreemap.ui.Developers;
-import com.wintec.degreemap.ui.ManagerManageCourses;
-import com.wintec.degreemap.ui.ManagerManageStudents;
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.ui.student.student_profile.StudentProfile_AboutUs;
+import com.wintec.degreemap.ui.student.student_profile.StudentProfile_ContactDetail;
+import com.wintec.degreemap.ui.student.student_profile.StudentProfile_Developers;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -36,11 +36,15 @@ public class Student_Home extends AppCompatActivity {
         Intent i = null;
         switch (view.getId()) {
             case R.id.about_us:
-                i = new Intent(this, AboutUs.class);
+                i = new Intent(this, StudentProfile_AboutUs.class);
                 startActivity(i);
                 break;
             case R.id.developer_group:
-                i = new Intent(this, Developers.class);
+                i = new Intent(this, StudentProfile_Developers.class);
+                startActivity(i);
+                break;
+            case R.id.student_contact_details:
+                i = new Intent(this, StudentProfile_ContactDetail.class);
                 startActivity(i);
                 break;
         }

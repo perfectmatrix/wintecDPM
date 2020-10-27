@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.shared.TutorialPart1">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/back"
+                android:onClick="jumpTo"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Back"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro"
+                android:gravity="bottom"
+                android:textAlignment="viewEnd"
+                android:padding="16dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="24sp"
+                android:textColor="@color/blue"
+                tools:ignore="RtlCompat" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Mistakenly Completed Your Modules?"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/source_sans_pro_black"/>
+
+                <!-- Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Swipe right agine to unmark your modules."
+                    android:fontFamily="@font/source_sans_pro"/>
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/icon_tutorial_2"/>
+
+                <!-- Indicators -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="40dp">
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:src="@drawable/ic_circle_black"
+                        app:tint="@color/gray"
+                        android:layout_marginRight="10dp"/>
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:src="@drawable/ic_circle_black"
+                        android:layout_marginRight="200dp"/>
+                    <ImageView
+                        android:onClick="jumpTo"
+                        android:id="@+id/next2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/icon_next"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui.dashboard;
+package com.wintec.degreemap.ui.student.student_dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

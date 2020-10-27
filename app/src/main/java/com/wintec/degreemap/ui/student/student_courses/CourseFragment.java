@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui.course;
+package com.wintec.degreemap.ui.student.student_courses;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
-import com.wintec.degreemap.ui.dashboard.DashboardFragment;
+import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.List;

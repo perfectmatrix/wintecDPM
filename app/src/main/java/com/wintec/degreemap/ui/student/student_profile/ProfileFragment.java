@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui.profile;
+package com.wintec.degreemap.ui.student.student_profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

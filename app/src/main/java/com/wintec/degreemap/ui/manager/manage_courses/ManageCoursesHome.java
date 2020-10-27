@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui;
+package com.wintec.degreemap.ui.manager.manage_courses;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.wintec.degreemap.R;
 
-public class ManagerManageCourses extends AppCompatActivity {
+public class ManageCoursesHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +21,19 @@ public class ManagerManageCourses extends AppCompatActivity {
         Intent i = null;
         switch (view.getId()) {
             case R.id.card_network:
-                i = new Intent(this, ManagerManageCourseNetwork.class);
+                i = new Intent(this, ManageCourse_Network.class);
                 startActivity(i);
                 break;
             case R.id.card_database:
-                i = new Intent(this, ManagerManageCourseDatabase.class);
+                i = new Intent(this, ManageCourse_Database.class);
                 startActivity(i);
                 break;
             case R.id.card_web:
-                i = new Intent(this, ManagerManageCourseWeb.class);
+                i = new Intent(this, ManageCourse_Web.class);
                 startActivity(i);
                 break;
             case R.id.card_software:
-                i = new Intent(this, ManagerManageCourseSoftware.class);
+                i = new Intent(this, ManageCourse_Software.class);
                 startActivity(i);
                 break;
         }

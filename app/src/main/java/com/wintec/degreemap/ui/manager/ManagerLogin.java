@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui.login;
+package com.wintec.degreemap.ui.manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.wintec.degreemap.ui.Manager_Home;
+import com.wintec.degreemap.ui.manager.Manager_Home;
 import com.wintec.degreemap.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class ManagerLogin extends AppCompatActivity {
 
     EditText  mPassword;
     Button btnSubmit;

@@ -1,4 +1,4 @@
-package com.wintec.degreemap.ui;
+package com.wintec.degreemap.ui.manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.ManagerManageCourses;
-import com.wintec.degreemap.ui.ManagerManageStudents;
-import com.wintec.degreemap.ui.login.LoginActivity;
+import com.wintec.degreemap.ui.manager.manage_courses.ManageCoursesHome;
+import com.wintec.degreemap.ui.manager.manage_students.ManageStudentsHome;
 
 public class Manager_Home extends AppCompatActivity {
 
@@ -24,11 +23,11 @@ public class Manager_Home extends AppCompatActivity {
         Intent i = null;
         switch (view.getId()) {
             case R.id.manage_courses:
-                i = new Intent(this, ManagerManageCourses.class);
+                i = new Intent(this, ManageCoursesHome.class);
                 startActivity(i);
                 break;
             case R.id.manage_students:
-                i = new Intent(this, ManagerManageStudents.class);
+                i = new Intent(this, ManageStudentsHome.class);
                 startActivity(i);
                 break;
         }

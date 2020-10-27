@@ -4,7 +4,7 @@
     app:startDestination="@id/dashboardFragment">
     <fragment
         android:id="@+id/courseFragment"
-        android:name="com.wintec.degreemap.ui.course.CourseFragment"
+        android:name="com.wintec.degreemap.ui.student.student_courses.CourseFragment"
         android:label="CourseFragment" >
         <argument
             android:name="pathway"
@@ -13,7 +13,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.wintec.degreemap.ui.dashboard.DashboardFragment"
+        android:name="com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment"
         android:label="DashboardFragment" >
         <action
             android:id="@+id/action_dashboardFragment_to_courseFragment"
@@ -21,6 +21,6 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.wintec.degreemap.ui.profile.ProfileFragment"
+        android:name="com.wintec.degreemap.ui.student.student_profile.ProfileFragment"
         android:label="ProfileFragment" />
 </navigation>
