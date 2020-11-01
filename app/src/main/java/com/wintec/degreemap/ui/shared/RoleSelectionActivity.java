@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.wintec.degreemap.ui.manager.ManagerLogin;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.ui.student.Student_Home;
@@ -18,6 +19,7 @@ import com.wintec.degreemap.ui.student.Student_Home;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_role_selection);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 
     // Method for users to select role: [Student] or [Manager]
