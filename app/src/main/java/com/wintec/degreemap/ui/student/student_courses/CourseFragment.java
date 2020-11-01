@@ -23,13 +23,20 @@ import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
+    private static final int ALL_COURSE = 0;
+    private static final int FIRST_YEAR = 1;
+    private static final int SECOND_YEAR = 2;
+    private static final int THIRD_YEAR = 3;
+
     private RecyclerView mRecyclerView;
     private CourseAdapter mCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private String mSelectedPathway;
 
     @Nullable
     @Override
@@ -46,17 +53,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         mCourseAdapter = new CourseAdapter();
 
         // get selected pathway
-        String pathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
-
-        // get all course data
-        CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
-
-            @Override
-            public void onChanged(List<Course> courseList) {
-                mCourseAdapter.setCourses(courseList);
-            }
-        });
+        mSelectedPathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
 
         // set recyclerView data
         mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
@@ -66,7 +63,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         mRecyclerView.setAdapter(mCourseAdapter);
 
         // set pathway title and background color
-        setPathwayTextViewFormatting(view, pathway);
+        setPathwayTextViewFormatting(view, mSelectedPathway);
 
         return view;
     }
@@ -95,9 +92,34 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+
+        // get all course data
+        CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
+        courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
+            @Override
+            public void onChanged(List<Course> courseList) {
+                switch (position) {
+                    case ALL_COURSE: {
+                        mCourseAdapter.setCourses(courseList);
+                        break;
+                    }
+                    case FIRST_YEAR:
+                    case SECOND_YEAR:
+                    case THIRD_YEAR: {
+                        List<Course> filteredCourseList = new ArrayList<>();
+                        for (Course course: courseList) {
+                            if(course.getYear() == position)
+                                filteredCourseList.add(course);
+                        }
+                        mCourseAdapter.setCourses(filteredCourseList);
+                        break;
+                    }
+                }
+            }
+        });
     }
 
     @Override
