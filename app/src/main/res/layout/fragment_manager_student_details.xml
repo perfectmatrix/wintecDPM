@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.student.student_profile.StudentProfile_AboutUs"
-    android:background="@color/backgroundColor">
+    android:background="@color/managerBackgroundColor">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,10 +41,10 @@
                     android:fontFamily="@font/source_sans_pro"/>
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/details_avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_profile_edit_image"/>
+                    android:src="@drawable/picture_gallagher_student"/>
 
                 <!-- First Name -->
                 <TextView
@@ -125,6 +125,41 @@
                     android:padding="6dp"
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/source_sans_pro"/>
+
+                <!-- Pathway -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pathway"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/source_sans_pro"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/radioGroup_pathway"
+                    android:layout_marginBottom="30dp">
+                    <RadioButton
+                        android:id="@+id/radio_network"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Network Engineering" />
+                    <RadioButton
+                        android:id="@+id/radio_software"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Software Engineering" />
+                    <RadioButton
+                        android:id="@+id/radio_database"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Database Architecture" />
+                    <RadioButton
+                        android:id="@+id/radio_web"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Web Development" />
+                </RadioGroup>
 
                 <!-- Buttons -->
                 <LinearLayout
