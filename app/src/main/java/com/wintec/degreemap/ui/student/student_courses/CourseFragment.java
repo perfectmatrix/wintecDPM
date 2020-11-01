@@ -45,6 +45,9 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
 
         mCourseAdapter = new CourseAdapter();
 
+        // get selected pathway
+        String pathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
+
         // get all course data
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
@@ -63,14 +66,13 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         mRecyclerView.setAdapter(mCourseAdapter);
 
         // set pathway title and background color
-        setPathwayTextViewFormatting(view);
+        setPathwayTextViewFormatting(view, pathway);
 
         return view;
     }
 
-    private void setPathwayTextViewFormatting(View view) {
+    private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-        int pathway = getArguments().getInt(DashboardFragment.BUNDLE_PATHWAY);
 
         switch (pathway) {
             case Course.PATHWAY_NETWORK_ENGINEERING:

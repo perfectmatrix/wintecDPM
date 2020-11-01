@@ -1,10 +1,10 @@
 package com.wintec.degreemap.data.model;
 
 public class Course {
-    public static final int PATHWAY_NETWORK_ENGINEERING = 0;
-    public static final int PATHWAY_WEB_DEVELOPMENT = 1;
-    public static final int PATHWAY_DATABASE_ARCHITECTURE = 2;
-    public static final int PATHWAY_SOFTWARE_ENGINEERING = 3;
+    public static final String PATHWAY_NETWORK_ENGINEERING = "network";
+    public static final String PATHWAY_WEB_DEVELOPMENT = "web";
+    public static final String PATHWAY_DATABASE_ARCHITECTURE = "database";
+    public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
 
     private String code;
     private String longName;

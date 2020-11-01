@@ -40,7 +40,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         // set network as default pathway
-        int pathway = Course.PATHWAY_NETWORK_ENGINEERING;
+        String pathway = Course.PATHWAY_NETWORK_ENGINEERING;
 
         switch (v.getId()) {
             case R.id.card_network:
@@ -59,7 +59,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
         // set pathway to selected value
         Bundle bundle = new Bundle();
-        bundle.putInt(BUNDLE_PATHWAY, pathway);
+        bundle.putString(BUNDLE_PATHWAY, pathway);
 
         // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
