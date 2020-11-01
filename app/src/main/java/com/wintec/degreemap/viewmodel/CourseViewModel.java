@@ -4,24 +4,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.wintec.degreemap.data.firebaselivedata.CourseListLiveData;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.data.repository.CourseRepository;
 
 import java.util.List;
 
 public class CourseViewModel extends ViewModel {
-    private CourseRepository courseRepository;
-    public LiveData<List<Course>> courseList;
+    private CourseRepository mCourseRepository;
 
     public CourseViewModel() {
-        this.courseRepository = CourseRepository.getInstance();
+        this.mCourseRepository = CourseRepository.getInstance();
     }
 
-    public LiveData<List<Course>> getCourseList() {
-        if (courseList == null) {
-            courseList = courseRepository.getCourseList();
-        }
-
-        return courseList;
+    public CourseListLiveData getCourseList() {
+        return mCourseRepository.getCourseList();
     }
 }

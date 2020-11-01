@@ -1,19 +1,11 @@
 package com.wintec.degreemap.data.repository;
 
-import androidx.lifecycle.LiveData;
-
 import com.wintec.degreemap.data.firebaselivedata.CourseListLiveData;
-import com.wintec.degreemap.data.model.Course;
-
-import java.util.List;
+import com.wintec.degreemap.util.FirebaseUtils;
 
 public class CourseRepository {
     private static CourseRepository sCourseRepository;
-    private LiveData<List<Course>> courseList;
-
-    public CourseRepository() {
-        courseList = new CourseListLiveData();
-    }
+    private CourseListLiveData courseList;
 
     public static CourseRepository getInstance() {
         if (sCourseRepository == null) {
@@ -22,7 +14,12 @@ public class CourseRepository {
         return sCourseRepository;
     }
 
-    public LiveData<List<Course>> getCourseList() {
+    public CourseListLiveData getCourseList() {
+        if(courseList == null)
+        {
+            courseList = new CourseListLiveData(FirebaseUtils.getCourseRef());
+            return courseList;
+        }
         return courseList;
     }
 }
