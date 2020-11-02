@@ -9,8 +9,9 @@ import android.os.Handler;
 
 import com.wintec.degreemap.R;
 
-import static com.wintec.degreemap.ui.shared.TutorialPart2.KEY_TUTORIAL_DONE;
-import static com.wintec.degreemap.ui.shared.TutorialPart2.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Constants.KEY_TUTORIAL_DONE;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+
 
 public class SplashScreenActivity extends AppCompatActivity {
 
