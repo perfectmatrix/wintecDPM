@@ -9,6 +9,7 @@ import android.view.View;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.ui.manager.manage_courses.ManageCoursesHome;
 import com.wintec.degreemap.ui.manager.manage_students.ManageStudentsHome;
+import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
 
 public class Manager_Home extends AppCompatActivity {
 
@@ -30,6 +31,12 @@ public class Manager_Home extends AppCompatActivity {
                 i = new Intent(this, ManageStudentsHome.class);
                 startActivity(i);
                 break;
+            case R.id.back_arrow:
+                i = new Intent(this, RoleSelectionActivity.class);
+                startActivity(i);
+                break;
         }
     }
+
+
 }
