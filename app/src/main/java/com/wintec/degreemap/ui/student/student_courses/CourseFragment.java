@@ -26,6 +26,9 @@ import com.wintec.degreemap.viewmodel.CourseViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.wintec.degreemap.data.model.Course.PATHWAY_CORE;
+import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
+
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private static final int ALL_COURSE = 0;
@@ -70,7 +73,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-        pathwayTextView.setText(Course.getPathwayLabel(pathway));
+        pathwayTextView.setText(getPathwayLabel(pathway));
     }
 
     @Override

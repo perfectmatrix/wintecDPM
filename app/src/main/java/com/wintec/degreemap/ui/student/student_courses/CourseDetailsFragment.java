@@ -19,6 +19,8 @@ import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
+import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
+
 public class CourseDetailsFragment extends Fragment {
     TextView courseCodeTextView,
             courseLongNameTextView,
@@ -74,7 +76,7 @@ public class CourseDetailsFragment extends Fragment {
         courseCreditTextView.setText(String.valueOf(mCourse.getCredit()));
         preRequisiteTextView.setText("Pre-requisite");
         coRequisiteTextView.setText("Co-requisite");
-        pathwayTextView.setText(Course.getPathwayLabel(mCourse.getType()));
+        pathwayTextView.setText(getPathwayLabel(mCourse.getType()));
         courseDescriptionTextView.setText(mCourse.getDescription());
     }
 

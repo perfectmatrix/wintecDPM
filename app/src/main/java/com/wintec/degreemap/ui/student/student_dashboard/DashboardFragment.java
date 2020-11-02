@@ -13,7 +13,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.data.model.Course;
+
+import static com.wintec.degreemap.data.model.Course.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_WEB_DEVELOPMENT;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
     public static final String BUNDLE_PATHWAY = "BundlePathway";
@@ -40,20 +44,20 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         // set network as default pathway
-        String pathway = Course.PATHWAY_NETWORK_ENGINEERING;
+        String pathway = PATHWAY_NETWORK_ENGINEERING;
 
         switch (v.getId()) {
             case R.id.card_network:
-                pathway = Course.PATHWAY_NETWORK_ENGINEERING;
+                pathway = PATHWAY_NETWORK_ENGINEERING;
                 break;
             case R.id.card_web:
-                pathway = Course.PATHWAY_WEB_DEVELOPMENT;
+                pathway = PATHWAY_WEB_DEVELOPMENT;
                 break;
             case R.id.card_database:
-                pathway = Course.PATHWAY_DATABASE_ARCHITECTURE;
+                pathway = PATHWAY_DATABASE_ARCHITECTURE;
                 break;
             case R.id.card_software:
-                pathway = Course.PATHWAY_SOFTWARE_ENGINEERING;
+                pathway = PATHWAY_SOFTWARE_ENGINEERING;
                 break;
         }
 
