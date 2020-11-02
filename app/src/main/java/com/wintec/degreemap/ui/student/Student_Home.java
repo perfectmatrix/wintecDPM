@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wintec.degreemap.R;
+import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
 import com.wintec.degreemap.ui.student.student_profile.StudentProfile_AboutUs;
 import com.wintec.degreemap.ui.student.student_profile.StudentProfile_ContactDetail;
 import com.wintec.degreemap.ui.student.student_profile.StudentProfile_Developers;
@@ -45,6 +46,10 @@ public class Student_Home extends AppCompatActivity {
                 break;
             case R.id.student_contact_details:
                 i = new Intent(this, StudentProfile_ContactDetail.class);
+                startActivity(i);
+                break;
+            case R.id.back_arrow:
+                i = new Intent(this, RoleSelectionActivity.class);
                 startActivity(i);
                 break;
         }
