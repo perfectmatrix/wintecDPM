@@ -17,10 +17,26 @@ import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 public class CourseDetailsFragment extends Fragment {
-
+    TextView courseCodeTextView,
+            courseLongNameTextView,
+            courseLevelTextView,
+            courseCreditTextView,
+            preRequisiteTextView ,
+            coRequisiteTextView,
+            pathwayTextView,
+            courseDescriptionTextView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_course_details, container, false);
+
+        courseCodeTextView = view.findViewById(R.id.courseCodeTextView);
+        courseLongNameTextView = view.findViewById(R.id.courseLongNameTextView);
+        courseLevelTextView = view.findViewById(R.id.courseLevelTextView);
+        courseCreditTextView = view.findViewById(R.id.courseCreditTextView);
+        preRequisiteTextView = view.findViewById(R.id.preRequisiteTextView);
+        coRequisiteTextView = view.findViewById(R.id.coRequisiteTextView);
+        pathwayTextView = view.findViewById(R.id.pathwayTextView);
+        courseDescriptionTextView = view.findViewById(R.id.courseDescriptionTextView);
 
         String courseKey = getArguments().getString(CourseAdapter.BUNDLE_COURSE_ID);
 
@@ -29,11 +45,22 @@ public class CourseDetailsFragment extends Fragment {
             @Override
             public void onChanged(Course course) {
                 if(course != null) {
-                    // Populate UI with data
+                    populateCourseDetails(course);
                 }
             }
         });
 
         return view;
+    }
+
+    public void populateCourseDetails(Course course) {
+        courseCodeTextView.setText(course.getCode());
+        courseLongNameTextView.setText(course.getLongName());
+        courseLevelTextView.setText(String.valueOf(course.getLevel()));
+        courseCreditTextView.setText(String.valueOf(course.getCredit()));
+        preRequisiteTextView.setText("Pre-requisite");
+        coRequisiteTextView.setText("Co-requisite");
+        pathwayTextView.setText(Course.getPathwayLabel(course.getType()));
+        courseDescriptionTextView.setText(course.getDescription());
     }
 }

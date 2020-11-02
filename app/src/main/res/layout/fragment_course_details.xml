@@ -49,9 +49,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/courseCodeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[COMP709​]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -70,9 +70,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/courseLongNameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[Mobile Applications Development]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -91,9 +91,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/courseLevelTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[7]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -112,9 +112,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/courseCreditTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[15]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -133,9 +133,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/preRequisiteTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[INFO601]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -154,9 +154,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/coRequisiteTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[NA]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -175,9 +175,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/pathwayTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[???]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -198,9 +198,9 @@
                         android:textSize="20sp"
                         android:layout_marginBottom="10dp"/>
                     <TextView
+                        android:id="@+id/courseDescriptionTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />

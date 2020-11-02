@@ -70,25 +70,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-
-        switch (pathway) {
-            case Course.PATHWAY_NETWORK_ENGINEERING:
-                pathwayTextView.setText("Network Engineering");
-                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.purple, getContext().getTheme()));
-                break;
-            case Course.PATHWAY_WEB_DEVELOPMENT:
-                pathwayTextView.setText("Web Development");
-                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.blue, getContext().getTheme()));
-                break;
-            case Course.PATHWAY_DATABASE_ARCHITECTURE:
-                pathwayTextView.setText("Database Architecture");
-                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.green, getContext().getTheme()));
-                break;
-            case Course.PATHWAY_SOFTWARE_ENGINEERING:
-                pathwayTextView.setText("Software Engineering");
-                pathwayTextView.setBackgroundColor(getResources().getColor(R.color.red, getContext().getTheme()));
-                break;
-        }
+        pathwayTextView.setText(Course.getPathwayLabel(pathway));
     }
 
     @Override

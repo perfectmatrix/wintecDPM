@@ -11,6 +11,7 @@ public class Course {
     private int credit;
     private String description;
     private String longName;
+    private int level;
     private int semester;
     private String type;
     private String url;
@@ -19,12 +20,13 @@ public class Course {
     public Course() {
     }
 
-    public Course(String key, String code, int credit, String description, String longName, int semester, String type, String url, int year) {
+    public Course(String key, String code, int credit, String description, String longName, int level, int semester, String type, String url, int year) {
         this.key = key;
         this.code = code;
         this.credit = credit;
         this.description = description;
         this.longName = longName;
+        this.level = level;
         this.semester = semester;
         this.type = type;
         this.url = url;
@@ -43,25 +45,21 @@ public class Course {
         return code;
     }
 
-    public int getCredit() {
-        return credit;
-    }
+    public int getCredit() { return credit; }
 
     public String getDescription() {
         return description;
     }
 
-    public String getLongName() {
-        return longName;
-    }
+    public String getLongName() { return longName; }
+
+    public int getLevel() { return level; }
 
     public int getSemester() {
         return semester;
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
     public String getUrl() {
         return url;
@@ -69,5 +67,29 @@ public class Course {
 
     public int getYear() {
         return year;
+    }
+
+    public static String getPathwayLabel(String pathway) {
+        String label = "";
+
+        switch (pathway) {
+            case Course.PATHWAY_NETWORK_ENGINEERING:
+                label = "Network Engineering";
+                break;
+            case Course.PATHWAY_WEB_DEVELOPMENT:
+                label = "Web Development";
+                break;
+            case Course.PATHWAY_DATABASE_ARCHITECTURE:
+                label = "Database Architecture";
+                break;
+            case Course.PATHWAY_SOFTWARE_ENGINEERING:
+                label = "Software Engineering";
+                break;
+            default:
+                label = "Core";
+                break;
+        }
+
+        return label;
     }
 }
