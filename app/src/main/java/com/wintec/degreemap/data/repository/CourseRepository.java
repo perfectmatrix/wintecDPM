@@ -1,11 +1,14 @@
 package com.wintec.degreemap.data.repository;
 
+import com.wintec.degreemap.data.firebaselivedata.CourseDetailsLiveData;
 import com.wintec.degreemap.data.firebaselivedata.CourseListLiveData;
+import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.util.FirebaseUtils;
 
 public class CourseRepository {
     private static CourseRepository sCourseRepository;
     private CourseListLiveData courseList;
+    private CourseDetailsLiveData course;
 
     public static CourseRepository getInstance() {
         if (sCourseRepository == null) {
@@ -21,5 +24,9 @@ public class CourseRepository {
             return courseList;
         }
         return courseList;
+    }
+
+    public CourseDetailsLiveData getCourseDetails(String courseKey) {
+        return new CourseDetailsLiveData(FirebaseUtils.getCourseRef().child(courseKey));
     }
 }
