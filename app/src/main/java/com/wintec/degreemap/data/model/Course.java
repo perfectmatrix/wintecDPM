@@ -6,6 +6,7 @@ public class Course {
     public static final String PATHWAY_DATABASE_ARCHITECTURE = "database";
     public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
 
+    private String key;
     private String code;
     private int credit;
     private String description;
@@ -18,7 +19,8 @@ public class Course {
     public Course() {
     }
 
-    public Course(String code, int credit, String description, String longName, int semester, String type, String url, int year) {
+    public Course(String key, String code, int credit, String description, String longName, int semester, String type, String url, int year) {
+        this.key = key;
         this.code = code;
         this.credit = credit;
         this.description = description;
@@ -27,6 +29,14 @@ public class Course {
         this.type = type;
         this.url = url;
         this.year = year;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getCode() {

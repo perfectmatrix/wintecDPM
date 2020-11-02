@@ -38,6 +38,7 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
             mCourseList = new ArrayList<>();
             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                 Course course = snapshot.getValue(Course.class);
+                course.setKey(snapshot.getKey());
                 mCourseList.add(course);
             }
             setValue(mCourseList);
