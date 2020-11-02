@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -12,7 +13,10 @@ import android.widget.Button;
 
 import com.wintec.degreemap.R;
 
+import static com.wintec.degreemap.ui.shared.TutorialPart2.SHARED_PREFERENCES;
+
 public class TutorialPart1 extends AppCompatActivity {
+    public static final String KEY_DISCLAIMER_ACCEPTED = "KeyDisclaimerAccepted";
 
     Dialog disclaimer_dialog;
 
@@ -37,22 +41,32 @@ public class TutorialPart1 extends AppCompatActivity {
         }
     }
 
-    // Method for disclaimer
-    // But every time we go to role selection activity, this dialog will show
-    // feel free to change it
+    // Disclaimer dialog will show only once and will be hidden after the user acknowledges
     @Override
     protected void onStart() {
         super.onStart();
-        disclaimer_dialog = new Dialog(this);
-        disclaimer_dialog.setContentView(R.layout.dialog_disclaimer);
-        disclaimer_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        Button button = disclaimer_dialog.findViewById(R.id.btn_get_started);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                disclaimer_dialog.dismiss();
-            }
-        });
-        disclaimer_dialog.show();
+        SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        boolean isDisclaimerAccepted = prefs.getBoolean(KEY_DISCLAIMER_ACCEPTED, false);
+
+        if(!isDisclaimerAccepted) {
+            disclaimer_dialog = new Dialog(this);
+            disclaimer_dialog.setContentView(R.layout.dialog_disclaimer);
+            disclaimer_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Button button = disclaimer_dialog.findViewById(R.id.btn_get_started);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Save disclaimer status on SharedPreferences
+                    SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean(KEY_DISCLAIMER_ACCEPTED, true);
+                    editor.apply();
+
+                    disclaimer_dialog.dismiss();
+                }
+            });
+
+            disclaimer_dialog.show();
+        }
     }
 }
