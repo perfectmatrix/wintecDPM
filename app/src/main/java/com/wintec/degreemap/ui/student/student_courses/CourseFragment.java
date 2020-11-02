@@ -86,23 +86,28 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
             @Override
             public void onChanged(List<Course> courseList) {
+                List<Course> filteredCourseList = new ArrayList<>();
+
                 switch (position) {
                     case ALL_COURSE: {
-                        mCourseAdapter.setCourses(courseList);
+                        for (Course course: courseList) {
+                            if(course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE))
+                                filteredCourseList.add(course);
+                        }
                         break;
                     }
                     case FIRST_YEAR:
                     case SECOND_YEAR:
                     case THIRD_YEAR: {
-                        List<Course> filteredCourseList = new ArrayList<>();
                         for (Course course: courseList) {
-                            if(course.getYear() == position)
+                            if(course.getYear() == position && (course.getType().equalsIgnoreCase(mSelectedPathway)  || course.getType().equalsIgnoreCase(PATHWAY_CORE)))
                                 filteredCourseList.add(course);
                         }
-                        mCourseAdapter.setCourses(filteredCourseList);
                         break;
                     }
                 }
+
+                mCourseAdapter.setCourses(filteredCourseList);
             }
         });
     }

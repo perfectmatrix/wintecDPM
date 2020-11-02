@@ -5,6 +5,7 @@ public class Course {
     public static final String PATHWAY_WEB_DEVELOPMENT = "web";
     public static final String PATHWAY_DATABASE_ARCHITECTURE = "database";
     public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
+    public static final String PATHWAY_CORE = "core";
 
     private String key;
     private String code;
