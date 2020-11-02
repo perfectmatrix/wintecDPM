@@ -18,4 +18,8 @@
     <color name="blue">#5076fc</color>
     <color name="red">#ff7f6c</color>
 
+    <color name="lightPurple">#c19ef9</color>
+    <color name="lightGreen">#79e0c4</color>
+    <color name="lightBlue">#849ffc</color>
+    <color name="lightRed">#ffa598</color>
 </resources>
