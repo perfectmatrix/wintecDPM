@@ -13,8 +13,6 @@ import com.wintec.degreemap.ui.student.Student_Home;
 
  public class RoleSelectionActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +32,6 @@ import com.wintec.degreemap.ui.student.Student_Home;
                  i = new Intent(this, ManagerLogin.class);
                  startActivity(i);
                  break;
-
          }
      }
-
-
-
  }

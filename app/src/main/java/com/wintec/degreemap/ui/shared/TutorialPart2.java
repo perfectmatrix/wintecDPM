@@ -3,12 +3,16 @@ package com.wintec.degreemap.ui.shared;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 import com.wintec.degreemap.R;
 
 public class TutorialPart2 extends AppCompatActivity {
+
+    public static final String SHARED_PREFERENCES = "SharedPreferences";
+    public static final String KEY_TUTORIAL_DONE = "KeyTutorialDone";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,13 @@ public class TutorialPart2 extends AppCompatActivity {
             case R.id.next2:
                 i = new Intent(this, RoleSelectionActivity.class);
                 startActivity(i);
+
+                // Save tutorial status on SharedPreferences
+                SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean(KEY_TUTORIAL_DONE, true);
+                editor.apply();
+
                 break;
         }
     }
