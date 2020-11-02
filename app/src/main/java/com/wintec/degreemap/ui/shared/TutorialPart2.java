@@ -9,11 +9,10 @@ import android.view.View;
 
 import com.wintec.degreemap.R;
 
+import static com.wintec.degreemap.util.Constants.KEY_TUTORIAL_DONE;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+
 public class TutorialPart2 extends AppCompatActivity {
-
-    public static final String SHARED_PREFERENCES = "SharedPreferences";
-    public static final String KEY_TUTORIAL_DONE = "KeyTutorialDone";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

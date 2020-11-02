@@ -13,11 +13,10 @@ import android.widget.Button;
 
 import com.wintec.degreemap.R;
 
-import static com.wintec.degreemap.ui.shared.TutorialPart2.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Constants.KEY_DISCLAIMER_ACCEPTED;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class TutorialPart1 extends AppCompatActivity {
-    public static final String KEY_DISCLAIMER_ACCEPTED = "KeyDisclaimerAccepted";
-
     Dialog disclaimer_dialog;
 
     @Override
