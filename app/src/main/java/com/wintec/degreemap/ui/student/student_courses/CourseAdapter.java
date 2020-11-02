@@ -17,10 +17,21 @@ import com.wintec.degreemap.data.model.Course;
 
 import java.util.List;
 
+import static com.wintec.degreemap.data.model.Course.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.data.model.Course.PATHWAY_WEB_DEVELOPMENT;
+
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> implements View.OnClickListener {
     public static final String BUNDLE_COURSE_ID = "BundleCourseId";
     private List<Course> mCourseList;
     private Course mSelectedCourse;
+    private String mSelectedPathway;
+
+    public CourseAdapter(String pathway) {
+        super();
+        mSelectedPathway = pathway;
+    }
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
         public CardView courseCard;
@@ -53,6 +64,22 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         mSelectedCourse = mCourseList.get(position);
         holder.courseCodeTextView.setText(mSelectedCourse.getCode());
         holder.courseNameTextView.setText(mSelectedCourse.getLongName());
+
+        switch (mSelectedPathway) {
+            case PATHWAY_NETWORK_ENGINEERING:
+                holder.courseCodeTextView.setBackgroundResource(R.color.lightPurple);
+                break;
+            case PATHWAY_WEB_DEVELOPMENT:
+                holder.courseCodeTextView.setBackgroundResource(R.color.lightBlue);
+                break;
+            case PATHWAY_DATABASE_ARCHITECTURE:
+                holder.courseCodeTextView.setBackgroundResource(R.color.lightGreen);
+                break;
+            case PATHWAY_SOFTWARE_ENGINEERING:
+                holder.courseCodeTextView.setBackgroundResource(R.color.lightRed);
+                break;
+        }
+
         holder.courseCard.setOnClickListener(this);
     }
 

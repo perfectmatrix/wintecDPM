@@ -53,10 +53,10 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        mCourseAdapter = new CourseAdapter();
-
         // get selected pathway
         mSelectedPathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
+
+        mCourseAdapter = new CourseAdapter(mSelectedPathway);
 
         // set recyclerView data
         mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
