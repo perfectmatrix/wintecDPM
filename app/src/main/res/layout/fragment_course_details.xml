@@ -227,6 +227,7 @@
                     android:textSize="16sp"
                     android:fontFamily="@font/source_sans_pro"/>
                 <Button
+                    android:id="@+id/courseUrlButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
