@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="26dp"
                 android:padding="16dp"
                 android:background="@drawable/bg_rounded_light_gray">
 
@@ -145,7 +145,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="30dp">
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -213,24 +213,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:layout_marginBottom="40dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginBottom="30dp"
+                android:layout_marginHorizontal="26dp">
                 <Button
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:text="Mark as Completed"
                     android:textColor="@color/black"
                     android:background="@drawable/btn_wintec_yellow"
+                    android:layout_margin="2dp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/source_sans_pro"/>
                 <Button
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:text="See More"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:background="@drawable/btn_wintec_yellow"
+                    android:layout_margin="2dp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/source_sans_pro"/>
             </LinearLayout>
         </LinearLayout>
