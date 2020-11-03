@@ -1,5 +1,6 @@
 package com.wintec.degreemap.ui.student.student_dashboard;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +15,15 @@ import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
-    public static final String BUNDLE_PATHWAY = "BundlePathway";
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable
@@ -61,12 +64,14 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 break;
         }
 
-        // set pathway to selected value
-        Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_PATHWAY, pathway);
+        // Save selectedPathway on SharedPreferences
+        SharedPreferences prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(KEY_SELECTED_PATHWAY, pathway);
+        editor.apply();
 
         // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
-        navController.navigate(R.id.action_dashboardFragment_to_courseFragment, bundle);
+        navController.navigate(R.id.action_dashboardFragment_to_courseFragment);
     }
 }
