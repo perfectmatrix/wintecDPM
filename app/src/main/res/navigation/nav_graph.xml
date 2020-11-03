@@ -3,33 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/studentDashboardFragment">
     <fragment
-        android:id="@+id/courseFragment"
+        android:id="@+id/studentCourseFragment"
         android:name="com.wintec.degreemap.ui.student.student_courses.StudentCourseFragment"
         android:label="CourseFragment"
         tools:layout="@layout/fragment_student_course" >
         <action
-            android:id="@+id/action_courseFragment_to_courseDetailsFragment"
-            app:destination="@id/courseDetailsFragment" />
+            android:id="@+id/action_student_courseFragment_to_courseDetailsFragment"
+            app:destination="@id/studentCourseDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/dashboardFragment"
+        android:id="@+id/studentDashboardFragment"
         android:name="com.wintec.degreemap.ui.student.student_dashboard.StudentDashboardFragment"
-        android:label="DashboardFragment"
+        android:label="StudentDashboardFragment"
         tools:layout="@layout/fragment_student_dashboard" >
         <action
-            android:id="@+id/action_dashboardFragment_to_courseFragment"
-            app:destination="@id/courseFragment" />
+            android:id="@+id/action_student_dashboardFragment_to_courseFragment"
+            app:destination="@id/studentCourseFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/studentProfileFragment"
         android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfileFragment"
-        android:label="ProfileFragment"
+        android:label="StudentProfileFragment"
         tools:layout="@layout/fragment_student_profile" />
     <fragment
-        android:id="@+id/courseDetailsFragment"
+        android:id="@+id/studentCourseDetailsFragment"
         android:name="com.wintec.degreemap.ui.student.student_courses.StudentCourseDetailsFragment"
-        android:label="CourseDetailsFragment"
+        android:label="StudentCourseDetailsFragment"
         tools:layout="@layout/fragment_student_course_details" />
 </navigation>

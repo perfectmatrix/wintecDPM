@@ -52,7 +52,7 @@ public class StudentCourseFragment extends Fragment implements AdapterView.OnIte
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (mSelectedPathway.isEmpty()) {
-            Navigation.findNavController(view).navigate(R.id.dashboardFragment);
+            Navigation.findNavController(view).navigate(R.id.studentDashboardFragment);
             Toast.makeText(getActivity().getApplicationContext(), "Select a pathway first", Toast.LENGTH_SHORT).show();
         }
     }
@@ -143,6 +143,6 @@ public class StudentCourseFragment extends Fragment implements AdapterView.OnIte
 
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_courseFragment_to_courseDetailsFragment, bundle);
+        navController.navigate(R.id.action_student_courseFragment_to_courseDetailsFragment, bundle);
     }
 }
