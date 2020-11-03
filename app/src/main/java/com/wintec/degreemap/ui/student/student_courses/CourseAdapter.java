@@ -17,10 +17,10 @@ import com.wintec.degreemap.data.model.Course;
 
 import java.util.List;
 
-import static com.wintec.degreemap.data.model.Course.PATHWAY_DATABASE_ARCHITECTURE;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_NETWORK_ENGINEERING;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_SOFTWARE_ENGINEERING;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_WEB_DEVELOPMENT;
+import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> implements View.OnClickListener {
     public static final String BUNDLE_COURSE_ID = "BundleCourseId";

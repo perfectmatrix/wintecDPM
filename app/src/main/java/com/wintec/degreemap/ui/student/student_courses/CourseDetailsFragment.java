@@ -24,9 +24,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class CourseDetailsFragment extends Fragment {
     TextView courseCodeTextView,

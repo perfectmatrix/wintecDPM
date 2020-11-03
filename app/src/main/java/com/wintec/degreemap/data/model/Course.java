@@ -1,12 +1,6 @@
 package com.wintec.degreemap.data.model;
 
 public class Course {
-    public static final String PATHWAY_NETWORK_ENGINEERING = "network";
-    public static final String PATHWAY_WEB_DEVELOPMENT = "web";
-    public static final String PATHWAY_DATABASE_ARCHITECTURE = "database";
-    public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
-    public static final String PATHWAY_CORE = "core";
-
     private String key;
     private String code;
     private int credit;
@@ -68,29 +62,5 @@ public class Course {
 
     public int getYear() {
         return year;
-    }
-
-    public static String getPathwayLabel(String pathway) {
-        String label = "";
-
-        switch (pathway) {
-            case Course.PATHWAY_NETWORK_ENGINEERING:
-                label = "Network Engineering";
-                break;
-            case Course.PATHWAY_WEB_DEVELOPMENT:
-                label = "Web Development";
-                break;
-            case Course.PATHWAY_DATABASE_ARCHITECTURE:
-                label = "Database Architecture";
-                break;
-            case Course.PATHWAY_SOFTWARE_ENGINEERING:
-                label = "Software Engineering";
-                break;
-            default:
-                label = "Core";
-                break;
-        }
-
-        return label;
     }
 }

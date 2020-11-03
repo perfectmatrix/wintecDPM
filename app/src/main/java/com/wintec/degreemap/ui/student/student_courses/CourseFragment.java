@@ -30,18 +30,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_CORE;
-import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
+import static com.wintec.degreemap.util.Constants.ALL_COURSE;
+import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
+import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
+import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
+import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
-
-    private static final int ALL_COURSE = 0;
-    private static final int FIRST_YEAR = 1;
-    private static final int SECOND_YEAR = 2;
-    private static final int THIRD_YEAR = 3;
-
     private RecyclerView mRecyclerView;
     private CourseAdapter mCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;

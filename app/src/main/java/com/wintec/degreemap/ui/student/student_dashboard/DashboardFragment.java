@@ -14,10 +14,10 @@ import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
 
-import static com.wintec.degreemap.data.model.Course.PATHWAY_DATABASE_ARCHITECTURE;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_NETWORK_ENGINEERING;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_SOFTWARE_ENGINEERING;
-import static com.wintec.degreemap.data.model.Course.PATHWAY_WEB_DEVELOPMENT;
+import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
     public static final String BUNDLE_PATHWAY = "BundlePathway";
