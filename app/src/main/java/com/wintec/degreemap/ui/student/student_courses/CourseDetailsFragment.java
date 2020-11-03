@@ -19,13 +19,13 @@ import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class CourseDetailsFragment extends Fragment {
@@ -33,7 +33,7 @@ public class CourseDetailsFragment extends Fragment {
             courseLongNameTextView,
             courseLevelTextView,
             courseCreditTextView,
-            preRequisiteTextView ,
+            preRequisiteTextView,
             coRequisiteTextView,
             pathwayTextView,
             courseDescriptionTextView;
@@ -66,17 +66,19 @@ public class CourseDetailsFragment extends Fragment {
 
         markCourseButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { markCompleteOrIncomplete(); }
+            public void onClick(View view) {
+                markCompleteOrIncomplete();
+            }
         });
 
         mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        String courseKey = getArguments().getString(CourseAdapter.BUNDLE_COURSE_ID);
+        String courseKey = getArguments().getString(BUNDLE_COURSE_ID);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.getCourseDetails(courseKey).observe(getActivity(), new Observer<Course>() {
             @Override
             public void onChanged(Course course) {
-                if(course != null) {
+                if (course != null) {
                     mSelectedCourse = course;
                     populateCourseDetails();
                 }
@@ -91,21 +93,29 @@ public class CourseDetailsFragment extends Fragment {
         courseLongNameTextView.setText(mSelectedCourse.getLongName());
         courseLevelTextView.setText(String.valueOf(mSelectedCourse.getLevel()));
         courseCreditTextView.setText(String.valueOf(mSelectedCourse.getCredit()));
-        preRequisiteTextView.setText("Pre-requisite");
-        coRequisiteTextView.setText("Co-requisite");
+        preRequisiteTextView.setText(mSelectedCourse.getPreRequisite().isEmpty()
+                ? "None"
+                : mSelectedCourse.getPreRequisite().toString()
+                        .replace("[", "")
+                        .replace("]", ""));
+        coRequisiteTextView.setText(mSelectedCourse.getCoRequisite().isEmpty()
+                ? "None"
+                : mSelectedCourse.getCoRequisite().toString()
+                .replace("[", "")
+                .replace("]", ""));
         pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
 
-        getCompletedModules();
+        mCompletedModules = getCompletedModules(mPrefs);
         setMarkButtonText();
     }
 
-    public void markCompleteOrIncomplete(){
+    public void markCompleteOrIncomplete() {
         // Mark modules as complete or incomplete
-        if(isModuleCompleted()) {
-            mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getKey()));
+        if (isModuleCompleted()) {
+            mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getCode()));
         } else {
-            mCompletedModules.add(mSelectedCourse.getKey());
+            mCompletedModules.add(mSelectedCourse.getCode());
         }
 
         setMarkButtonText();
@@ -118,19 +128,7 @@ public class CourseDetailsFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void getCompletedModules() {
-        // Load completed modules from SharedPreferences
-        String completedModulesList = mPrefs.getString(KEY_COMPLETED_MODULES, "");
-
-        // Get previously selected modules if there is any
-        if(!completedModulesList.isEmpty()) {
-            mCompletedModules = new ArrayList<>(Arrays.asList(TextUtils.split(completedModulesList, ",")));
-        } else {
-            mCompletedModules = new ArrayList<>();
-        }
-    }
-
-    private void saveCompletedModules(){
+    private void saveCompletedModules() {
         // Save completed modules on SharedPreferences
         SharedPreferences.Editor editor = mPrefs.edit();
         editor.putString(KEY_COMPLETED_MODULES, TextUtils.join(",", mCompletedModules));
@@ -138,11 +136,11 @@ public class CourseDetailsFragment extends Fragment {
     }
 
     private boolean isModuleCompleted() {
-        return (mCompletedModules.contains(mSelectedCourse.getKey()));
+        return (mCompletedModules.contains(mSelectedCourse.getCode()));
     }
 
     private void setMarkButtonText() {
-        if(isModuleCompleted()) {
+        if (isModuleCompleted()) {
             markCourseButton.setText("Mark as Incomplete");
         } else {
             markCourseButton.setText("Mark as Completed");

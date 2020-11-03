@@ -1,12 +1,16 @@
 package com.wintec.degreemap.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
-    private String key;
     private String code;
+    private ArrayList<String> coRequisite;
     private int credit;
     private String description;
     private String longName;
     private int level;
+    private ArrayList<String> preRequisite;
     private int semester;
     private String type;
     private String url;
@@ -15,46 +19,55 @@ public class Course {
     public Course() {
     }
 
-    public Course(String key, String code, int credit, String description, String longName, int level, int semester, String type, String url, int year) {
-        this.key = key;
+    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String type, String url, int year) {
         this.code = code;
+        this.coRequisite = coRequisite;
         this.credit = credit;
         this.description = description;
         this.longName = longName;
         this.level = level;
+        this.preRequisite = preRequisite;
         this.semester = semester;
         this.type = type;
         this.url = url;
         this.year = year;
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
     public String getCode() {
         return code;
     }
 
-    public int getCredit() { return credit; }
+    public ArrayList<String> getCoRequisite() {
+        return coRequisite;
+    }
+
+    public int getCredit() {
+        return credit;
+    }
 
     public String getDescription() {
         return description;
     }
 
-    public String getLongName() { return longName; }
+    public String getLongName() {
+        return longName;
+    }
 
-    public int getLevel() { return level; }
+    public int getLevel() {
+        return level;
+    }
+
+    public ArrayList<String> getPreRequisite() {
+        return preRequisite;
+    }
 
     public int getSemester() {
         return semester;
     }
 
-    public String getType() { return type; }
+    public String getType() {
+        return type;
+    }
 
     public String getUrl() {
         return url;

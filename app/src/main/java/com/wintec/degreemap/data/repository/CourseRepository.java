@@ -8,7 +8,6 @@ import com.wintec.degreemap.util.FirebaseUtils;
 public class CourseRepository {
     private static CourseRepository sCourseRepository;
     private CourseListLiveData courseList;
-    private CourseDetailsLiveData course;
 
     public static CourseRepository getInstance() {
         if (sCourseRepository == null) {

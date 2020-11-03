@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.wintec.degreemap.data.model.Course;
 
@@ -37,8 +38,32 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
         public void onDataChange(DataSnapshot dataSnapshot) {
             mCourseList = new ArrayList<>();
             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                Course course = snapshot.getValue(Course.class);
-                course.setKey(snapshot.getKey());
+                ArrayList<String> coRequisite = new ArrayList<>();
+                if (snapshot.child("coRequisite").getValue() != null) {
+                    for (DataSnapshot preReq : snapshot.child("coRequisite").getChildren()) {
+                        coRequisite.add(preReq.getKey());
+                    }
+                }
+
+                ArrayList<String> preRequisite = new ArrayList<>();
+                if (snapshot.child("preRequisite").getValue() != null) {
+                    for (DataSnapshot preReq : snapshot.child("preRequisite").getChildren()) {
+                        preRequisite.add(preReq.getKey());
+                    }
+                }
+
+                Course course = new Course(snapshot.getKey(),
+                        coRequisite,
+                        snapshot.child("credit").getValue(Integer.class),
+                        snapshot.child("description").getValue(String.class),
+                        snapshot.child("longName").getValue(String.class),
+                        snapshot.child("level").getValue(Integer.class),
+                        preRequisite,
+                        snapshot.child("semester").getValue(Integer.class),
+                        snapshot.child("type").getValue(String.class),
+                        snapshot.child("url").getValue(String.class),
+                        snapshot.child("year").getValue(Integer.class));
+
                 mCourseList.add(course);
             }
             setValue(mCourseList);

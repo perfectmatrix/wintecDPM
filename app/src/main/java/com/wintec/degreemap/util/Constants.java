@@ -2,6 +2,9 @@ package com.wintec.degreemap.util;
 
 public final class Constants {
 
+    // Bundles
+    public static final String BUNDLE_COURSE_ID = "BundleCourseId";
+
     // Shared Preferences Keys
     public static final String SHARED_PREFERENCES = "SharedPreferences";
     public static final String KEY_TUTORIAL_DONE = "KeyTutorialDone";

@@ -7,7 +7,7 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp"
     android:id="@+id/courseCard"
-    android:layout_margin="2dp">
+    android:layout_margin="5dp">
 
     <LinearLayout
         android:id="@+id/courseCardLayout"
