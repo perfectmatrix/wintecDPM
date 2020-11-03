@@ -26,7 +26,7 @@ public class StudentHome extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 
-        // setup bottom nav to use nav_graph
+        // setup bottom nav to use student_nav_graph
         NavController navController = findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNav, navController);
 
