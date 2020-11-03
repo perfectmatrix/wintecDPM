@@ -1,5 +1,8 @@
 package com.wintec.degreemap.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
     private String key;
     private String code;
@@ -7,6 +10,7 @@ public class Course {
     private String description;
     private String longName;
     private int level;
+    private ArrayList<String> preRequisite;
     private int semester;
     private String type;
     private String url;
@@ -15,13 +19,14 @@ public class Course {
     public Course() {
     }
 
-    public Course(String key, String code, int credit, String description, String longName, int level, int semester, String type, String url, int year) {
+    public Course(String key, String code, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String type, String url, int year) {
         this.key = key;
         this.code = code;
         this.credit = credit;
         this.description = description;
         this.longName = longName;
         this.level = level;
+        this.preRequisite = preRequisite;
         this.semester = semester;
         this.type = type;
         this.url = url;
@@ -49,6 +54,8 @@ public class Course {
     public String getLongName() { return longName; }
 
     public int getLevel() { return level; }
+
+    public ArrayList<String> getPreRequisite() { return preRequisite; }
 
     public int getSemester() {
         return semester;

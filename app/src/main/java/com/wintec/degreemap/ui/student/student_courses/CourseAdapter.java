@@ -78,30 +78,40 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         holder.courseCodeTextView.setText(mSelectedCourse.getCode());
         holder.courseNameTextView.setText(mSelectedCourse.getLongName());
 
-        boolean isEnabled = true;
+        // Default to true for courses without pre-requisite
+        boolean isPreRequisiteCompleted = true;
+        if(!mSelectedCourse.getPreRequisite().isEmpty()) {
+            for (String courseKey : mSelectedCourse.getPreRequisite()) {
+                boolean isCompleted = mCompletedModules.contains(courseKey);
+                if (!isCompleted) {
+                    isPreRequisiteCompleted = false;
+                }
+            }
+        }
+
 
         switch (mSelectedPathway) {
             case PATHWAY_NETWORK_ENGINEERING:
-                holder.courseCardLayout.setBackgroundResource(isEnabled ? R.drawable.bg_course_item_purple : R.drawable.bg_course_item_purple_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_purple : R.drawable.bg_course_item_purple_disabled);
                 break;
             case PATHWAY_WEB_DEVELOPMENT:
-                holder.courseCardLayout.setBackgroundResource(isEnabled ? R.drawable.bg_course_item_blue : R.drawable.bg_course_item_blue_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_blue : R.drawable.bg_course_item_blue_disabled);
                 break;
             case PATHWAY_DATABASE_ARCHITECTURE:
-                holder.courseCardLayout.setBackgroundResource(isEnabled ? R.drawable.bg_course_item_green : R.drawable.bg_course_item_green_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_green : R.drawable.bg_course_item_green_disabled);
                 break;
             case PATHWAY_SOFTWARE_ENGINEERING:
-                holder.courseCardLayout.setBackgroundResource(isEnabled ? R.drawable.bg_course_item_red : R.drawable.bg_course_item_red_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_red : R.drawable.bg_course_item_red_disabled);
                 break;
         }
 
         // Show check icon on completed modules
         boolean isModuleCompleted = mCompletedModules.contains(mSelectedCourse.getKey());
         if (isModuleCompleted) {
-            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_check_box,0);
+            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_box, 0);
         }
 
-        if(!isEnabled)
+        if (!isPreRequisiteCompleted)
             holder.itemView.setOnClickListener(null);
     }
 
@@ -110,8 +120,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         return mCourseList == null ? 0 : mCourseList.size();
     }
 
-
-    public interface OnItemClickListener { void onItemClick(int position); }
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
