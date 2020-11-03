@@ -35,7 +35,7 @@ public class CourseDetailsFragment extends Fragment {
             courseLongNameTextView,
             courseLevelTextView,
             courseCreditTextView,
-            preRequisiteTextView ,
+            preRequisiteTextView,
             coRequisiteTextView,
             pathwayTextView,
             courseDescriptionTextView;
@@ -68,7 +68,9 @@ public class CourseDetailsFragment extends Fragment {
 
         markCourseButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { markCompleteOrIncomplete(); }
+            public void onClick(View view) {
+                markCompleteOrIncomplete();
+            }
         });
 
         mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
@@ -78,7 +80,7 @@ public class CourseDetailsFragment extends Fragment {
         courseViewModel.getCourseDetails(courseKey).observe(getActivity(), new Observer<Course>() {
             @Override
             public void onChanged(Course course) {
-                if(course != null) {
+                if (course != null) {
                     mSelectedCourse = course;
                     populateCourseDetails();
                 }
@@ -93,7 +95,11 @@ public class CourseDetailsFragment extends Fragment {
         courseLongNameTextView.setText(mSelectedCourse.getLongName());
         courseLevelTextView.setText(String.valueOf(mSelectedCourse.getLevel()));
         courseCreditTextView.setText(String.valueOf(mSelectedCourse.getCredit()));
-        preRequisiteTextView.setText("Pre-requisite");
+        preRequisiteTextView.setText(mSelectedCourse.getPreRequisite().isEmpty()
+                ? "None"
+                : mSelectedCourse.getPreRequisite().toString()
+                        .replace("[", "")
+                        .replace("]", ""));
         coRequisiteTextView.setText("Co-requisite");
         pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
@@ -102,9 +108,9 @@ public class CourseDetailsFragment extends Fragment {
         setMarkButtonText();
     }
 
-    public void markCompleteOrIncomplete(){
+    public void markCompleteOrIncomplete() {
         // Mark modules as complete or incomplete
-        if(isModuleCompleted()) {
+        if (isModuleCompleted()) {
             mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getCode()));
         } else {
             mCompletedModules.add(mSelectedCourse.getCode());
@@ -120,7 +126,7 @@ public class CourseDetailsFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void saveCompletedModules(){
+    private void saveCompletedModules() {
         // Save completed modules on SharedPreferences
         SharedPreferences.Editor editor = mPrefs.edit();
         editor.putString(KEY_COMPLETED_MODULES, TextUtils.join(",", mCompletedModules));
@@ -132,7 +138,7 @@ public class CourseDetailsFragment extends Fragment {
     }
 
     private void setMarkButtonText() {
-        if(isModuleCompleted()) {
+        if (isModuleCompleted()) {
             markCourseButton.setText("Mark as Incomplete");
         } else {
             markCourseButton.setText("Mark as Completed");
