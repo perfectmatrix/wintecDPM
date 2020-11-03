@@ -101,6 +101,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_check_box,0);
         }
 
+        if(!isEnabled)
+            holder.itemView.setOnClickListener(null);
     }
 
     @Override
