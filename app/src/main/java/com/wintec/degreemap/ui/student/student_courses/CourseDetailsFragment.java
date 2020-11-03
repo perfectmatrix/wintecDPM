@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
@@ -70,7 +71,7 @@ public class CourseDetailsFragment extends Fragment {
         });
 
         mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        String courseKey = getArguments().getString(CourseAdapter.BUNDLE_COURSE_ID);
+        String courseKey = getArguments().getString(BUNDLE_COURSE_ID);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.getCourseDetails(courseKey).observe(getActivity(), new Observer<Course>() {

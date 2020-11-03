@@ -17,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,6 +33,7 @@ import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
@@ -39,11 +42,12 @@ import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, CourseAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private CourseAdapter mCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private String mSelectedPathway;
+    private List<Course> mFilteredCourseList;
 
     @Nullable
     @Override
@@ -73,6 +77,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mCourseAdapter);
+        mCourseAdapter.setOnItemClickListener(this);
 
         // set pathway title and background color
         setPathwayTextViewFormatting(view, mSelectedPathway);
@@ -95,28 +100,28 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
             @Override
             public void onChanged(List<Course> courseList) {
-                if(courseList != null) {
-                    List<Course> filteredCourseList = new ArrayList<>();
+                if (courseList != null) {
+                    mFilteredCourseList = new ArrayList<>();
 
                     switch (position) {
                         case ALL_COURSE: {
-                            for (Course course: courseList) {
-                                if(course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE))
-                                    filteredCourseList.add(course);
+                            for (Course course : courseList) {
+                                if (course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE))
+                                    mFilteredCourseList.add(course);
                             }
                             break;
                         }
                         case FIRST_YEAR:
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
-                            for (Course course: courseList) {
-                                if(course.getYear() == position && (course.getType().equalsIgnoreCase(mSelectedPathway)  || course.getType().equalsIgnoreCase(PATHWAY_CORE)))
-                                    filteredCourseList.add(course);
+                            for (Course course : courseList) {
+                                if (course.getYear() == position && (course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE)))
+                                    mFilteredCourseList.add(course);
                             }
                             break;
                         }
                     }
-                    mCourseAdapter.setCourses(filteredCourseList);
+                    mCourseAdapter.setCourses(mFilteredCourseList);
                 }
             }
         });
@@ -124,5 +129,15 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Bundle bundle = new Bundle();
+        bundle.putString(BUNDLE_COURSE_ID, mFilteredCourseList.get(position).getKey());
+
+        // navigate to course details fragment
+        NavController navController = NavHostFragment.findNavController(this);
+        navController.navigate(R.id.action_courseFragment_to_courseDetailsFragment, bundle);
     }
 }
