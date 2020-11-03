@@ -27,10 +27,12 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     private List<Course> mCourseList;
     private Course mSelectedCourse;
     private String mSelectedPathway;
+    private List<String> mCompletedModules;
 
-    public CourseAdapter(String pathway) {
+    public CourseAdapter(String selectedPathway, List<String> completedModules) {
         super();
-        mSelectedPathway = pathway;
+        mSelectedPathway = selectedPathway;
+        mCompletedModules = completedModules;
     }
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
@@ -78,6 +80,12 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             case PATHWAY_SOFTWARE_ENGINEERING:
                 holder.courseCodeTextView.setBackgroundResource(R.color.lightRed);
                 break;
+        }
+
+        // Show check icon on completed modules
+        boolean isModuleCompleted = mCompletedModules.contains(mSelectedCourse.getKey());
+        if (isModuleCompleted) {
+            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_check_box,0);
         }
 
         holder.courseCard.setOnClickListener(this);

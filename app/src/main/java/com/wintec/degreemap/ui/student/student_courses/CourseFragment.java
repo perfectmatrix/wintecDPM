@@ -1,6 +1,8 @@
 package com.wintec.degreemap.ui.student.student_courses;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +26,14 @@ import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.data.model.Course.PATHWAY_CORE;
 import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
+import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -56,7 +62,12 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         // get selected pathway
         mSelectedPathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
 
-        mCourseAdapter = new CourseAdapter(mSelectedPathway);
+        // Load completed modules from SharedPreferences
+        SharedPreferences prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        String completedModulesList = prefs.getString(KEY_COMPLETED_MODULES, "");
+        List<String> completedModules = Arrays.asList(TextUtils.split(completedModulesList, ","));
+
+        mCourseAdapter = new CourseAdapter(mSelectedPathway, completedModules);
 
         // set recyclerView data
         mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
