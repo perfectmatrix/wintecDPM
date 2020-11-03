@@ -60,7 +60,7 @@ public class StudentCourseFragment extends Fragment implements AdapterView.OnIte
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_course, container, false);
 
         Spinner spinner = view.findViewById(R.id.spinner_year);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),

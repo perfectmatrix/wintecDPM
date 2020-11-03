@@ -37,6 +37,5 @@ public class ManageCoursesHome extends AppCompatActivity {
                 startActivity(i);
                 break;
         }
-
     }
 }

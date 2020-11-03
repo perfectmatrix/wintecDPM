@@ -29,7 +29,7 @@ public class StudentDashboardFragment extends Fragment implements View.OnClickLi
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View v = inflater.inflate(R.layout.fragment_student_dashboard, container, false);
 
         networkCard = v.findViewById(R.id.card_network);
         webCard = v.findViewById(R.id.card_web);

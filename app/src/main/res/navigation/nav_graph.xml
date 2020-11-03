@@ -7,11 +7,8 @@
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.wintec.degreemap.ui.student.student_courses.StudentCourseFragment"
-        android:label="CourseFragment" >
-        <argument
-            android:name="pathway"
-            app:argType="string"
-            android:defaultValue="network" />
+        android:label="CourseFragment"
+        tools:layout="@layout/fragment_student_course" >
         <action
             android:id="@+id/action_courseFragment_to_courseDetailsFragment"
             app:destination="@id/courseDetailsFragment" />
@@ -19,7 +16,8 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.wintec.degreemap.ui.student.student_dashboard.StudentDashboardFragment"
-        android:label="DashboardFragment" >
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_student_dashboard" >
         <action
             android:id="@+id/action_dashboardFragment_to_courseFragment"
             app:destination="@id/courseFragment" />
@@ -27,10 +25,11 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_student_profile" />
     <fragment
         android:id="@+id/courseDetailsFragment"
         android:name="com.wintec.degreemap.ui.student.student_courses.StudentCourseDetailsFragment"
-        android:label="fragment_course_details"
-        tools:layout="@layout/fragment_course_details" />
+        android:label="CourseDetailsFragment"
+        tools:layout="@layout/fragment_student_course_details" />
 </navigation>
