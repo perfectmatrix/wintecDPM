@@ -1,25 +1,32 @@
 package com.wintec.degreemap.ui.student.student_courses;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
-import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.data.model.Course.getPathwayLabel;
+import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
+import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class CourseDetailsFragment extends Fragment {
     TextView courseCodeTextView,
@@ -30,8 +37,11 @@ public class CourseDetailsFragment extends Fragment {
             coRequisiteTextView,
             pathwayTextView,
             courseDescriptionTextView;
-    Button courseUrlButton;
-    private Course mCourse;
+    Button courseUrlButton, markCourseButton;
+    private Course mSelectedCourse;
+    private List<String> mCompletedModules;
+    SharedPreferences mPrefs;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_course_details, container, false);
@@ -45,6 +55,7 @@ public class CourseDetailsFragment extends Fragment {
         pathwayTextView = view.findViewById(R.id.pathwayTextView);
         courseDescriptionTextView = view.findViewById(R.id.courseDescriptionTextView);
         courseUrlButton = view.findViewById(R.id.courseUrlButton);
+        markCourseButton = view.findViewById(R.id.markCourseButton);
 
         courseUrlButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +64,12 @@ public class CourseDetailsFragment extends Fragment {
             }
         });
 
+        markCourseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { markCompleteOrIncomplete(); }
+        });
+
+        mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         String courseKey = getArguments().getString(CourseAdapter.BUNDLE_COURSE_ID);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
@@ -60,7 +77,7 @@ public class CourseDetailsFragment extends Fragment {
             @Override
             public void onChanged(Course course) {
                 if(course != null) {
-                    mCourse = course;
+                    mSelectedCourse = course;
                     populateCourseDetails();
                 }
             }
@@ -70,20 +87,65 @@ public class CourseDetailsFragment extends Fragment {
     }
 
     public void populateCourseDetails() {
-        courseCodeTextView.setText(mCourse.getCode());
-        courseLongNameTextView.setText(mCourse.getLongName());
-        courseLevelTextView.setText(String.valueOf(mCourse.getLevel()));
-        courseCreditTextView.setText(String.valueOf(mCourse.getCredit()));
+        courseCodeTextView.setText(mSelectedCourse.getCode());
+        courseLongNameTextView.setText(mSelectedCourse.getLongName());
+        courseLevelTextView.setText(String.valueOf(mSelectedCourse.getLevel()));
+        courseCreditTextView.setText(String.valueOf(mSelectedCourse.getCredit()));
         preRequisiteTextView.setText("Pre-requisite");
         coRequisiteTextView.setText("Co-requisite");
-        pathwayTextView.setText(getPathwayLabel(mCourse.getType()));
-        courseDescriptionTextView.setText(mCourse.getDescription());
+        pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
+        courseDescriptionTextView.setText(mSelectedCourse.getDescription());
+
+        getCompletedModules();
+        setMarkButtonText();
     }
 
-    public void openCourseUrl()
-    {
-        Intent intent= new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(mCourse.getUrl()));
+    public void markCompleteOrIncomplete(){
+        // Mark modules as complete or incomplete
+        if(isModuleCompleted()) {
+            mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getKey()));
+        } else {
+            mCompletedModules.add(mSelectedCourse.getKey());
+        }
+
+        setMarkButtonText();
+        saveCompletedModules();
+    }
+
+    private void openCourseUrl() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(mSelectedCourse.getUrl()));
         startActivity(intent);
+    }
+
+    private void getCompletedModules() {
+        // Load completed modules from SharedPreferences
+        String completedModulesList = mPrefs.getString(KEY_COMPLETED_MODULES, "");
+
+        // Get previously selected modules if there is any
+        if(!completedModulesList.isEmpty()) {
+            mCompletedModules = new ArrayList<>(Arrays.asList(TextUtils.split(completedModulesList, ",")));
+        } else {
+            mCompletedModules = new ArrayList<>();
+        }
+    }
+
+    private void saveCompletedModules(){
+        // Save completed modules on SharedPreferences
+        SharedPreferences.Editor editor = mPrefs.edit();
+        editor.putString(KEY_COMPLETED_MODULES, TextUtils.join(",", mCompletedModules));
+        editor.apply();
+    }
+
+    private boolean isModuleCompleted() {
+        return (mCompletedModules.contains(mSelectedCourse.getKey()));
+    }
+
+    private void setMarkButtonText() {
+        if(isModuleCompleted()) {
+            markCourseButton.setText("Mark as Incomplete");
+        } else {
+            markCourseButton.setText("Mark as Completed");
+        }
     }
 }
