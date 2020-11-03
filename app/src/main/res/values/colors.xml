@@ -12,14 +12,20 @@
     <color name="normalGray">#cccccc</color>
     <color name="gray">#808080</color>
     <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="purple">#833ef3</color>
     <color name="green">#40d4ac</color>
     <color name="blue">#5076fc</color>
     <color name="red">#ff7f6c</color>
 
-    <color name="lightPurple">#c19ef9</color>
+    <color name="lightPurple">#b389ef</color>
     <color name="lightGreen">#79e0c4</color>
-    <color name="lightBlue">#849ffc</color>
-    <color name="lightRed">#ffa598</color>
+    <color name="lightBlue">#97aeff</color>
+    <color name="lightRed">#ef8991</color>
+
+    <color name="deepPurple">#594477</color>
+    <color name="deepGreen">#437a6b</color>
+    <color name="deepBlue">#5b6999</color>
+    <color name="deepRed">#844c50</color>
 </resources>
