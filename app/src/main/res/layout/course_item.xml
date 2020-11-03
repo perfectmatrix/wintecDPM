@@ -10,9 +10,9 @@
     android:layout_margin="2dp">
 
     <LinearLayout
+        android:id="@+id/courseCardLayout"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/bg_course_item"
         android:orientation="horizontal">
 
         <TextView
