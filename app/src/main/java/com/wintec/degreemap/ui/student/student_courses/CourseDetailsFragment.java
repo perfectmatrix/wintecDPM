@@ -27,6 +27,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
+import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class CourseDetailsFragment extends Fragment {
@@ -97,7 +98,7 @@ public class CourseDetailsFragment extends Fragment {
         pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
 
-        getCompletedModules();
+        mCompletedModules = getCompletedModules(mPrefs);
         setMarkButtonText();
     }
 
@@ -117,18 +118,6 @@ public class CourseDetailsFragment extends Fragment {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(mSelectedCourse.getUrl()));
         startActivity(intent);
-    }
-
-    private void getCompletedModules() {
-        // Load completed modules from SharedPreferences
-        String completedModulesList = mPrefs.getString(KEY_COMPLETED_MODULES, "");
-
-        // Get previously selected modules if there is any
-        if(!completedModulesList.isEmpty()) {
-            mCompletedModules = new ArrayList<>(Arrays.asList(TextUtils.split(completedModulesList, ",")));
-        } else {
-            mCompletedModules = new ArrayList<>();
-        }
     }
 
     private void saveCompletedModules(){

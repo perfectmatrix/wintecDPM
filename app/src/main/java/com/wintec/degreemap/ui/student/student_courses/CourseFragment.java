@@ -40,6 +40,7 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
+import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, CourseAdapter.OnItemClickListener {
@@ -64,11 +65,8 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         // get selected pathway
         mSelectedPathway = getArguments().getString(DashboardFragment.BUNDLE_PATHWAY);
 
-        // Load completed modules from SharedPreferences
         SharedPreferences prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        String completedModulesList = prefs.getString(KEY_COMPLETED_MODULES, "");
-        List<String> completedModules = Arrays.asList(TextUtils.split(completedModulesList, ","));
-
+        List<String> completedModules = getCompletedModules(prefs);
         mCourseAdapter = new CourseAdapter(mSelectedPathway, completedModules);
 
         // set recyclerView data
