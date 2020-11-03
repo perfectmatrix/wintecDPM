@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Course {
     private String code;
+    private ArrayList<String> coRequisite;
     private int credit;
     private String description;
     private String longName;
@@ -18,8 +19,9 @@ public class Course {
     public Course() {
     }
 
-    public Course(String code, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String type, String url, int year) {
+    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String type, String url, int year) {
         this.code = code;
+        this.coRequisite = coRequisite;
         this.credit = credit;
         this.description = description;
         this.longName = longName;
@@ -33,6 +35,10 @@ public class Course {
 
     public String getCode() {
         return code;
+    }
+
+    public ArrayList<String> getCoRequisite() {
+        return coRequisite;
     }
 
     public int getCredit() {

@@ -100,7 +100,11 @@ public class CourseDetailsFragment extends Fragment {
                 : mSelectedCourse.getPreRequisite().toString()
                         .replace("[", "")
                         .replace("]", ""));
-        coRequisiteTextView.setText("Co-requisite");
+        coRequisiteTextView.setText(mSelectedCourse.getCoRequisite().isEmpty()
+                ? "None"
+                : mSelectedCourse.getCoRequisite().toString()
+                .replace("[", "")
+                .replace("]", ""));
         pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
 
