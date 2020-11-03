@@ -105,9 +105,9 @@ public class CourseDetailsFragment extends Fragment {
     public void markCompleteOrIncomplete(){
         // Mark modules as complete or incomplete
         if(isModuleCompleted()) {
-            mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getKey()));
+            mCompletedModules.remove(mCompletedModules.indexOf(mSelectedCourse.getCode()));
         } else {
-            mCompletedModules.add(mSelectedCourse.getKey());
+            mCompletedModules.add(mSelectedCourse.getCode());
         }
 
         setMarkButtonText();
@@ -128,7 +128,7 @@ public class CourseDetailsFragment extends Fragment {
     }
 
     private boolean isModuleCompleted() {
-        return (mCompletedModules.contains(mSelectedCourse.getKey()));
+        return (mCompletedModules.contains(mSelectedCourse.getCode()));
     }
 
     private void setMarkButtonText() {

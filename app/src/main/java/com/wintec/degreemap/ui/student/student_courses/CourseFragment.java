@@ -132,7 +132,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_ID, mFilteredCourseList.get(position).getKey());
+        bundle.putString(BUNDLE_COURSE_ID, mFilteredCourseList.get(position).getCode());
 
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);

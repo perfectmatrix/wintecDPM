@@ -37,7 +37,6 @@ public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course>  {
             }
 
             Course course = new Course(snapshot.getKey(),
-                    snapshot.child("code").getValue(String.class),
                     snapshot.child("credit").getValue(Integer.class),
                     snapshot.child("description").getValue(String.class),
                     snapshot.child("longName").getValue(String.class),
