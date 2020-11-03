@@ -108,11 +108,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         // Show check icon on completed modules
         boolean isModuleCompleted = mCompletedModules.contains(mSelectedCourse.getCode());
         if (isModuleCompleted) {
-<<<<<<< HEAD
             holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_check_circle,0);
-=======
-            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_box, 0);
->>>>>>> a7ebbd8fe46e83c55f37051f7d66844ce01071ad
         }
 
         if (!isPreRequisiteCompleted)
