@@ -4,6 +4,7 @@ public final class Constants {
 
     // Bundles
     public static final String BUNDLE_COURSE_ID = "BundleCourseId";
+    public static final String BUNDLE_PATHWAY = "BundlePathway";
 
     // Shared Preferences Keys
     public static final String SHARED_PREFERENCES = "SharedPreferences";

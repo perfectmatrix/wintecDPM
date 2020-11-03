@@ -21,7 +21,7 @@
         <activity android:name=".ui.manager.manage_courses.ManageCourse_Web" />
         <activity android:name=".ui.manager.manage_courses.ManageCourse_Network" />
         <activity android:name=".ui.manager.manage_students.ManageStudentsHome" />
-        <activity android:name=".ui.manager.manage_courses.ManageCoursesHome" />
+        <activity android:name=".ui.manager.manage_courses.ManagerCourseHomeFragment" />
         <activity android:name=".ui.manager.ManagerLogin" />
         <activity
             android:name=".ui.manager.ManagerHome"

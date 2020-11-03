@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.manager.manage_courses.ManageCoursesHome;
+import com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseHomeFragment;
 import com.wintec.degreemap.ui.manager.manage_students.ManageStudentsHome;
 import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
 
@@ -24,7 +24,7 @@ public class ManagerHome extends AppCompatActivity {
         Intent i = null;
         switch (view.getId()) {
             case R.id.manage_courses:
-                i = new Intent(this, ManageCoursesHome.class);
+                i = new Intent(this, ManagerCourseHomeFragment.class);
                 startActivity(i);
                 break;
             case R.id.manage_students:
