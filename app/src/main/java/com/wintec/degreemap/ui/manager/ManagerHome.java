@@ -11,7 +11,7 @@ import com.wintec.degreemap.ui.manager.manage_courses.ManageCoursesHome;
 import com.wintec.degreemap.ui.manager.manage_students.ManageStudentsHome;
 import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
 
-public class Manager_Home extends AppCompatActivity {
+public class ManagerHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

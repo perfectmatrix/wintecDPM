@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.wintec.degreemap.ui.manager.Manager_Home;
 import com.wintec.degreemap.R;
 
 public class ManagerLogin extends AppCompatActivity {
@@ -43,7 +42,7 @@ public class ManagerLogin extends AppCompatActivity {
 
     // Method to jump to managers' homepage
     public void jumpTo() {
-        Intent i = new Intent(this, Manager_Home.class);
+        Intent i = new Intent(this, ManagerHome.class);
         startActivity(i);
     }
 }

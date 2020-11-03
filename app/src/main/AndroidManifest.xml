@@ -24,7 +24,7 @@
         <activity android:name=".ui.manager.manage_courses.ManageCoursesHome" />
         <activity android:name=".ui.manager.ManagerLogin" />
         <activity
-            android:name=".ui.manager.Manager_Home"
+            android:name=".ui.manager.ManagerHome"
             android:label="Manager"
             android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity
