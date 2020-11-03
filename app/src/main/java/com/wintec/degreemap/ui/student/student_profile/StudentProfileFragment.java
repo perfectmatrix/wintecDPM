@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.wintec.degreemap.R;
 
-public class ProfileFragment extends Fragment {
+public class StudentProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

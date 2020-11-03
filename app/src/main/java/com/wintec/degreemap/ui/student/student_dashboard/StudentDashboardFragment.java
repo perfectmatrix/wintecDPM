@@ -23,7 +23,7 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
-public class DashboardFragment extends Fragment implements View.OnClickListener {
+public class StudentDashboardFragment extends Fragment implements View.OnClickListener {
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable

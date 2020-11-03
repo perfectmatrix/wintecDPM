@@ -28,7 +28,7 @@
             android:label="Manager"
             android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity
-            android:name=".ui.student.Student_Home"
+            android:name=".ui.student.StudentHome"
             android:label="Student"
             android:parentActivityName=".ui.shared.RoleSelectionActivity" />
         <activity android:name=".ui.shared.SplashScreenActivity">

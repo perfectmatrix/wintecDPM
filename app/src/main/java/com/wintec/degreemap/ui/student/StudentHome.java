@@ -17,7 +17,7 @@ import com.wintec.degreemap.ui.student.student_profile.StudentProfile_Developers
 
 import static androidx.navigation.Navigation.findNavController;
 
-public class Student_Home extends AppCompatActivity {
+public class StudentHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

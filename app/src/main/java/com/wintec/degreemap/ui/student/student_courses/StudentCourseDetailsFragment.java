@@ -28,7 +28,7 @@ import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class CourseDetailsFragment extends Fragment {
+public class StudentCourseDetailsFragment extends Fragment {
     TextView courseCodeTextView,
             courseLongNameTextView,
             courseLevelTextView,

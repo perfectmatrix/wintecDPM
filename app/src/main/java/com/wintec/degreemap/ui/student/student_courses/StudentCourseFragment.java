@@ -2,7 +2,6 @@ package com.wintec.degreemap.ui.student.student_courses;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,18 +24,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
-import com.wintec.degreemap.ui.student.student_dashboard.DashboardFragment;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
-import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
@@ -45,9 +41,9 @@ import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class CourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, CourseAdapter.OnItemClickListener {
+public class StudentCourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, StudentCourseAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
-    private CourseAdapter mCourseAdapter;
+    private StudentCourseAdapter mStudentCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private String mSelectedPathway;
     private List<Course> mFilteredCourseList;
@@ -78,15 +74,15 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
         mSelectedPathway = prefs.getString(KEY_SELECTED_PATHWAY, "");
 
         List<String> completedModules = getCompletedModules(prefs);
-        mCourseAdapter = new CourseAdapter(mSelectedPathway, completedModules);
+        mStudentCourseAdapter = new StudentCourseAdapter(mSelectedPathway, completedModules);
 
         // set recyclerView data
         mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mCourseAdapter);
-        mCourseAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mStudentCourseAdapter);
+        mStudentCourseAdapter.setOnItemClickListener(this);
 
         // set pathway title and background color
         setPathwayTextViewFormatting(view, mSelectedPathway);
@@ -130,7 +126,7 @@ public class CourseFragment extends Fragment implements AdapterView.OnItemSelect
                             break;
                         }
                     }
-                    mCourseAdapter.setCourses(mFilteredCourseList);
+                    mStudentCourseAdapter.setCourses(mFilteredCourseList);
                 }
             }
         });

@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.student.Student_Home;
+import com.wintec.degreemap.ui.student.StudentHome;
 
 import java.io.IOException;
 
@@ -130,7 +130,7 @@ public class StudentProfile_ContactDetail extends AppCompatActivity {
         Intent i = null;
         switch (view.getId()) {
             case R.id.btn_details_cancel:
-                i = new Intent(this, Student_Home.class);
+                i = new Intent(this, StudentHome.class);
                 startActivity(i);
         }
     }

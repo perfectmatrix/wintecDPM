@@ -9,7 +9,7 @@ import android.view.View;
 import com.google.firebase.database.FirebaseDatabase;
 import com.wintec.degreemap.ui.manager.ManagerLogin;
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.student.Student_Home;
+import com.wintec.degreemap.ui.student.StudentHome;
 
  public class RoleSelectionActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ import com.wintec.degreemap.ui.student.Student_Home;
          Intent i = null;
          switch (view.getId()){
              case R.id.btn_student:
-                 i = new Intent(this, Student_Home.class);
+                 i = new Intent(this, StudentHome.class);
                  startActivity(i);
                  break;
              case R.id.btn_manager:

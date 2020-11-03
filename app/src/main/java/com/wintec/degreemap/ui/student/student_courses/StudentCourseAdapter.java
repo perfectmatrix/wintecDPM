@@ -20,14 +20,14 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
+public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdapter.CourseViewHolder> {
     private List<Course> mCourseList;
     private Course mSelectedCourse;
     private String mSelectedPathway;
     private List<String> mCompletedModules;
     private OnItemClickListener mListener;
 
-    public CourseAdapter(String selectedPathway, List<String> completedModules) {
+    public StudentCourseAdapter(String selectedPathway, List<String> completedModules) {
         super();
         mSelectedPathway = selectedPathway;
         mCompletedModules = completedModules;
