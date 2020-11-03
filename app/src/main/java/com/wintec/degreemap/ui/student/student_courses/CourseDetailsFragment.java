@@ -19,8 +19,6 @@ import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
