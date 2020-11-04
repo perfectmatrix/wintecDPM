@@ -67,6 +67,6 @@ public class ManageCourseHomeFragment extends Fragment implements View.OnClickLi
 
         // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
-        navController.navigate(R.id.action_student_dashboardFragment_to_courseFragment);
+        navController.navigate(R.id.action_manageCourseHomeFragment_to_managerCourseFragment, bundle);
     }
 }

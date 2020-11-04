@@ -17,5 +17,14 @@
         android:id="@+id/manageCourseHomeFragment"
         android:name="com.wintec.degreemap.ui.manager.manage_courses.ManageCourseHomeFragment"
         android:label="fragment_manager_course_home"
-        tools:layout="@layout/fragment_manage_course_home" />
+        tools:layout="@layout/fragment_manage_course_home" >
+        <action
+            android:id="@+id/action_manageCourseHomeFragment_to_managerCourseFragment"
+            app:destination="@id/managerCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/managerCourseFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseFragment"
+        android:label="ManagerCourseFragment"
+        tools:layout="@layout/fragment_manager_course"/>
 </navigation>
