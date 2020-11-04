@@ -90,8 +90,6 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
                 holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_red);
                 break;
         }
-
-        holder.itemView.setOnClickListener(null);
     }
 
     @Override

@@ -29,10 +29,19 @@
         android:id="@+id/managerCourseListFragment"
         android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseListFragment"
         android:label="ManagerCourseListFragment"
-        tools:layout="@layout/fragment_manager_course_list"/>
+        tools:layout="@layout/fragment_manager_course_list">
+        <action
+            android:id="@+id/action_managerCourseListFragment_to_managerCourseDetailsFragment"
+            app:destination="@id/managerCourseDetailsFragment" />
+    </fragment>
     <activity
         android:id="@+id/roleSelectionActivity"
         android:name="com.wintec.degreemap.ui.shared.RoleSelectionActivity"
         android:label="activity_role_selection"
         tools:layout="@layout/activity_role_selection" />
+    <fragment
+        android:id="@+id/managerCourseDetailsFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseDetailsFragment"
+        android:label="ManagerCourseDetailsFragment"
+        tools:layout="@layout/fragment_manager_course_details"/>
 </navigation>
