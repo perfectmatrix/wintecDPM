@@ -22,4 +22,7 @@ public final class FirebaseUtils {
         return getCourseRef().child(courseCode);
     }
 
+    public static DatabaseReference getUserRef() {
+        return getDatabaseInstance().getReference("user");
+    }
 }
