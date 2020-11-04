@@ -255,7 +255,7 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/cbtn_courseDetails_delete"
+                    android:id="@+id/btn_courseDetails_delete"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
