@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/managerBackgroundColor">
+    android:background="@color/managerBackgroundColor"
+    android:orientation="vertical">
 
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Details"
-        android:fontFamily="@font/source_sans_pro"
-        android:background="@color/colorPrimary"
-        android:textAlignment="center"
-        android:padding="16dp"
         android:layout_marginBottom="10dp"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/source_sans_pro"
+        android:padding="16dp"
+        android:text="Course Details"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,27 +32,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="26dp"
+                android:background="@drawable/bg_rounded_light_gray"
                 android:orientation="vertical"
-                android:layout_margin="16dp"
-                android:padding="16dp"
-                android:background="@drawable/bg_rounded_light_gray">
+                android:padding="16dp">
 
                 <!-- Row1: Module Code-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Module Code"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Module Code"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/courseCodeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[COMP709​]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -62,17 +66,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Module Name"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Module Name"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/courseLongNameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[Mobile Applications Development]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -83,17 +90,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Module Level"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Module Level"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/courseLevelTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[7]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -104,17 +114,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Module Credit Level"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Module Credit Level"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/courseCreditTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[15]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -125,17 +138,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Pre-requisite"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Pre-requisite"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/preRequisiteTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[INFO601]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -145,18 +161,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="30dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Co-requisite"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Co-requisite"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/coRequisiteTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[NA]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -167,17 +186,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Pathway"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Pathway"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/pathwayTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="[???]"
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -189,18 +211,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Module Description"
+                        android:layout_marginBottom="10dp"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="Module Description"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        android:layout_marginBottom="10dp"/>
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/courseDescriptionTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -212,28 +237,37 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginBottom="40dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_horizontal">
+
                 <Button
-                    android:layout_width="100dp"
+                    android:id="@+id/markCourseButton"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textAllCaps="false"
-                    android:text="Edit Module"
                     android:textColor="#fff"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_wintec_gray"
-                    android:fontFamily="@font/source_sans_pro"/>
+                    android:fontFamily="@font/source_sans_pro"
+                    android:text="Edit Module"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
                 <Button
-                    android:layout_width="100dp"
+                    android:id="@+id/courseUrlButton"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_wintec_red"
+                    android:fontFamily="@font/source_sans_pro"
                     android:text="Delete Module"
                     android:textAllCaps="false"
                     android:textColor="#fff"
-                    android:background="@drawable/btn_wintec_red"
-                    android:fontFamily="@font/source_sans_pro"/>
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
