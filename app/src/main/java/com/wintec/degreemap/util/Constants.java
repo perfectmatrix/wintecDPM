@@ -12,6 +12,7 @@ public final class Constants {
     public static final String KEY_DISCLAIMER_ACCEPTED = "KeyDisclaimerAccepted";
     public static final String KEY_SELECTED_PATHWAY = "KeySelectedPathway";
     public static final String KEY_COMPLETED_MODULES = "KeyCompletedModules";
+    public static final String KEY_USER_KEY= "KeyUserKey";
 
     // Course Year
     public static final int ALL_COURSE = 0;

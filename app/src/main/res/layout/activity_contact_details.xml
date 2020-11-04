@@ -46,6 +46,22 @@
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/icon_profile_edit_image"/>
 
+                <!-- ID -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/source_sans_pro"/>
+                <EditText
+                    android:id="@+id/details_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_with_border"
+                    android:padding="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/source_sans_pro"/>
+
                 <!-- First Name -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,22 +87,6 @@
                     android:fontFamily="@font/source_sans_pro"/>
                 <EditText
                     android:id="@+id/details_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_with_border"
-                    android:padding="6dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/source_sans_pro"/>
-
-                <!-- ID -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ID"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/source_sans_pro"/>
-                <EditText
-                    android:id="@+id/details_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
