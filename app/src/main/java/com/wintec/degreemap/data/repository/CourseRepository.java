@@ -25,7 +25,7 @@ public class CourseRepository {
         return courseList;
     }
 
-    public CourseDetailsLiveData getCourseDetails(String courseKey) {
-        return new CourseDetailsLiveData(FirebaseUtils.getCourseRef().child(courseKey));
+    public CourseDetailsLiveData getCourseDetails(String courseCode) {
+        return new CourseDetailsLiveData(FirebaseUtils.getCourseDetailsRef(courseCode));
     }
 }

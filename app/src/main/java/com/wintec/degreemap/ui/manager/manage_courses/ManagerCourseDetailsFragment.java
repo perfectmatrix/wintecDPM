@@ -46,10 +46,10 @@ public class ManagerCourseDetailsFragment extends Fragment {
         courseDescriptionTextView = view.findViewById(R.id.courseDescriptionTextView);
 
         mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        String courseKey = getArguments().getString(BUNDLE_COURSE_CODE);
+        String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        courseViewModel.getCourseDetails(courseKey).observe(getActivity(), new Observer<Course>() {
+        courseViewModel.getCourseDetails(courseCode).observe(getActivity(), new Observer<Course>() {
             @Override
             public void onChanged(Course course) {
                 if (course != null) {
