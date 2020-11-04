@@ -31,7 +31,7 @@ import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
-import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
 import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
@@ -127,6 +127,6 @@ public class ManagerCourseFragment extends Fragment implements AdapterView.OnIte
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_ID, mFilteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_COURSE_CODE, mFilteredCourseList.get(position).getCode());
     }
 }

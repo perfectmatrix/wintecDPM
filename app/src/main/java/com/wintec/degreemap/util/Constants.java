@@ -3,7 +3,7 @@ package com.wintec.degreemap.util;
 public final class Constants {
 
     // Bundles
-    public static final String BUNDLE_COURSE_ID = "BundleCourseId";
+    public static final String BUNDLE_COURSE_CODE = "BundleCourseCode";
     public static final String BUNDLE_PATHWAY = "BundlePathway";
 
     // Shared Preferences Keys

@@ -31,7 +31,7 @@ import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
-import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_ID;
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
 import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
@@ -41,7 +41,7 @@ import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class StudentCourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, StudentCourseAdapter.OnItemClickListener {
+public class StudentCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, StudentCourseAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private StudentCourseAdapter mStudentCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -60,7 +60,7 @@ public class StudentCourseFragment extends Fragment implements AdapterView.OnIte
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_student_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_course_list, container, false);
 
         Spinner spinner = view.findViewById(R.id.spinner_year);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
@@ -139,10 +139,10 @@ public class StudentCourseFragment extends Fragment implements AdapterView.OnIte
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_ID, mFilteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_COURSE_CODE, mFilteredCourseList.get(position).getCode());
 
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_student_courseFragment_to_courseDetailsFragment, bundle);
+        navController.navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
     }
 }
