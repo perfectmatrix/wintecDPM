@@ -1,15 +1,13 @@
 package com.wintec.degreemap.ui.manager;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
 
 public class ManagerHome extends AppCompatActivity {
 
@@ -28,8 +26,7 @@ public class ManagerHome extends AppCompatActivity {
             case R.id.manage_students:
                 break;
             case R.id.back_arrow:
-                Intent i = new Intent(this, RoleSelectionActivity.class);
-                startActivity(i);
+                navController.navigate(R.id.action_managerHomeOptions_to_roleSelectionActivity);
                 break;
         }
     }

@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,28 +30,23 @@ public class StudentHome extends AppCompatActivity {
         // setup bottom nav to use student_nav_graph
         NavController navController = findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNav, navController);
-
     }
 
     // Method to select actions in profile page: [Contact Details], [About us] or [Developers]
-    public void jumpTo(View view) {
-        Intent i = null;
+    public void navigateTo(View view) {
+        NavController navController = Navigation.findNavController(view);
         switch (view.getId()) {
             case R.id.about_us:
-                i = new Intent(this, StudentProfile_AboutUs.class);
-                startActivity(i);
+                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_AboutUs);
                 break;
             case R.id.developer_group:
-                i = new Intent(this, StudentProfile_Developers.class);
-                startActivity(i);
+                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_Developers);
                 break;
             case R.id.student_contact_details:
-                i = new Intent(this, StudentProfile_ContactDetail.class);
-                startActivity(i);
+                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_ContactDetail);
                 break;
             case R.id.back_arrow:
-                i = new Intent(this, RoleSelectionActivity.class);
-                startActivity(i);
+                navController.navigate(R.id.action_studentDashboardFragment_to_roleSelectionActivity);
                 break;
         }
     }

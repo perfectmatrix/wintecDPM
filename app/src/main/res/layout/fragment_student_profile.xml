@@ -32,7 +32,7 @@
 
     <!-- Contact Details -->
     <LinearLayout
-        android:onClick="jumpTo"
+        android:onClick="navigateTo"
         android:id="@+id/student_contact_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
 
     <!-- Developer Group -->
     <TextView
-        android:onClick="jumpTo"
+        android:onClick="navigateTo"
         android:id="@+id/developer_group"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
 
     <!-- About Us -->
     <TextView
-        android:onClick="jumpTo"
+        android:onClick="navigateTo"
         android:id="@+id/about_us"
         android:layout_width="280dp"
         android:layout_height="wrap_content"

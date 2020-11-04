@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_managerHomeOptions_to_manageCourseHomeFragment"
             app:destination="@id/managerCourseHomeFragment" />
+        <action
+            android:id="@+id/action_managerHomeOptions_to_roleSelectionActivity"
+            app:destination="@id/roleSelectionActivity" />
     </fragment>
     <fragment
         android:id="@+id/managerCourseHomeFragment"
@@ -27,4 +30,9 @@
         android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseListFragment"
         android:label="ManagerCourseListFragment"
         tools:layout="@layout/fragment_manager_course_list"/>
+    <activity
+        android:id="@+id/roleSelectionActivity"
+        android:name="com.wintec.degreemap.ui.shared.RoleSelectionActivity"
+        android:label="activity_role_selection"
+        tools:layout="@layout/activity_role_selection" />
 </navigation>

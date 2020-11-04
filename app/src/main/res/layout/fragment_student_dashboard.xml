@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary">
         <ImageView
             android:id="@+id/back_arrow"
-            android:onClick="jumpTo"
+            android:onClick="navigateTo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_arrow_back"
