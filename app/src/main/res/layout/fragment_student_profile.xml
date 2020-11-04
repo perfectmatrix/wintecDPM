@@ -68,7 +68,7 @@
         android:gravity="start"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/gray"
+        android:textColor="@color/black"
         android:textSize="20dp"/>
 
     <!-- About Us -->
@@ -82,7 +82,7 @@
         android:gravity="start"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/gray"
+        android:textColor="@color/black"
         android:textSize="20dp"/>
 
     <TextView
