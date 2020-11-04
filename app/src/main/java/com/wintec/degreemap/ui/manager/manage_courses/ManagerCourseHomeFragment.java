@@ -20,13 +20,13 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
-public class ManageCourseHomeFragment extends Fragment implements View.OnClickListener{
+public class ManagerCourseHomeFragment extends Fragment implements View.OnClickListener{
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_manage_course_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_manager_course_home, container, false);
 
         networkCard = v.findViewById(R.id.card_network);
         webCard = v.findViewById(R.id.card_web);
@@ -67,6 +67,6 @@ public class ManageCourseHomeFragment extends Fragment implements View.OnClickLi
 
         // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
-        navController.navigate(R.id.action_manageCourseHomeFragment_to_managerCourseFragment, bundle);
+        navController.navigate(R.id.action_managerCourseHomeFragment_to_managerCourseListFragment, bundle);
     }
 }

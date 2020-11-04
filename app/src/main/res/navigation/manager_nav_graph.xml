@@ -11,20 +11,20 @@
         tools:layout="@layout/fragment_manager_home_options" >
         <action
             android:id="@+id/action_managerHomeOptions_to_manageCourseHomeFragment"
-            app:destination="@id/manageCourseHomeFragment" />
+            app:destination="@id/managerCourseHomeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/manageCourseHomeFragment"
-        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManageCourseHomeFragment"
-        android:label="fragment_manager_course_home"
-        tools:layout="@layout/fragment_manage_course_home" >
+        android:id="@+id/managerCourseHomeFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseHomeFragment"
+        android:label="ManagerCourseHomeFragment"
+        tools:layout="@layout/fragment_manager_course_home" >
         <action
-            android:id="@+id/action_manageCourseHomeFragment_to_managerCourseFragment"
-            app:destination="@id/managerCourseFragment" />
+            android:id="@+id/action_managerCourseHomeFragment_to_managerCourseListFragment"
+            app:destination="@id/managerCourseListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/managerCourseFragment"
-        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseFragment"
-        android:label="ManagerCourseFragment"
-        tools:layout="@layout/fragment_manager_course"/>
+        android:id="@+id/managerCourseListFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseListFragment"
+        android:label="ManagerCourseListFragment"
+        tools:layout="@layout/fragment_manager_course_list"/>
 </navigation>

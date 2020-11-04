@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/studentCourseListFragment"
         android:name="com.wintec.degreemap.ui.student.student_courses.StudentCourseListFragment"
-        android:label="CourseFragment"
+        android:label="StudentCourseListFragment"
         tools:layout="@layout/fragment_student_course_list" >
         <action
             android:id="@+id/action_studentCourseListFragment_to_studentCourseDetailsFragment"

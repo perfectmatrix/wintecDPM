@@ -1,6 +1,5 @@
 package com.wintec.degreemap.ui.manager.manage_courses;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,20 +25,16 @@ import com.wintec.degreemap.viewmodel.CourseViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
-import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
-import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
-import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class ManagerCourseFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener {
+public class ManagerCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private ManagerCourseAdapter mManagerCourseAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -52,7 +44,7 @@ public class ManagerCourseFragment extends Fragment implements AdapterView.OnIte
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_manager_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_manager_course_list, container, false);
 
         Spinner spinner = view.findViewById(R.id.spinner_year);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
