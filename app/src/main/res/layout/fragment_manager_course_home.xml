@@ -8,20 +8,18 @@
     tools:context=".ui.manager.manage_courses.ManagerCourseHomeFragment"
     android:background="@color/managerBackgroundColor">
 
-    <RelativeLayout
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Manage Courses"
-            android:textAlignment="center"
-            android:padding="16dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="24sp"
-            android:textColor="@color/black"/>
-    </RelativeLayout>
+        android:layout_height="60dp"
+        android:text="Manage Courses"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:background="@color/colorPrimary"/>
+
 
     <TextView
         android:layout_width="wrap_content"

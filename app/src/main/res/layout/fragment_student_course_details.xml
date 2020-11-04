@@ -9,7 +9,7 @@
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="Course Details"
         android:fontFamily="@font/source_sans_pro"
         android:background="@color/colorPrimary"

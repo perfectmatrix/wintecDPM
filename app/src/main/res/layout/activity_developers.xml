@@ -16,7 +16,7 @@
             android:gravity="center_horizontal">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:text="Developers"
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/source_sans_pro"
