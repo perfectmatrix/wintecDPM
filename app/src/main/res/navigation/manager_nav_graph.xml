@@ -8,7 +8,7 @@
         android:id="@+id/managerHomeOptions"
         android:name="com.wintec.degreemap.ui.manager.ManagerHomeOptions"
         android:label="fragment_manager_home_options"
-        tools:layout="@layout/fragment_manager_home_options" >
+        tools:layout="@layout/fragment_manager_dashboard" >
         <action
             android:id="@+id/action_managerHomeOptions_to_manageCourseHomeFragment"
             app:destination="@id/managerCourseHomeFragment" />

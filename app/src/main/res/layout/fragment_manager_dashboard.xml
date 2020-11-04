@@ -24,10 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Dashboard"
-            android:textAlignment="center"
             android:textSize="24sp"
             android:textColor="@color/black"
-            android:gravity="center_vertical"/>
+            android:gravity="center"/>
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"

@@ -14,17 +14,14 @@
             android:id="@+id/back_arrow"
             android:onClick="navigateTo"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="match_parent"
             android:src="@drawable/ic_arrow_back"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
             app:tint="@color/black" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Dashboard"
-            android:textAlignment="center"
-            android:padding="16dp"
+            android:gravity="center"
             android:textSize="24sp"
             android:textColor="@color/black"/>
     </RelativeLayout>
