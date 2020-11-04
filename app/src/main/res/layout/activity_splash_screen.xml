@@ -7,6 +7,23 @@
     tools:context=".ui.shared.SplashScreenActivity"
     android:background="@color/colorPrimary">
 
+    <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+        android:id="@+id/myLoaderProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="20dp"
+        app:lazyloader_animDur="800"
+        app:lazyloader_dotsDist="10dp"
+        app:lazyloader_dotsRadius="12dp"
+        app:lazyloader_firstDelayDur="150"
+        app:lazyloader_firstDotColor="#F44336"
+        app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+        app:lazyloader_secondDelayDur="300"
+        app:lazyloader_secondDotColor="@color/green"
+        app:lazyloader_thirdDotColor="#fff" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="232dp"
@@ -16,7 +33,10 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="95dp"
         android:layout_marginEnd="84dp"
-        android:src="@drawable/logo_degree_mapper" />
+        android:src="@drawable/logo_degree_mapper"
+        android:gravity="center"/>
+
+
 
     <TextView
         android:layout_width="fill_parent"

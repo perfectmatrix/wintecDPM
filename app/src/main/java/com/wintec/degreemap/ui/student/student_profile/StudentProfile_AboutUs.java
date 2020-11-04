@@ -19,15 +19,15 @@ public class StudentProfile_AboutUs extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
 
         // Play video: https://www.youtube.com/watch?v=3T0BeP1czcE
-        VideoView videoView = findViewById(R.id.video_view);
+        //VideoView videoView = findViewById(R.id.video_view);
 
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video_wintec_it;
-        Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
-
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
+//        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video_wintec_it;
+//        Uri uri = Uri.parse(videoPath);
+//        videoView.setVideoURI(uri);
+//
+//        MediaController mediaController = new MediaController(this);
+//        videoView.setMediaController(mediaController);
+//        mediaController.setAnchorView(videoView);
     }
 
     // Method for each [Know More] button to jump to website

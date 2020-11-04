@@ -39,44 +39,45 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="52dp"
                 android:layout_marginTop="30dp"
-                android:src="@drawable/icon_warning_sign"/>
+                android:src="@drawable/icon_warning_sign" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="Disclaimer"
                 android:textAlignment="center"
-                android:fontFamily="@font/source_sans_pro"
+                android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:text="Disclaimer"/>
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/source_sans_pro"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:textAlignment="center"
-                android:textSize="16sp"
+                android:fontFamily="@font/source_sans_pro_semibold"
                 android:padding="10dp"
                 android:text="The DPM App is a Prototype version of a degree planner only and NOT an official study plan. It is intended that students
 shall use this to get an understanding of the pathways offered and then discuss study plans with a Wintec representative.
 Pathways may change accordingly making older versions redundant – Wintec takes no responsibility of outdated pathways
-or information displayed on the app."/>
+or information displayed on the app."
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_get_started"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Get Started"
-                android:textAllCaps="false"
-                android:fontFamily="@font/source_sans_pro_black"
-                android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:background="@drawable/btn_wintec_yellow"/>
+                android:background="@drawable/btn_wintec_yellow"
+                android:fontFamily="@font/source_sans_pro_bold"
+                android:text="Get Started"
+                android:textAllCaps="false"
+                android:textSize="22sp" />
 
         </LinearLayout>
     </ScrollView>

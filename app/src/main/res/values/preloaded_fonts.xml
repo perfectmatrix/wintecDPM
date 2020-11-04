@@ -3,6 +3,8 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/source_sans_pro</item>
         <item>@font/source_sans_pro_black</item>
+        <item>@font/source_sans_pro_bold</item>
         <item>@font/source_sans_pro_extralight</item>
+        <item>@font/source_sans_pro_semibold</item>
     </array>
 </resources>

@@ -15,18 +15,19 @@
 
         <ImageView
             android:id="@+id/wintec_logo"
-            android:layout_width="185dp"
-            android:layout_height="64dp"
+            android:layout_width="165dp"
+            android:layout_height="47dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="@drawable/logo_wintec" />
 
         <ImageView
             android:id="@+id/role_selection"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:layout_width="358dp"
+            android:layout_height="328dp"
             android:layout_below="@+id/wintec_logo"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="-17dp"
             android:background="@drawable/icon_select_role" />
 
         <TextView
@@ -34,11 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/role_selection"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/source_sans_pro"
+            android:fontFamily="@font/source_sans_pro_bold"
             android:text="Please Select"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -50,25 +51,25 @@
         android:layout_marginHorizontal="60dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_wintec_yellow"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/source_sans_pro_bold"
         android:onClick="jumpTo"
         android:text="Student"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/btn_manager"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/btn_wintec_yellow"
         android:layout_marginHorizontal="60dp"
         android:layout_marginTop="20dp"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        android:fontFamily="@font/source_sans_pro"
-        android:textColor="@color/black"
+        android:background="@drawable/btn_wintec_yellow"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:onClick="jumpTo"
         android:text="Manager"
-        android:onClick="jumpTo"/>
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
 </LinearLayout>

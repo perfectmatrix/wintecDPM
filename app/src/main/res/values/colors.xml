@@ -14,10 +14,10 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 
-    <color name="purple">#833ef3</color>
-    <color name="green">#40d4ac</color>
-    <color name="blue">#5076fc</color>
-    <color name="red">#ff7f6c</color>
+    <color name="purple">#7F38F2</color>
+    <color name="green">#1DCD9D</color>
+    <color name="blue">#466EFC</color>
+    <color name="red">#FF6851</color>
 
     <color name="lightPurple">#b389ef</color>
     <color name="lightGreen">#79e0c4</color>
