@@ -79,8 +79,8 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        //String text = parent.getItemAtPosition(position).toString();
+        //Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
 
         // get all course data
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
