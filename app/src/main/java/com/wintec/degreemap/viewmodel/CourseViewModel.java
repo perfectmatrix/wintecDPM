@@ -22,7 +22,7 @@ public class CourseViewModel extends ViewModel {
         return mCourseRepository.getCourseList();
     }
 
-    public CourseDetailsLiveData getCourseDetails(String courseKey) {
-        return mCourseRepository.getCourseDetails(courseKey);
+    public CourseDetailsLiveData getCourseDetails(String courseCode) {
+        return mCourseRepository.getCourseDetails(courseCode);
     }
 }

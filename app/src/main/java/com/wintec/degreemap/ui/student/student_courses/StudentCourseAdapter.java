@@ -81,8 +81,8 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         // Default to true for courses without pre-requisite
         boolean isPreRequisiteCompleted = true;
         if(!mSelectedCourse.getPreRequisite().isEmpty()) {
-            for (String courseKey : mSelectedCourse.getPreRequisite()) {
-                boolean isCompleted = mCompletedModules.contains(courseKey);
+            for (String courseCode : mSelectedCourse.getPreRequisite()) {
+                boolean isCompleted = mCompletedModules.contains(courseCode);
                 if (!isCompleted) {
                     isPreRequisiteCompleted = false;
                 }
