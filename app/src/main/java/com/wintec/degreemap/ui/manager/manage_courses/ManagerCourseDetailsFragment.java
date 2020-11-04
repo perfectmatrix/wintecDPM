@@ -1,14 +1,10 @@
 package com.wintec.degreemap.ui.manager.manage_courses;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -19,13 +15,9 @@ import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
-import java.util.List;
-
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
-import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
-import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class ManagerCourseDetailsFragment extends Fragment {
@@ -85,7 +77,7 @@ public class ManagerCourseDetailsFragment extends Fragment {
                 : mSelectedCourse.getCoRequisite().toString()
                 .replace("[", "")
                 .replace("]", ""));
-        pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
+        pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getPathway()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
     }
 }

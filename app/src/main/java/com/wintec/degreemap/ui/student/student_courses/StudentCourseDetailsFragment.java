@@ -103,7 +103,7 @@ public class StudentCourseDetailsFragment extends Fragment {
                 : mSelectedCourse.getCoRequisite().toString()
                 .replace("[", "")
                 .replace("]", ""));
-        pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getType()));
+        pathwayTextView.setText(getPathwayLabel(mSelectedCourse.getPathway()));
         courseDescriptionTextView.setText(mSelectedCourse.getDescription());
 
         mCompletedModules = getCompletedModules(mPrefs);

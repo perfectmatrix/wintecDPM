@@ -1,7 +1,6 @@
 package com.wintec.degreemap.data.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Course {
     private String code;
@@ -12,14 +11,14 @@ public class Course {
     private int level;
     private ArrayList<String> preRequisite;
     private int semester;
-    private String type;
+    private String pathway;
     private String url;
     private int year;
 
     public Course() {
     }
 
-    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String type, String url, int year) {
+    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String pathway, String url, int year) {
         this.code = code;
         this.coRequisite = coRequisite;
         this.credit = credit;
@@ -28,7 +27,7 @@ public class Course {
         this.level = level;
         this.preRequisite = preRequisite;
         this.semester = semester;
-        this.type = type;
+        this.pathway = pathway;
         this.url = url;
         this.year = year;
     }
@@ -65,8 +64,8 @@ public class Course {
         return semester;
     }
 
-    public String getType() {
-        return type;
+    public String getPathway() {
+        return pathway;
     }
 
     public String getUrl() {

@@ -111,7 +111,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                     switch (position) {
                         case ALL_COURSE: {
                             for (Course course : courseList) {
-                                if (course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE))
+                                if (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE))
                                     mFilteredCourseList.add(course);
                             }
                             break;
@@ -120,7 +120,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getType().equalsIgnoreCase(mSelectedPathway) || course.getType().equalsIgnoreCase(PATHWAY_CORE)))
+                                if (course.getYear() == position && (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE)))
                                     mFilteredCourseList.add(course);
                             }
                             break;

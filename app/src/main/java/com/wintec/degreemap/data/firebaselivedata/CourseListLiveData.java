@@ -60,7 +60,7 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
                         snapshot.child("level").getValue(Integer.class),
                         preRequisite,
                         snapshot.child("semester").getValue(Integer.class),
-                        snapshot.child("type").getValue(String.class),
+                        snapshot.child("pathway").getValue(String.class),
                         snapshot.child("url").getValue(String.class),
                         snapshot.child("year").getValue(Integer.class));
 
