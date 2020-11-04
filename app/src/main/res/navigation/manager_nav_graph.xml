@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manager_navigation_graph"
+    app:startDestination="@id/managerHomeOptions">
+    <fragment
+        android:id="@+id/managerHomeOptions"
+        android:name="com.wintec.degreemap.ui.manager.ManagerHomeOptions"
+        android:label="fragment_manager_home_options"
+        tools:layout="@layout/fragment_manager_home_options" >
+        <action
+            android:id="@+id/action_managerHomeOptions_to_manageCourseHomeFragment"
+            app:destination="@id/manageCourseHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageCourseHomeFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManageCourseHomeFragment"
+        android:label="fragment_manager_course_home"
+        tools:layout="@layout/fragment_manage_course_home" />
+</navigation>

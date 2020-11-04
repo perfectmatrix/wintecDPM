@@ -7,8 +7,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,22 +14,19 @@ import android.view.ViewGroup;
 
 import com.wintec.degreemap.R;
 
-import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
-import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
-import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
-public class ManagerCourseHomeFragment extends Fragment implements View.OnClickListener{
+public class ManageCourseHomeFragment extends Fragment implements View.OnClickListener{
     private CardView networkCard, webCard, databasedCard, softwareCard;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_manager_course_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_manage_course_home, container, false);
 
         networkCard = v.findViewById(R.id.card_network);
         webCard = v.findViewById(R.id.card_web);
