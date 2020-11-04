@@ -28,4 +28,8 @@
     <color name="deepGreen">#437a6b</color>
     <color name="deepBlue">#5b6999</color>
     <color name="deepRed">#844c50</color>
+
+    <color name="yellow">#fcf9ea</color>
+    <color name="deepYellow">#f7eca9</color>
+
 </resources>
