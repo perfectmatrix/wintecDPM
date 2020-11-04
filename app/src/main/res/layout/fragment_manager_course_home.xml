@@ -48,8 +48,7 @@
             android:layout_height="180dp"
             android:layout_margin="8dp"
             app:cardBackgroundColor="@color/purple"
-            app:cardCornerRadius="14dp"
-            android:onClick="jumpTo">
+            app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -79,8 +78,7 @@
             android:layout_height="180dp"
             android:layout_margin="8dp"
             app:cardBackgroundColor="@color/blue"
-            app:cardCornerRadius="14dp"
-            android:onClick="jumpTo">
+            app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -119,8 +117,7 @@
             android:layout_height="180dp"
             android:layout_margin="8dp"
             app:cardBackgroundColor="@color/green"
-            app:cardCornerRadius="14dp"
-            android:onClick="jumpTo">
+            app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -152,8 +149,7 @@
             android:layout_height="180dp"
             android:layout_margin="8dp"
             app:cardBackgroundColor="@color/red"
-            app:cardCornerRadius="14dp"
-            android:onClick="jumpTo">
+            app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
