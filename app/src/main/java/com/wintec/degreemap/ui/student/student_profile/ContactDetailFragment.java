@@ -1,11 +1,5 @@
 package com.wintec.degreemap.ui.student.student_profile;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,10 +14,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentContactDetailBinding;
-import com.wintec.degreemap.ui.student.StudentHome;
 import com.wintec.degreemap.viewmodel.UserViewModel;
 
 import java.io.IOException;

@@ -31,15 +31,6 @@ public class StudentHome extends AppCompatActivity {
     public void navigateTo(View view) {
         NavController navController = Navigation.findNavController(view);
         switch (view.getId()) {
-            case R.id.about_us:
-                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_AboutUs);
-                break;
-            case R.id.developer_group:
-                navController.navigate(R.id.action_studentProfileFragment_to_developersFragment);
-                break;
-            case R.id.student_contact_details:
-                navController.navigate(R.id.action_studentProfileFragment_to_contactDetailFragment);
-                break;
             case R.id.btn_details_cancel:
                 navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
                 break;

@@ -15,7 +15,7 @@
         <activity android:name=".ui.shared.TutorialPart1" />
         <activity android:name=".ui.student.student_profile.ContactDetailFragment" />
         <activity android:name=".ui.student.student_profile.DevelopersFragment" />
-        <activity android:name=".ui.student.student_profile.StudentProfile_AboutUs" />
+        <activity android:name=".ui.student.student_profile.AboutUsFragment" />
         <activity android:name=".ui.manager.manage_students.ManageStudentsHome" />
         <activity android:name=".ui.manager.manage_courses.ManagerCourseHomeFragment" />
         <activity android:name=".ui.manager.ManagerLogin" />
