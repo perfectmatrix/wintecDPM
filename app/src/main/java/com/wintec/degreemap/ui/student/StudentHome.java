@@ -35,7 +35,7 @@ public class StudentHome extends AppCompatActivity {
                 navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_AboutUs);
                 break;
             case R.id.developer_group:
-                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_Developers);
+                navController.navigate(R.id.action_studentProfileFragment_to_developersFragment);
                 break;
             case R.id.student_contact_details:
                 navController.navigate(R.id.action_studentProfileFragment_to_contactDetailFragment);
