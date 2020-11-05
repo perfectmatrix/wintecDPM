@@ -19,7 +19,7 @@ import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 
-public class ManagerCourseDetailsEditFragment extends Fragment implements  View.OnClickListener {
+public class ManagerCourseDetailsEditFragment extends Fragment implements View.OnClickListener {
     private FragmentManagerCourseDetailsEditBinding binding;
     Button btnSave, btnCancel;
 
@@ -31,9 +31,10 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements  View.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_details_edit, container, false);
+        View view = binding.getRoot();
 
-        btnSave = binding.getRoot().findViewById(R.id.btn_courseEdit_save);
-        btnCancel = binding.getRoot().findViewById(R.id.btn_courseEdit_cancel);
+        btnSave = view.findViewById(R.id.btn_courseEdit_save);
+        btnCancel = view.findViewById(R.id.btn_courseEdit_cancel);
 
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
@@ -49,7 +50,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements  View.
             }
         });
 
-        return binding.getRoot();
+        return view;
     }
 
     @Override

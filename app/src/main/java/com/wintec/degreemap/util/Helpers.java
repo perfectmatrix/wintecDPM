@@ -21,22 +21,24 @@ public final class Helpers {
     public static String getPathwayLabel(String pathway) {
         String label = "";
 
-        switch (pathway) {
-            case PATHWAY_NETWORK_ENGINEERING:
-                label = "Network Engineering";
-                break;
-            case PATHWAY_WEB_DEVELOPMENT:
-                label = "Web Development";
-                break;
-            case PATHWAY_DATABASE_ARCHITECTURE:
-                label = "Database Architecture";
-                break;
-            case PATHWAY_SOFTWARE_ENGINEERING:
-                label = "Software Engineering";
-                break;
-            default:
-                label = "Core";
-                break;
+        if (pathway != null) {
+            switch (pathway) {
+                case PATHWAY_NETWORK_ENGINEERING:
+                    label = "Network Engineering";
+                    break;
+                case PATHWAY_WEB_DEVELOPMENT:
+                    label = "Web Development";
+                    break;
+                case PATHWAY_DATABASE_ARCHITECTURE:
+                    label = "Database Architecture";
+                    break;
+                case PATHWAY_SOFTWARE_ENGINEERING:
+                    label = "Software Engineering";
+                    break;
+                default:
+                    label = "Core";
+                    break;
+            }
         }
 
         return label;
@@ -47,7 +49,7 @@ public final class Helpers {
         String completedModulesList = prefs.getString(KEY_COMPLETED_MODULES, "");
 
         // Get previously selected modules if there is any
-        if(!completedModulesList.isEmpty()) {
+        if (!completedModulesList.isEmpty()) {
             return new ArrayList<>(Arrays.asList(TextUtils.split(completedModulesList, ",")));
         } else {
             return new ArrayList<>();
