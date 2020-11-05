@@ -42,16 +42,16 @@ import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class StudentCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, StudentCourseAdapter.OnItemClickListener {
-    private RecyclerView mRecyclerView;
-    private StudentCourseAdapter mStudentCourseAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private String mSelectedPathway;
-    private List<Course> mFilteredCourseList;
+    private RecyclerView recyclerView;
+    private StudentCourseAdapter studentCourseAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private String selectedPathway;
+    private List<Course> filteredCourseList;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (mSelectedPathway.isEmpty()) {
+        if (selectedPathway.isEmpty()) {
             Navigation.findNavController(view).navigate(R.id.studentDashboardFragment);
             Toast.makeText(getActivity().getApplicationContext(), "Select a pathway first", Toast.LENGTH_SHORT).show();
         }
@@ -63,29 +63,29 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         View view = inflater.inflate(R.layout.fragment_student_course_list, container, false);
 
         Spinner spinner = view.findViewById(R.id.spinner_year);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(view.getContext(),
                 R.array.chooseYear, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
 
         // get selected pathway
         SharedPreferences prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        mSelectedPathway = prefs.getString(KEY_SELECTED_PATHWAY, "");
+        selectedPathway = prefs.getString(KEY_SELECTED_PATHWAY, "");
 
         List<String> completedModules = getCompletedModules(prefs);
-        mStudentCourseAdapter = new StudentCourseAdapter(mSelectedPathway, completedModules);
+        studentCourseAdapter = new StudentCourseAdapter(selectedPathway, completedModules);
 
         // set recyclerView data
-        mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(view.getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mStudentCourseAdapter);
-        mStudentCourseAdapter.setOnItemClickListener(this);
+        recyclerView = view.findViewById(R.id.recyclerview_all_courses);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(studentCourseAdapter);
+        studentCourseAdapter.setOnItemClickListener(this);
 
         // set pathway title and background color
-        setPathwayTextViewFormatting(view, mSelectedPathway);
+        setPathwayTextViewFormatting(view, selectedPathway);
 
         return view;
     }
@@ -103,13 +103,13 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
             @Override
             public void onChanged(List<Course> courseList) {
                 if (courseList != null) {
-                    mFilteredCourseList = new ArrayList<>();
+                    filteredCourseList = new ArrayList<>();
 
                     switch (position) {
                         case ALL_COURSE: {
                             for (Course course : courseList) {
-                                if (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE))
-                                    mFilteredCourseList.add(course);
+                                if (course.getPathway().equalsIgnoreCase(selectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE))
+                                    filteredCourseList.add(course);
                             }
                             break;
                         }
@@ -117,13 +117,13 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE)))
-                                    mFilteredCourseList.add(course);
+                                if (course.getYear() == position && (course.getPathway().equalsIgnoreCase(selectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE)))
+                                    filteredCourseList.add(course);
                             }
                             break;
                         }
                     }
-                    mStudentCourseAdapter.setCourses(mFilteredCourseList);
+                    studentCourseAdapter.setCourses(filteredCourseList);
                 }
             }
         });
@@ -136,7 +136,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_CODE, mFilteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
 
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);

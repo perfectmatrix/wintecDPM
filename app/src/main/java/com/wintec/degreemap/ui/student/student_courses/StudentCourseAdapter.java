@@ -1,5 +1,6 @@
 package com.wintec.degreemap.ui.student.student_courses;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +22,14 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
 public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdapter.CourseViewHolder> {
-    private List<Course> mCourseList;
-    private Course mSelectedCourse;
-    private String mSelectedPathway;
-    private List<String> mCompletedModules;
-    private OnItemClickListener mListener;
+    private List<Course> courseList;
+    private String selectedPathway;
+    private List<String> completedModules;
+    private OnItemClickListener listener;
 
     public StudentCourseAdapter(String selectedPathway, List<String> completedModules) {
-        super();
-        mSelectedPathway = selectedPathway;
-        mCompletedModules = completedModules;
+        this.selectedPathway = selectedPathway;
+        this.completedModules = completedModules;
     }
 
     public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -50,17 +49,17 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
 
         @Override
         public void onClick(View view) {
-            if (mListener != null) {
+            if (listener != null) {
                 int position = getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION) {
-                    mListener.onItemClick(position);
+                    listener.onItemClick(position);
                 }
             }
         }
     }
 
     public void setCourses(List<Course> courseList) {
-        this.mCourseList = courseList;
+        this.courseList = courseList;
         notifyDataSetChanged();
     }
 
@@ -74,23 +73,22 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        mSelectedCourse = mCourseList.get(position);
-        holder.courseCodeTextView.setText(mSelectedCourse.getCode());
-        holder.courseNameTextView.setText(mSelectedCourse.getLongName());
+        Course course = courseList.get(position);
+        holder.courseCodeTextView.setText(course.getCode());
+        holder.courseNameTextView.setText(course.getLongName());
 
         // Default to true for courses without pre-requisite
         boolean isPreRequisiteCompleted = true;
-        if(!mSelectedCourse.getPreRequisite().isEmpty()) {
-            for (String courseCode : mSelectedCourse.getPreRequisite()) {
-                boolean isCompleted = mCompletedModules.contains(courseCode);
+        if (!course.getPreRequisite().isEmpty()) {
+            for (String courseCode : course.getPreRequisite()) {
+                boolean isCompleted = completedModules.contains(courseCode);
                 if (!isCompleted) {
                     isPreRequisiteCompleted = false;
                 }
             }
         }
 
-
-        switch (mSelectedPathway) {
+        switch (selectedPathway) {
             case PATHWAY_NETWORK_ENGINEERING:
                 holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_purple : R.drawable.bg_course_item_purple_disabled);
                 break;
@@ -106,18 +104,20 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         }
 
         // Show check icon on completed modules
-        boolean isModuleCompleted = mCompletedModules.contains(mSelectedCourse.getCode());
+        boolean isModuleCompleted = completedModules.contains(course.getCode());
         if (isModuleCompleted) {
-            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_check_circle,0);
+            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle, 0);
         }
 
-        if (!isPreRequisiteCompleted)
+        if (!isPreRequisiteCompleted) {
+            holder.courseCodeTextView.setTextColor(Color.GRAY);
             holder.itemView.setOnClickListener(null);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mCourseList == null ? 0 : mCourseList.size();
+        return courseList == null ? 0 : courseList.size();
     }
 
     public interface OnItemClickListener {
@@ -125,6 +125,6 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
+        this.listener = listener;
     }
 }
