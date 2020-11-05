@@ -27,6 +27,7 @@ import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -92,7 +93,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-        pathwayTextView.setText(getPathwayLabel(pathway));
+        pathwayTextView.setText(getPathwayLabel(new ArrayList<>(Arrays.asList(pathway))));
     }
 
     @Override
@@ -108,7 +109,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                     switch (position) {
                         case ALL_COURSE: {
                             for (Course course : courseList) {
-                                if (course.getPathway().equalsIgnoreCase(selectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE))
+                                if (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE))
                                     filteredCourseList.add(course);
                             }
                             break;
@@ -117,7 +118,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getPathway().equalsIgnoreCase(selectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE)))
+                                if (course.getYear() == position && (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
                                     filteredCourseList.add(course);
                             }
                             break;

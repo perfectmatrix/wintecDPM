@@ -43,6 +43,13 @@ public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course>  {
                 }
             }
 
+            ArrayList<String> pathway = new ArrayList<>();
+            if (snapshot.child("pathway").getValue() != null) {
+                for (DataSnapshot path : snapshot.child("pathway").getChildren()) {
+                    pathway.add(path.getKey());
+                }
+            }
+
             Course course = new Course(snapshot.getKey(),
                     coRequisite,
                     snapshot.child("credit").getValue(Integer.class),
@@ -51,7 +58,7 @@ public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course>  {
                     snapshot.child("level").getValue(Integer.class),
                     preRequisite,
                     snapshot.child("semester").getValue(Integer.class),
-                    snapshot.child("pathway").getValue(String.class),
+                    pathway,
                     snapshot.child("url").getValue(String.class),
                     snapshot.child("year").getValue(Integer.class));
 

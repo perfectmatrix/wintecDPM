@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
+import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
@@ -18,30 +19,15 @@ import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public final class Helpers {
 
-    public static String getPathwayLabel(String pathway) {
-        String label = "";
-
-        if (pathway != null) {
-            switch (pathway) {
-                case PATHWAY_NETWORK_ENGINEERING:
-                    label = "Network Engineering";
-                    break;
-                case PATHWAY_WEB_DEVELOPMENT:
-                    label = "Web Development";
-                    break;
-                case PATHWAY_DATABASE_ARCHITECTURE:
-                    label = "Database Architecture";
-                    break;
-                case PATHWAY_SOFTWARE_ENGINEERING:
-                    label = "Software Engineering";
-                    break;
-                default:
-                    label = "Core";
-                    break;
-            }
-        }
-
-        return label;
+    public static String getPathwayLabel(ArrayList<String> pathway) {
+        return pathway != null ? pathway.toString()
+                .replace(PATHWAY_NETWORK_ENGINEERING, "Network Engineering")
+                .replace(PATHWAY_WEB_DEVELOPMENT, "Web Development")
+                .replace(PATHWAY_DATABASE_ARCHITECTURE, "Database Architecture")
+                .replace(PATHWAY_SOFTWARE_ENGINEERING, "Software Engineering")
+                .replace(PATHWAY_CORE, "Core")
+                .replace("[", "")
+                .replace("]", "") : "";
     }
 
     // Load completed modules from SharedPreferences

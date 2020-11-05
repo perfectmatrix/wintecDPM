@@ -11,14 +11,14 @@ public class Course {
     private int level;
     private ArrayList<String> preRequisite;
     private int semester;
-    private String pathway;
+    private ArrayList<String> pathway;
     private String url;
     private int year;
 
     public Course() {
     }
 
-    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, String pathway, String url, int year) {
+    public Course(String code, ArrayList<String> coRequisite, int credit, String description, String longName, int level, ArrayList<String> preRequisite, int semester, ArrayList<String> pathway, String url, int year) {
         this.code = code;
         this.coRequisite = coRequisite;
         this.credit = credit;
@@ -64,7 +64,7 @@ public class Course {
         return semester;
     }
 
-    public String getPathway() {
+    public ArrayList<String> getPathway() {
         return pathway;
     }
 
