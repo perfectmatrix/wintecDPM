@@ -6,6 +6,9 @@
         <variable
             name="course"
             type="com.wintec.degreemap.data.model.Course" />
+        <variable
+            name="isModuleCompleted"
+            type="boolean" />
         <import type="com.wintec.degreemap.util.DataBindingUtils" />
         <import type="com.wintec.degreemap.util.Helpers" />
 
@@ -268,6 +271,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_yellow"
                         android:fontFamily="@font/source_sans_pro"
+                        android:text="@{isModuleCompleted ? `Mark as Incomplete` : `Mark as Complete`}"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="16sp" />

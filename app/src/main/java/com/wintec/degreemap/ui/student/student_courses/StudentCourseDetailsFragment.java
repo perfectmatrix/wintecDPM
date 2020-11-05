@@ -55,7 +55,7 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
                 if (course != null) {
                     binding.setCourse(course);
                     completedModules = getCompletedModules(prefs);
-                    setMarkButtonText();
+                    setIsModuleCompleted();
                 }
             }
         });
@@ -82,22 +82,14 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
     }
 
     private void markCompleteOrIncomplete() {
-        if (isModuleCompleted()) {
+        if (binding.getIsModuleCompleted()) {
             completedModules.remove(completedModules.indexOf(binding.getCourse().getCode()));
         } else {
             completedModules.add(binding.getCourse().getCode());
         }
 
-        setMarkButtonText();
         saveCompletedModules();
-    }
-
-    private void setMarkButtonText() {
-        if (isModuleCompleted()) {
-            markCourseButton.setText("Mark as Incomplete");
-        } else {
-            markCourseButton.setText("Mark as Completed");
-        }
+        setIsModuleCompleted();
     }
 
     private void saveCompletedModules() {
@@ -106,7 +98,7 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
         editor.apply();
     }
 
-    private boolean isModuleCompleted() {
-        return (completedModules.contains(binding.getCourse().getCode()));
+    private void setIsModuleCompleted() {
+        binding.setIsModuleCompleted(completedModules.contains(binding.getCourse().getCode()));
     }
 }
