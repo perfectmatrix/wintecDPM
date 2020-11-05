@@ -43,14 +43,5 @@
         android:id="@+id/managerCourseDetailsFragment"
         android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseDetailsFragment"
         android:label="ManagerCourseDetailsFragment"
-        tools:layout="@layout/fragment_manager_course_details">
-        <action
-            android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment"
-            app:destination="@id/managerCourseDetailsEditFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/managerCourseDetailsEditFragment"
-        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseDetailsEditFragment"
-        android:label="ManagerCourseDetailsEditFragment"
-        tools:layout="@layout/fragment_manager_course_details_edit"/>
+        tools:layout="@layout/fragment_manager_course_details"/>
 </navigation>
