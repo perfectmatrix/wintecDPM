@@ -25,21 +25,15 @@ import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class ManagerCourseDetailsFragment extends Fragment implements View.OnClickListener {
     private FragmentManagerCourseDetailsBinding binding;
-    private Button btnEdit, btnDelete;
-    private SharedPreferences mPrefs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_details, container, false);
         View view = binding.getRoot();
 
-        btnEdit = view.findViewById(R.id.btn_courseDetails_edit);
-        btnDelete = view.findViewById(R.id.btn_courseDetails_delete);
+        view.findViewById(R.id.btn_courseDetails_edit).setOnClickListener(this);
+        view.findViewById(R.id.btn_courseDetails_delete).setOnClickListener(this);
 
-        btnEdit.setOnClickListener(this);
-        btnDelete.setOnClickListener(this);
-
-        mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
