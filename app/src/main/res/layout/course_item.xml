@@ -23,6 +23,7 @@
             android:gravity="center"
             android:text="Course Code"
             android:fontFamily="@font/source_sans_pro"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
