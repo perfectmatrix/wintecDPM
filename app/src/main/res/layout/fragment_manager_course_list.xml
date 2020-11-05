@@ -62,5 +62,6 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:contentDescription="Add Course"
+        app:borderWidth="0dp"
         android:src="@drawable/ic_add_white" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
