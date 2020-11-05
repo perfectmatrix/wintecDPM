@@ -32,7 +32,7 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         this.completedModules = completedModules;
     }
 
-    public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class CourseViewHolder extends RecyclerView.ViewHolder {
         public CardView courseCard;
         public LinearLayout courseCardLayout;
         public TextView courseCodeTextView;
@@ -44,18 +44,20 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
             courseCardLayout = itemView.findViewById(R.id.courseCardLayout);
             courseCodeTextView = itemView.findViewById(R.id.courseCode);
             courseNameTextView = itemView.findViewById(R.id.courseLongName);
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(clickListener);
         }
 
-        @Override
-        public void onClick(View view) {
-            if (listener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    listener.onItemClick(position);
+        public View.OnClickListener clickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
+                    }
                 }
             }
-        }
+        };
     }
 
     public void setCourses(List<Course> courseList) {
@@ -112,6 +114,9 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         if (!isPreRequisiteCompleted) {
             holder.courseCodeTextView.setTextColor(Color.GRAY);
             holder.itemView.setOnClickListener(null);
+        } else {
+            holder.courseCodeTextView.setTextColor(Color.WHITE);
+            holder.itemView.setOnClickListener(holder.clickListener);
         }
     }
 
