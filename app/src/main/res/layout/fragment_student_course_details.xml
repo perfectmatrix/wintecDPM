@@ -9,15 +9,21 @@
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
         android:layout_height="60dp"
         android:text="Course Details"
         android:fontFamily="@font/source_sans_pro"
-        android:background="@color/colorPrimary"
-        android:textAlignment="center"
-        android:padding="16dp"
+=======
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:padding="16dp"
+        android:text="Course Details"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,14 +47,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Module Code"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/courseCodeTextView"
                         android:layout_width="wrap_content"
@@ -63,14 +74,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Module Name"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/courseLongNameTextView"
                         android:layout_width="wrap_content"
@@ -85,14 +101,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Module Level"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/courseLevelTextView"
                         android:layout_width="wrap_content"
@@ -107,14 +128,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Module Credit Level"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/courseCreditTextView"
                         android:layout_width="wrap_content"
@@ -129,14 +155,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Pre-requisite"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/preRequisiteTextView"
                         android:layout_width="wrap_content"
@@ -151,14 +182,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Co-requisite"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/coRequisiteTextView"
                         android:layout_width="wrap_content"
@@ -173,14 +209,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Pathway"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/pathwayTextView"
                         android:layout_width="wrap_content"
@@ -196,15 +237,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Module Description"
-                        android:fontFamily="@font/source_sans_pro"
                         android:textColor="@color/black"
+<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_details.xml
                         android:textSize="20sp"
                         android:layout_marginBottom="10dp"
                         android:textStyle="bold"/>
+=======
+                        android:textSize="14sp" />
+>>>>>>> Stashed changes:app/src/main/res/layout/fragment_course_details.xml
                     <TextView
                         android:id="@+id/courseDescriptionTextView"
                         android:layout_width="match_parent"

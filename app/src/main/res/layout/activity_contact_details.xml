@@ -15,17 +15,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
+
             <TextView
                 android:layout_width="match_parent"
+<<<<<<< Updated upstream
                 android:layout_height="60dp"
                 android:text="My Details"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/source_sans_pro"
-                android:textAlignment="center"
-                android:padding="16dp"
+=======
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/black"/>
+>>>>>>> Stashed changes
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:padding="16dp"
+                android:text="My Details"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

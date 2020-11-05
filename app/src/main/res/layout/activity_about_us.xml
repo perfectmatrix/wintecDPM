@@ -14,17 +14,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
+
             <TextView
                 android:layout_width="match_parent"
+<<<<<<< Updated upstream
                 android:layout_height="60dp"
                 android:text="About us"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/source_sans_pro"
-                android:textAlignment="center"
-                android:padding="16dp"
+=======
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/black"/>
+>>>>>>> Stashed changes
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:padding="16dp"
+                android:text="About us"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,50 +43,57 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-                    <VideoView
-                        android:id="@+id/video_view"
+                    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                        android:id="@+id/youtube_player_view"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+
+                        app:videoId="3T0BeP1czcE"
+                        app:autoPlay="false"
+                        app:showFullScreenButton="false" />
                 </FrameLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bachelor of Applied Information of Technology"
-                    android:fontFamily="@font/source_sans_pro_black"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Bachelor of Applied Information of Technology"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at ex aliquam, rhoncus risus et, luctus lectus. Suspendisse et lorem laoreet arcu ullamcorper dignissim et in dui."
                     android:fontFamily="@font/source_sans_pro"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"/>
+                    android:lineSpacingExtra="4sp"
+                    android:text="Students in this programme will gain a strong foundation of knowledge across a broad range of different information technology skills, as well as an advanced level of expertise in a selected specialisation."
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
                 <Button
-                    android:onClick="jumpTo"
                     android:id="@+id/btn_km_bachelor_it"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:text="Know More"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/btn_wintec_yellow"
-                    android:textAllCaps="false"/>
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:onClick="jumpTo"
+                    android:text="Know More"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Graduate Profile"
-                    android:fontFamily="@font/source_sans_pro_black"
-                    android:textSize="20sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Graduate Profile"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
                 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -94,13 +107,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_marginLeft="10dp">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                             android:fontFamily="@font/source_sans_pro"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
+                            android:lineSpacingExtra="4sp"
+                            android:text="Third year Wintec IT student, Adric Lloyd, is a perfect example of how internships can benefit both the student and business. "
+                            android:textColor="@color/black"
+                            android:textSize="11sp" />
 
                         <Button
                             android:onClick="jumpTo"
@@ -117,12 +132,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Design Factory NZ"
-                    android:fontFamily="@font/source_sans_pro_black"
-                    android:textSize="20sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Design Factory NZ"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -136,13 +151,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_marginLeft="10dp">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                             android:fontFamily="@font/source_sans_pro"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
+                            android:lineSpacingExtra="4dp"
+                            android:text="A passion-fuelled, design-driven co-creation space where students work with industry partners to solve complex problems."
+                            android:textColor="@color/black"
+                            android:textSize="11sp" />
 
                         <Button
                             android:onClick="jumpTo"
