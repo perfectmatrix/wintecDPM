@@ -31,7 +31,6 @@ import static com.wintec.degreemap.util.Helpers.getCompletedModules;
 public class StudentCourseDetailsFragment extends Fragment implements View.OnClickListener {
     private FragmentStudentCourseDetailsBinding binding;
     private Button courseUrlButton, markCourseButton;
-    private Course selectedCourse;
     private List<String> completedModules;
     private SharedPreferences prefs;
 
@@ -54,8 +53,7 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
             @Override
             public void onChanged(Course course) {
                 if (course != null) {
-                    selectedCourse = course;
-                    binding.setCourse(selectedCourse);
+                    binding.setCourse(course);
                     completedModules = getCompletedModules(prefs);
                     setMarkButtonText();
                 }
@@ -79,15 +77,15 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
 
     private void openCourseUrl() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(selectedCourse.getUrl()));
+        intent.setData(Uri.parse(binding.getCourse().getUrl()));
         startActivity(intent);
     }
 
     private void markCompleteOrIncomplete() {
         if (isModuleCompleted()) {
-            completedModules.remove(completedModules.indexOf(selectedCourse.getCode()));
+            completedModules.remove(completedModules.indexOf(binding.getCourse().getCode()));
         } else {
-            completedModules.add(selectedCourse.getCode());
+            completedModules.add(binding.getCourse().getCode());
         }
 
         setMarkButtonText();
@@ -109,6 +107,6 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
     }
 
     private boolean isModuleCompleted() {
-        return (completedModules.contains(selectedCourse.getCode()));
+        return (completedModules.contains(binding.getCourse().getCode()));
     }
 }
