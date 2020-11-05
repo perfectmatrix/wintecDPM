@@ -1,6 +1,5 @@
 package com.wintec.degreemap.ui.student;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,10 +10,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wintec.degreemap.R;
-import com.wintec.degreemap.ui.shared.RoleSelectionActivity;
-import com.wintec.degreemap.ui.student.student_profile.StudentProfile_AboutUs;
-import com.wintec.degreemap.ui.student.student_profile.StudentProfile_ContactDetail;
-import com.wintec.degreemap.ui.student.student_profile.StudentProfile_Developers;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -43,7 +38,10 @@ public class StudentHome extends AppCompatActivity {
                 navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_Developers);
                 break;
             case R.id.student_contact_details:
-                navController.navigate(R.id.action_studentProfileFragment_to_studentProfile_ContactDetail);
+                navController.navigate(R.id.action_studentProfileFragment_to_contactDetailFragment);
+                break;
+            case R.id.btn_details_cancel:
+                navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
                 break;
             case R.id.back_arrow:
                 navController.navigate(R.id.action_studentDashboardFragment_to_roleSelectionActivity);

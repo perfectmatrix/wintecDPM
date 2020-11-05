@@ -37,8 +37,8 @@
             android:id="@+id/action_studentProfileFragment_to_studentProfile_AboutUs"
             app:destination="@id/studentProfile_AboutUs" />
         <action
-            android:id="@+id/action_studentProfileFragment_to_studentProfile_ContactDetail"
-            app:destination="@id/studentProfile_ContactDetail" />
+            android:id="@+id/action_studentProfileFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentCourseDetailsFragment"
@@ -60,9 +60,13 @@
         android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfile_AboutUs"
         android:label="activity_about_us"
         tools:layout="@layout/activity_about_us" />
-    <activity
-        android:id="@+id/studentProfile_ContactDetail"
-        android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfile_ContactDetail"
-        android:label="StudentProfile_ContactDetail"
-        tools:layout="@layout/activity_contact_details"/>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.wintec.degreemap.ui.student.student_profile.ContactDetailFragment"
+        android:label="ContactDetailFragment"
+        tools:layout="@layout/fragment_contact_detail">
+        <action
+            android:id="@+id/action_contactDetailFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+    </fragment>
 </navigation>
