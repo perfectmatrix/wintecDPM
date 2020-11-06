@@ -120,8 +120,6 @@ public class ContactDetailFragment extends Fragment {
         editor.putString(KEY_USER_KEY, binding.getUser().getKey());
         editor.apply();
 
-        Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-
         NavController navController = Navigation.findNavController(view);
         navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
     }
