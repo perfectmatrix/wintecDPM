@@ -113,24 +113,22 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        boolean isChecked = ((RadioButton) view).isChecked();
-
         // Check which radio button was clicked
         switch (view.getId()) {
             case R.id.radio_notSay:
-                if (isChecked)
+                if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_NOT_SAY);
                 break;
             case R.id.radio_diverse:
-                if (isChecked)
+                if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_DIVERSE);
                 break;
             case R.id.radio_female:
-                if (isChecked)
+                if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_MALE);
                 break;
             case R.id.radio_male:
-                if (isChecked)
+                if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_FEMALE);
                 break;
             case R.id.details_avatar:
