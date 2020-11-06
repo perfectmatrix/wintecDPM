@@ -33,5 +33,6 @@ public final class Constants {
     public static final String GENDER_MALE = "male";
     public static final String GENDER_FEMALE = "female";
 
-
+    // Request
+    public static final int REQUEST_PICK_IMAGE = 1;
 }

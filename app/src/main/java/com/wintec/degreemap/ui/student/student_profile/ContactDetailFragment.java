@@ -38,16 +38,16 @@ import static com.wintec.degreemap.util.Constants.GENDER_MALE;
 import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
 import static com.wintec.degreemap.util.Constants.KEY_USER_KEY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
+import static com.wintec.degreemap.util.Constants.REQUEST_PICK_IMAGE;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class ContactDetailFragment extends Fragment implements View.OnClickListener {
     private FragmentContactDetailBinding binding;
 
     private ImageView profileImage;
-    private static final int PICK_IMAGE = 1;
-    Uri imageUri;
-    SharedPreferences prefs;
-    View view;
+    private Uri imageUri;
+    private SharedPreferences prefs;
+    private View view;
 
     @Nullable
     @Override
@@ -58,22 +58,9 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
         profileImage = view.findViewById(R.id.details_avatar);
-        profileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFileChooser();
-            }
-        });
+        profileImage.setOnClickListener(this);
 
-        Button saveBtn = view.findViewById(R.id.btn_details_save);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-            }
-        });
-
-        // set gender onClickListener
+        view.findViewById(R.id.btn_details_save).setOnClickListener(this);
         view.findViewById(R.id.radio_notSay).setOnClickListener(this);
         view.findViewById(R.id.radio_diverse).setOnClickListener(this);
         view.findViewById(R.id.radio_male).setOnClickListener(this);
@@ -84,18 +71,35 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         return view;
     }
 
-    // Choose image file for avatar
-    private void openFileChooser() {
-        Intent gallery = new Intent();
-        gallery.setType("image/*");
-        gallery.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
+    public void loadData() {
+        String userKey = prefs.getString(KEY_USER_KEY, "");
+
+        if (userKey.isEmpty()) {
+            setEmptyUser();
+        } else {
+            UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+            userViewModel.getUserDetails(userKey).observe(getActivity(), new Observer<User>() {
+                @Override
+                public void onChanged(User user) {
+                    if (user != null) {
+                        binding.setUser(user);
+                    } else {
+                        setEmptyUser();
+                    }
+                }
+            });
+        }
+    }
+
+    private void setEmptyUser() {
+        User user = new User("", "", "", "", "", "", "", "");
+        binding.setUser(user);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+        if (requestCode == REQUEST_PICK_IMAGE && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
 
             try {
@@ -105,6 +109,46 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        boolean isChecked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.radio_notSay:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_NOT_SAY);
+                break;
+            case R.id.radio_diverse:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_DIVERSE);
+                break;
+            case R.id.radio_female:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_MALE);
+                break;
+            case R.id.radio_male:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_FEMALE);
+                break;
+            case R.id.details_avatar:
+                openFileChooser();
+                break;
+            case R.id.btn_details_save:
+                saveData();
+                break;
+        }
+    }
+
+    // Choose image file for avatar
+    private void openFileChooser() {
+        if()
+        Intent gallery = new Intent();
+        gallery.setType("image/*");
+        gallery.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(gallery, "Select Picture"), REQUEST_PICK_IMAGE);
     }
 
     public void saveData() {
@@ -134,55 +178,5 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
 
         NavController navController = Navigation.findNavController(view);
         navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
-    }
-
-    public void loadData() {
-        String userKey = prefs.getString(KEY_USER_KEY, "");
-
-        if (userKey.isEmpty()) {
-            setEmptyUser();
-        } else {
-            UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-            userViewModel.getUserDetails(userKey).observe(getActivity(), new Observer<User>() {
-                @Override
-                public void onChanged(User user) {
-                    if (user != null) {
-                        binding.setUser(user);
-                    } else {
-                        setEmptyUser();
-                    }
-                }
-            });
-        }
-    }
-
-    private void setEmptyUser() {
-        User user = new User("", "", "", "", "", "", "", "");
-        binding.setUser(user);
-    }
-
-    @Override
-    public void onClick(View view) {
-        boolean isChecked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.radio_notSay:
-                if (isChecked)
-                    binding.getUser().setGender(GENDER_NOT_SAY);
-                break;
-            case R.id.radio_diverse:
-                if (isChecked)
-                    binding.getUser().setGender(GENDER_DIVERSE);
-                break;
-            case R.id.radio_female:
-                if (isChecked)
-                    binding.getUser().setGender(GENDER_MALE);
-                break;
-            case R.id.radio_male:
-                if (isChecked)
-                    binding.getUser().setGender(GENDER_FEMALE);
-                break;
-        }
     }
 }
