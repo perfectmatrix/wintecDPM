@@ -105,6 +105,15 @@ public class ContactDetailFragment extends Fragment {
                 binding.getUser().getEmail(),
                 "",
                 PATHWAY_WEB_DEVELOPMENT);
+
+        String currentUserKey = prefs.getString(KEY_USER_KEY, "");
+        boolean isKeyUpdated = !currentUserKey.equals(user.getKey());
+
+        // If key has been updated, delete the previous record
+        if(isKeyUpdated) {
+            userViewModel.deleteUser(currentUserKey);
+        }
+
         userViewModel.insertUser(binding.getUser().getKey(), user);
 
         SharedPreferences.Editor editor = prefs.edit();

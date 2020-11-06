@@ -24,4 +24,9 @@ public class UserRepository {
         DatabaseReference userRef = FirebaseUtils.getUserRef();
         userRef.child(userKey).setValue(user);
     }
+
+    public void deleteUser(String userKey) {
+        DatabaseReference userRef = FirebaseUtils.getUserRef();
+        userRef.child(userKey).removeValue();
+    }
 }

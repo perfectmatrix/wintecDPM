@@ -20,4 +20,8 @@ public class UserViewModel extends ViewModel {
     public void insertUser(String userKey, User user) {
         userRepository.insertUser(userKey, user);
     }
+
+    public void deleteUser(String userKey) {
+        userRepository.deleteUser(userKey);
+    }
 }
