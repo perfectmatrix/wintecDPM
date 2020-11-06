@@ -125,11 +125,11 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                 if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_DIVERSE);
                 break;
-            case R.id.radio_female:
+            case R.id.radio_male:
                 if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_MALE);
                 break;
-            case R.id.radio_male:
+            case R.id.radio_female:
                 if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_FEMALE);
                 break;
