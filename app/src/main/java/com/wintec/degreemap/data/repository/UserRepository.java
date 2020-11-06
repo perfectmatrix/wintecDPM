@@ -1,17 +1,23 @@
 package com.wintec.degreemap.data.repository;
 
 import com.google.firebase.database.DatabaseReference;
+import com.wintec.degreemap.data.firebaselivedata.CourseDetailsLiveData;
+import com.wintec.degreemap.data.firebaselivedata.UserDetailsLiveData;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.util.FirebaseUtils;
 
 public class UserRepository {
-    private static UserRepository sUserRepository;
+    private static UserRepository userRepository;
 
     public static UserRepository getInstance() {
-        if (sUserRepository == null) {
-            sUserRepository = new UserRepository();
+        if (userRepository == null) {
+            userRepository = new UserRepository();
         }
-        return sUserRepository;
+        return userRepository;
+    }
+
+    public UserDetailsLiveData getUserDetails(String userKey) {
+        return new UserDetailsLiveData(FirebaseUtils.getUseDetailsRef(userKey));
     }
 
     public void insertUser(String userKey, User user) {

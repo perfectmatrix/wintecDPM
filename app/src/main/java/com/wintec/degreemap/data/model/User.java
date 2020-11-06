@@ -1,6 +1,11 @@
 package com.wintec.degreemap.data.model;
 
-public class User {
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
+import com.wintec.degreemap.BR;
+
+public class User extends BaseObservable {
     private String key;
     private String firstName;
     private String lastName;
@@ -8,6 +13,10 @@ public class User {
     private String email;
     private String gender;
     private String pathway;
+
+    // Required empty constructor
+    public User() {
+    }
 
     public User(String key, String firstName, String lastName, String phone, String email, String gender, String pathway) {
         this.key = key;
@@ -19,31 +28,67 @@ public class User {
         this.pathway = pathway;
     }
 
+    @Bindable
     public String getKey() {
         return key;
     }
 
+    public void setKey(String key) {
+        if ( this.key == null || !this.key.equals(key)) {
+            this.key = key;
+            notifyPropertyChanged(BR.key);
+        }
+    }
+
+    @Bindable
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    @Bindable
     public String getLastName() {
         return lastName;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Bindable
     public String getPhone() {
         return phone;
     }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Bindable
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getGender() {
         return gender;
     }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getPathway() {
         return pathway;
+    }
+
+    public void setPathway(String pathway) {
+        this.pathway = pathway;
     }
 }

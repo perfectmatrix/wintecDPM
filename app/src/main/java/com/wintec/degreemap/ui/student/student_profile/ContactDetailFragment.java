@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -18,7 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
@@ -39,40 +41,33 @@ public class ContactDetailFragment extends Fragment {
     private ImageView profileImage;
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
-    SharedPreferences mPrefs;
-
-    private EditText firstName, lastName, id, phone, email;
-    private Button btnSave;
+    SharedPreferences prefs;
+    View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_contact_detail, container, false);
-        View view = binding.getRoot();
+        view = binding.getRoot();
+
+        prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
         profileImage = view.findViewById(R.id.details_avatar);
-        firstName = view.findViewById(R.id.details_first_name);
-        lastName = view.findViewById(R.id.details_last_name);
-        id = view.findViewById(R.id.details_id);
-        phone = view.findViewById(R.id.details_phone);
-        email = view.findViewById(R.id.details_email);
-
-        btnSave = view.findViewById(R.id.btn_details_save);
-
-        mPrefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-            }
-        });
-
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openFileChooser();
             }
         });
+
+        Button saveBtn = view.findViewById(R.id.btn_details_save);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
+
         loadData();
 
         return view;
@@ -104,27 +99,46 @@ public class ContactDetailFragment extends Fragment {
     public void saveData() {
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = new User(null,
-                firstName.getText().toString(),
-                lastName.getText().toString(),
-                phone.getText().toString(),
-                email.getText().toString(),
+                binding.getUser().getFirstName(),
+                binding.getUser().getLastName(),
+                binding.getUser().getPhone(),
+                binding.getUser().getEmail(),
                 "",
                 PATHWAY_WEB_DEVELOPMENT);
-        userViewModel.insertUser(id.getText().toString(), user);
+        userViewModel.insertUser(binding.getUser().getKey(), user);
 
-        SharedPreferences.Editor editor = mPrefs.edit();
-        editor.putString(KEY_USER_KEY, id.getText().toString());
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(KEY_USER_KEY, binding.getUser().getKey());
         editor.apply();
 
         Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+        NavController navController = Navigation.findNavController(view);
+        navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
     }
 
     public void loadData() {
-        String userKey = mPrefs.getString(KEY_USER_KEY, "");
+        String userKey = prefs.getString(KEY_USER_KEY, "");
 
-        // TODO: If userKey is found then get data from firebase
-        if (!userKey.isEmpty()) {
-            id.setText(userKey);
+        if (userKey.isEmpty()) {
+            setEmptyUser();
+        } else {
+            UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+            userViewModel.getUserDetails(userKey).observe(getActivity(), new Observer<User>() {
+                @Override
+                public void onChanged(User user) {
+                    if (user != null) {
+                        binding.setUser(user);
+                    } else {
+                        setEmptyUser();
+                    }
+                }
+            });
         }
+    }
+
+    private void setEmptyUser() {
+        User user = new User("", "", "", "", "", "", "");
+        binding.setUser(user);
     }
 }

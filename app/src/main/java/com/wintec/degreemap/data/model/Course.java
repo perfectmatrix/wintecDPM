@@ -15,6 +15,7 @@ public class Course {
     private String url;
     private int year;
 
+    // Required empty constructor
     public Course() {
     }
 

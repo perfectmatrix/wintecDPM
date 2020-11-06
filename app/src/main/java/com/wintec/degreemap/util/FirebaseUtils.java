@@ -7,7 +7,7 @@ public final class FirebaseUtils {
     private static FirebaseDatabase _databaseReference;
 
     public static FirebaseDatabase getDatabaseInstance() {
-        if(_databaseReference == null) {
+        if (_databaseReference == null) {
             _databaseReference = FirebaseDatabase.getInstance();
             return _databaseReference;
         }
@@ -18,11 +18,15 @@ public final class FirebaseUtils {
         return getDatabaseInstance().getReference("course");
     }
 
-    public static DatabaseReference getCourseDetailsRef(String courseCode){
+    public static DatabaseReference getCourseDetailsRef(String courseCode) {
         return getCourseRef().child(courseCode);
     }
 
     public static DatabaseReference getUserRef() {
         return getDatabaseInstance().getReference("user");
+    }
+
+    public static DatabaseReference getUseDetailsRef(String userKey) {
+        return getUserRef().child(userKey);
     }
 }
