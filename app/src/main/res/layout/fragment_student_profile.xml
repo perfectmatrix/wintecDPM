@@ -10,14 +10,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Profile"
-        android:fontFamily="@font/source_sans_pro"
-        android:background="@color/colorPrimary"
-        android:textAlignment="center"
-        android:padding="16dp"
         android:layout_marginBottom="10dp"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:padding="16dp"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <!-- Profile Image -->
     <ImageView
@@ -42,15 +42,16 @@
         android:layout_marginBottom="30dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp">
+
         <TextView
             android:layout_width="280dp"
             android:layout_height="match_parent"
-            android:text="My Contact Details"
-            android:fontFamily="@font/source_sans_pro"
-            android:gravity="start"
             android:layout_marginLeft="40dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="start"
+            android:text="My Contact Details"
             android:textColor="@color/black"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -59,31 +60,31 @@
 
     <!-- Developer Group -->
     <TextView
-        android:onClick="navigateTo"
         android:id="@+id/developer_group"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="The Developer Group"
-        android:fontFamily="@font/source_sans_pro"
-        android:gravity="start"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:gravity="start"
+        android:onClick="navigateTo"
+        android:text="The Developer Group"
         android:textColor="@color/black"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
 
     <!-- About Us -->
     <TextView
-        android:onClick="navigateTo"
         android:id="@+id/about_us"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="About us"
-        android:fontFamily="@font/source_sans_pro"
-        android:gravity="start"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:gravity="start"
+        android:onClick="navigateTo"
+        android:text="About us"
         android:textColor="@color/black"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -17,20 +17,15 @@
 
             <TextView
                 android:layout_width="match_parent"
-<<<<<<< Updated upstream
                 android:layout_height="60dp"
                 android:text="About us"
-=======
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
->>>>>>> Stashed changes
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/source_sans_pro_semibold"
                 android:padding="16dp"
-                android:text="About us"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,7 +55,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
                     android:text="Bachelor of Applied Information of Technology"
-                    android:textAlignment="center"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -68,10 +63,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_sans_pro"
-                    android:lineSpacingExtra="4sp"
+                    android:lineSpacingExtra="5sp"
                     android:text="Students in this programme will gain a strong foundation of knowledge across a broad range of different information technology skills, as well as an advanced level of expertise in a selected specialisation."
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btn_km_bachelor_it"
@@ -112,10 +107,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:lineSpacingExtra="4sp"
+                            android:lineSpacingExtra="5sp"
                             android:text="Third year Wintec IT student, Adric Lloyd, is a perfect example of how internships can benefit both the student and business. "
                             android:textColor="@color/black"
-                            android:textSize="11sp" />
+                            android:textSize="12sp" />
 
                         <Button
                             android:onClick="jumpTo"
@@ -156,7 +151,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:lineSpacingExtra="4dp"
+                            android:lineSpacingExtra="5sp"
                             android:text="A passion-fuelled, design-driven co-creation space where students work with industry partners to solve complex problems."
                             android:textColor="@color/black"
                             android:textSize="11sp" />

@@ -13,20 +13,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/back"
-                android:onClick="jumpTo"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Back"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/source_sans_pro"
-                android:gravity="bottom"
-                android:textAlignment="viewEnd"
-                android:padding="16dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="24sp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:gravity="bottom"
+                android:onClick="jumpTo"
+                android:padding="16dp"
+                android:text="Back"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/blue"
+                android:textSize="18sp"
                 tools:ignore="RtlCompat" />
 
             <LinearLayout
@@ -41,10 +42,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Mistakenly Completed Your Modules?"
-                    android:textSize="24sp"
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:text="Remove the modules from completed list?"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/source_sans_pro_black"/>
+                    android:textSize="24sp" />
 
                 <!-- Text -->
                 <TextView
@@ -52,15 +53,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
                     android:text="Swipe right agine to unmark your modules."
-                    android:fontFamily="@font/source_sans_pro"/>
+                    android:textSize="18sp" />
 
                 <!-- Image -->
                 <ImageView
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
                     android:layout_gravity="center"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:src="@drawable/icon_tutorial_2"/>
+                    android:src="@drawable/icon_tutorial_2" />
 
                 <!-- Indicators -->
                 <LinearLayout

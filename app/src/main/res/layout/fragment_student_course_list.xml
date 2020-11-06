@@ -9,14 +9,8 @@
     <TextView
         android:id="@+id/pathwayTextView"
         android:layout_width="match_parent"
-<<<<<<< Updated upstream:app/src/main/res/layout/fragment_student_course_list.xml
         android:layout_height="60dp"
-        android:padding="16dp"
-        android:fontFamily="@font/source_sans_pro"
-=======
-        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
->>>>>>> Stashed changes:app/src/main/res/layout/fragment_course.xml
         android:background="@color/colorPrimary"
         android:fontFamily="@font/source_sans_pro_semibold"
         android:padding="16dp"

@@ -17,20 +17,15 @@
 
             <TextView
                 android:layout_width="match_parent"
-<<<<<<< Updated upstream
                 android:layout_height="60dp"
                 android:text="Developers"
-=======
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
->>>>>>> Stashed changes
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/source_sans_pro_semibold"
                 android:padding="16dp"
-                android:text="Developers"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -24,10 +24,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-<<<<<<< Updated upstream
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         final boolean isTutorialDone = prefs.getBoolean(KEY_TUTORIAL_DONE, false);
-=======
+
         // Method for DotLoader
 
         lazyLoader = (LazyLoader)findViewById(R.id.myLoaderProgress);
@@ -40,7 +39,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         loader.setInterpolator(new LinearInterpolator());
 
         lazyLoader.addView(loader);
->>>>>>> Stashed changes
 
         // Method to show splash screen for 3 seconds
         new Handler().postDelayed(new Runnable() {
