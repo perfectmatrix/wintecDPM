@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.bumptech.glide.Glide;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentContactDetailBinding;
@@ -80,11 +81,14 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         if (userKey.isEmpty()) {
             setEmptyUser();
         } else {
-            UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+            final UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
             userViewModel.getUserDetails(userKey).observe(getActivity(), new Observer<User>() {
                 @Override
                 public void onChanged(User user) {
                     if (user != null) {
+                        Glide.with(getContext())
+                                .load(user.getProfileUrl())
+                                .into(profileImage);
                         binding.setUser(user);
                     } else {
                         setEmptyUser();
@@ -160,16 +164,17 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     public void saveData() {
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = new User(null,
-                null, binding.getUser().getFirstName(),
+                binding.getUser().getProfileUrl(),
+                binding.getUser().getFirstName(),
                 binding.getUser().getLastName(),
                 binding.getUser().getPhone(),
                 binding.getUser().getEmail(),
                 binding.getUser().getAddress(),
                 binding.getUser().getGender(),
-                PATHWAY_WEB_DEVELOPMENT);
+                binding.getUser().getPathway());
 
         String currentUserKey = prefs.getString(KEY_USER_KEY, "");
-        boolean isKeyUpdated = !currentUserKey.equals(user.getKey());
+        boolean isKeyUpdated = !currentUserKey.equals(binding.getUser().getKey());
 
         // If key has been updated, delete the previous record
         if (isKeyUpdated) {

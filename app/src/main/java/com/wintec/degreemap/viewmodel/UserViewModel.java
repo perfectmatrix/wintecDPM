@@ -4,6 +4,7 @@ import android.net.Uri;
 
 import androidx.lifecycle.ViewModel;
 
+import com.google.firebase.storage.StorageReference;
 import com.wintec.degreemap.data.firebaselivedata.UserDetailsLiveData;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.data.repository.UserRepository;
@@ -20,7 +21,11 @@ public class UserViewModel extends ViewModel {
     }
 
     public void insertUser(String userKey, Uri profileImage, String profileImageExtension, User user) {
-        userRepository.insertUser(userKey, profileImage, profileImageExtension, user);
+        if (profileImage == null) {
+            userRepository.insertUser(userKey, user);
+        } else {
+            userRepository.insertUserWithProfile(userKey, profileImage, profileImageExtension, user);
+        }
     }
 
     public void deleteUser(String userKey) {
