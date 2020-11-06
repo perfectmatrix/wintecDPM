@@ -6,6 +6,8 @@
         <variable
             name="user"
             type="com.wintec.degreemap.data.model.User" />
+
+        <import type="com.wintec.degreemap.util.Constants"></import>
     </data>
 
     <LinearLayout
@@ -90,7 +92,7 @@
                         android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
-                        android:text="@={user.firstName}"  />
+                        android:text="@={user.firstName}" />
 
                     <!-- Last Name -->
                     <TextView
@@ -108,7 +110,7 @@
                         android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
-                        android:text="@={user.lastName}"  />
+                        android:text="@={user.lastName}" />
 
                     <!-- Phone Number -->
                     <TextView
@@ -140,11 +142,74 @@
                         android:id="@+id/details_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
                         android:text="@={user.email}" />
+
+                    <!-- Address -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="Address" />
+
+                    <EditText
+                        android:id="@+id/details_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_with_border"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:padding="6dp"
+                        android:text="@={user.address}" />
+
+                    <!-- Gender -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="What gender do you identify as?" />
+
+
+                    <RadioGroup
+                        android:id="@+id/radio_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="30dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_notSay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{user.gender.equals(Constants.GENDER_NOT_SAY)}"
+                            android:text="Prefer not to say" />
+
+                        <RadioButton
+                            android:id="@+id/radio_diverse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{user.gender.equals(Constants.GENDER_DIVERSE)}"
+                            android:text="Gender diverse" />
+
+                        <RadioButton
+                            android:id="@+id/radio_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{user.gender.equals(Constants.GENDER_MALE)}"
+                            android:text="Male" />
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{user.gender.equals(Constants.GENDER_FEMALE)}"
+                            android:text="Female" />
+                    </RadioGroup>
 
                     <!-- Buttons -->
                     <LinearLayout

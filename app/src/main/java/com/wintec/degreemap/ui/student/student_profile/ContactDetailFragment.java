@@ -10,8 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,11 +32,15 @@ import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
+import static com.wintec.degreemap.util.Constants.GENDER_DIVERSE;
+import static com.wintec.degreemap.util.Constants.GENDER_FEMALE;
+import static com.wintec.degreemap.util.Constants.GENDER_MALE;
+import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
 import static com.wintec.degreemap.util.Constants.KEY_USER_KEY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
-public class ContactDetailFragment extends Fragment {
+public class ContactDetailFragment extends Fragment implements View.OnClickListener {
     private FragmentContactDetailBinding binding;
 
     private ImageView profileImage;
@@ -67,6 +72,12 @@ public class ContactDetailFragment extends Fragment {
                 saveData();
             }
         });
+
+        // set gender onClickListener
+        view.findViewById(R.id.radio_notSay).setOnClickListener(this);
+        view.findViewById(R.id.radio_diverse).setOnClickListener(this);
+        view.findViewById(R.id.radio_male).setOnClickListener(this);
+        view.findViewById(R.id.radio_female).setOnClickListener(this);
 
         loadData();
 
@@ -103,14 +114,15 @@ public class ContactDetailFragment extends Fragment {
                 binding.getUser().getLastName(),
                 binding.getUser().getPhone(),
                 binding.getUser().getEmail(),
-                "",
+                binding.getUser().getAddress(),
+                binding.getUser().getGender(),
                 PATHWAY_WEB_DEVELOPMENT);
 
         String currentUserKey = prefs.getString(KEY_USER_KEY, "");
         boolean isKeyUpdated = !currentUserKey.equals(user.getKey());
 
         // If key has been updated, delete the previous record
-        if(isKeyUpdated) {
+        if (isKeyUpdated) {
             userViewModel.deleteUser(currentUserKey);
         }
 
@@ -145,7 +157,32 @@ public class ContactDetailFragment extends Fragment {
     }
 
     private void setEmptyUser() {
-        User user = new User("", "", "", "", "", "", "");
+        User user = new User("", "", "", "", "", "", "", "");
         binding.setUser(user);
+    }
+
+    @Override
+    public void onClick(View view) {
+        boolean isChecked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.radio_notSay:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_NOT_SAY);
+                break;
+            case R.id.radio_diverse:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_DIVERSE);
+                break;
+            case R.id.radio_female:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_MALE);
+                break;
+            case R.id.radio_male:
+                if (isChecked)
+                    binding.getUser().setGender(GENDER_FEMALE);
+                break;
+        }
     }
 }

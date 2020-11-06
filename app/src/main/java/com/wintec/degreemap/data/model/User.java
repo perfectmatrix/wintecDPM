@@ -11,6 +11,7 @@ public class User extends BaseObservable {
     private String lastName;
     private String phone;
     private String email;
+    private String address;
     private String gender;
     private String pathway;
 
@@ -18,12 +19,13 @@ public class User extends BaseObservable {
     public User() {
     }
 
-    public User(String key, String firstName, String lastName, String phone, String email, String gender, String pathway) {
+    public User(String key, String firstName, String lastName, String phone, String email, String address, String gender, String pathway) {
         this.key = key;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
+        this.address = address;
         this.gender = gender;
         this.pathway = pathway;
     }
@@ -76,6 +78,16 @@ public class User extends BaseObservable {
         this.email = email;
     }
 
+    @Bindable
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Bindable
     public String getGender() {
         return gender;
     }

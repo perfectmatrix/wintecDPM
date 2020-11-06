@@ -12,7 +12,7 @@ public final class Constants {
     public static final String KEY_DISCLAIMER_ACCEPTED = "KeyDisclaimerAccepted";
     public static final String KEY_SELECTED_PATHWAY = "KeySelectedPathway";
     public static final String KEY_COMPLETED_MODULES = "KeyCompletedModules";
-    public static final String KEY_USER_KEY= "KeyUserKey";
+    public static final String KEY_USER_KEY = "KeyUserKey";
 
     // Course Year
     public static final int ALL_COURSE = 0;
@@ -26,4 +26,12 @@ public final class Constants {
     public static final String PATHWAY_DATABASE_ARCHITECTURE = "database";
     public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
     public static final String PATHWAY_CORE = "core";
+
+    // Gender
+    public static final String GENDER_NOT_SAY = "notSay";
+    public static final String GENDER_DIVERSE = "diverse";
+    public static final String GENDER_MALE = "male";
+    public static final String GENDER_FEMALE = "female";
+
+
 }
