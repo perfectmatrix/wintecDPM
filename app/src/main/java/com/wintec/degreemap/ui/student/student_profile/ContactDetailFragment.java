@@ -11,8 +11,6 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
@@ -29,6 +27,7 @@ import androidx.navigation.Navigation;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentContactDetailBinding;
+import com.wintec.degreemap.util.Helpers;
 import com.wintec.degreemap.viewmodel.UserViewModel;
 
 import java.io.IOException;
@@ -49,7 +48,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     private FragmentContactDetailBinding binding;
 
     private ImageView profileImage;
-    private Uri imageUri;
+    private Uri profileImageUri;
     private SharedPreferences prefs;
     private View view;
 
@@ -96,7 +95,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     }
 
     private void setEmptyUser() {
-        User user = new User("", "", "", "", "", "", "", "");
+        User user = new User("", "", "", "", "", "", "", "", "");
         binding.setUser(user);
     }
 
@@ -104,10 +103,9 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_PICK_IMAGE && resultCode == RESULT_OK && data != null) {
-            imageUri = data.getData();
-
+            profileImageUri = data.getData();
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageUri);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), profileImageUri);
                 profileImage.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -162,7 +160,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     public void saveData() {
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = new User(null,
-                binding.getUser().getFirstName(),
+                null, binding.getUser().getFirstName(),
                 binding.getUser().getLastName(),
                 binding.getUser().getPhone(),
                 binding.getUser().getEmail(),
@@ -178,7 +176,10 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
             userViewModel.deleteUser(currentUserKey);
         }
 
-        userViewModel.insertUser(binding.getUser().getKey(), user);
+        userViewModel.insertUser(binding.getUser().getKey(),
+                profileImageUri,
+                Helpers.getFileExtension(getContext(), profileImageUri),
+                user);
 
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(KEY_USER_KEY, binding.getUser().getKey());

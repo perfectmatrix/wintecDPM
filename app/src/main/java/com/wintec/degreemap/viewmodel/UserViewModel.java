@@ -1,5 +1,7 @@
 package com.wintec.degreemap.viewmodel;
 
+import android.net.Uri;
+
 import androidx.lifecycle.ViewModel;
 
 import com.wintec.degreemap.data.firebaselivedata.UserDetailsLiveData;
@@ -17,8 +19,8 @@ public class UserViewModel extends ViewModel {
         return userRepository.getUserDetails(userKey);
     }
 
-    public void insertUser(String userKey, User user) {
-        userRepository.insertUser(userKey, user);
+    public void insertUser(String userKey, Uri profileImage, String profileImageExtension, User user) {
+        userRepository.insertUser(userKey, profileImage, profileImageExtension, user);
     }
 
     public void deleteUser(String userKey) {

@@ -1,7 +1,11 @@
 package com.wintec.degreemap.util;
 
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.text.TextUtils;
+import android.webkit.MimeTypeMap;
 
 import com.wintec.degreemap.data.model.Course;
 
@@ -18,6 +22,11 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public final class Helpers {
+    public static String getFileExtension(Context context, Uri uri) {
+        ContentResolver contentResolver = context.getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(contentResolver.getType(uri));
+    }
 
     public static String getPathwayLabel(ArrayList<String> pathway) {
         return pathway != null ? pathway.toString()

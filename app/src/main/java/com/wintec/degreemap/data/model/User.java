@@ -7,6 +7,7 @@ import com.wintec.degreemap.BR;
 
 public class User extends BaseObservable {
     private String key;
+    private String profileUrl;
     private String firstName;
     private String lastName;
     private String phone;
@@ -19,8 +20,9 @@ public class User extends BaseObservable {
     public User() {
     }
 
-    public User(String key, String firstName, String lastName, String phone, String email, String address, String gender, String pathway) {
+    public User(String key, String profileUrl, String firstName, String lastName, String phone, String email, String address, String gender, String pathway) {
         this.key = key;
+        this.profileUrl = profileUrl;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -36,10 +38,18 @@ public class User extends BaseObservable {
     }
 
     public void setKey(String key) {
-        if ( this.key == null || !this.key.equals(key)) {
+        if (this.key == null || !this.key.equals(key)) {
             this.key = key;
             notifyPropertyChanged(BR.key);
         }
+    }
+
+    public String getProfileUrl() {
+        return profileUrl;
+    }
+
+    public void setProfileUrl(String profileUrl) {
+        this.profileUrl = profileUrl;
     }
 
     @Bindable
