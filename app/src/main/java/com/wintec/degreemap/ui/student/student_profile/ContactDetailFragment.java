@@ -1,7 +1,9 @@
 package com.wintec.degreemap.ui.student.student_profile;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -39,6 +42,7 @@ import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
 import static com.wintec.degreemap.util.Constants.KEY_USER_KEY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.REQUEST_PICK_IMAGE;
+import static com.wintec.degreemap.util.Constants.REQUEST_STORAGE_PERMISSION;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class ContactDetailFragment extends Fragment implements View.OnClickListener {
@@ -142,11 +146,17 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
 
     // Choose image file for avatar
     private void openFileChooser() {
-        if()
-        Intent gallery = new Intent();
-        gallery.setType("image/*");
-        gallery.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(gallery, "Select Picture"), REQUEST_PICK_IMAGE);
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ContactDetailFragment.this.requestPermissions(
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    REQUEST_STORAGE_PERMISSION);
+        } else {
+            Intent gallery = new Intent();
+            gallery.setType("image/*");
+            gallery.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(gallery, "Select Picture"), REQUEST_PICK_IMAGE);
+        }
     }
 
     public void saveData() {

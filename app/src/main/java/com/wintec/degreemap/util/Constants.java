@@ -35,4 +35,5 @@ public final class Constants {
 
     // Request
     public static final int REQUEST_PICK_IMAGE = 1;
+    public static final int REQUEST_STORAGE_PERMISSION = 2;
 }
