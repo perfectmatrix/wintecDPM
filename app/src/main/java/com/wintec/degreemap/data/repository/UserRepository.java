@@ -17,7 +17,7 @@ public class UserRepository {
     }
 
     public UserDetailsLiveData getUserDetails(String userKey) {
-        return new UserDetailsLiveData(FirebaseUtils.getUseDetailsRef(userKey));
+        return new UserDetailsLiveData(FirebaseUtils.getUserRef().child(userKey));
     }
 
     public void insertUser(String userKey, User user) {

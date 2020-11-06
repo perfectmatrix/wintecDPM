@@ -18,15 +18,7 @@ public final class FirebaseUtils {
         return getDatabaseInstance().getReference("course");
     }
 
-    public static DatabaseReference getCourseDetailsRef(String courseCode) {
-        return getCourseRef().child(courseCode);
-    }
-
     public static DatabaseReference getUserRef() {
         return getDatabaseInstance().getReference("user");
-    }
-
-    public static DatabaseReference getUseDetailsRef(String userKey) {
-        return getUserRef().child(userKey);
     }
 }
