@@ -49,7 +49,7 @@ public class StudentCourseDetailsFragment extends Fragment implements View.OnCli
         String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        courseViewModel.getCourseDetails(courseCode).observe(getActivity(), new Observer<Course>() {
+        courseViewModel.getCourseDetails(courseCode).observe(getViewLifecycleOwner(), new Observer<Course>() {
             @Override
             public void onChanged(Course course) {
                 if (course != null) {

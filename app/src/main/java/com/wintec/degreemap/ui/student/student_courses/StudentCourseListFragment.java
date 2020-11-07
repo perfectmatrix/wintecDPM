@@ -54,7 +54,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         super.onViewCreated(view, savedInstanceState);
         if (selectedPathway.isEmpty()) {
             Navigation.findNavController(view).navigate(R.id.studentDashboardFragment);
-            Toast.makeText(getActivity().getApplicationContext(), "Select a pathway first", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Select a pathway first", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -100,7 +100,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
     public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
         // get all course data
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
+        courseViewModel.getCourseList().observe(getViewLifecycleOwner(), new Observer<List<Course>>() {
             @Override
             public void onChanged(List<Course> courseList) {
                 if (courseList != null) {

@@ -82,7 +82,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
             setEmptyUser();
         } else {
             final UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-            userViewModel.getUserDetails(userKey).observe(getActivity(), new Observer<User>() {
+            userViewModel.getUserDetails(userKey).observe(getViewLifecycleOwner(), new Observer<User>() {
                 @Override
                 public void onChanged(User user) {
                     if (user != null) {

@@ -33,7 +33,7 @@ public class AboutUsFragment extends Fragment implements View.OnClickListener {
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
-        MediaController mediaController = new MediaController(getActivity());
+        MediaController mediaController = new MediaController(getContext());
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
         return view;
