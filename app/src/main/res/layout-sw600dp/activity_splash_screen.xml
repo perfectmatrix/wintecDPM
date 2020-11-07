@@ -29,15 +29,15 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="209dp"
-        android:layout_marginEnd="91dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="206dp"
+        android:layout_marginEnd="179dp"
         android:gravity="center"
         android:src="@drawable/logo_degree_mapper" />
 
