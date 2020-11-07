@@ -6,6 +6,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.wintec.degreemap.data.model.Course;
 
@@ -13,22 +14,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
-    private final DatabaseReference reference;
+    private final Query query;
     private final CourseValueEventListener listener = new CourseValueEventListener();
     private List<Course> mCourseList;
 
-    public CourseListLiveData(DatabaseReference ref) {
-        this.reference = ref;
+    public CourseListLiveData(Query q) {
+        this.query = q;
     }
 
     @Override
     void removeListener() {
-        reference.removeEventListener(listener);
+        query.removeEventListener(listener);
     }
 
     @Override
     void attachListener() {
-        reference.addValueEventListener(listener);
+        query.addValueEventListener(listener);
     }
 
     private class CourseValueEventListener implements ValueEventListener {
@@ -78,7 +79,7 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
-            Log.e(TAG, "Can't listen to reference" + reference, databaseError.toException());
+            Log.e(TAG, "Can't listen to query" + query, databaseError.toException());
         }
     }
 }

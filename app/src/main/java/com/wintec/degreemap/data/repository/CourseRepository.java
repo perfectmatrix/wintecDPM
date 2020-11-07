@@ -19,7 +19,7 @@ public class CourseRepository {
     public CourseListLiveData getCourseList() {
         if(courseList == null)
         {
-            courseList = new CourseListLiveData(FirebaseUtils.getCourseRef());
+            courseList = new CourseListLiveData(FirebaseUtils.getCourseRef().orderByChild("semester"));
             return courseList;
         }
         return courseList;
