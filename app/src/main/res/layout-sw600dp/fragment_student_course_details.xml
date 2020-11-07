@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="course"
+            type="com.wintec.degreemap.data.model.Course" />
+        <variable
+            name="isModuleCompleted"
+            type="boolean" />
+        <import type="com.wintec.degreemap.util.DataBindingUtils" />
+        <import type="com.wintec.degreemap.util.Helpers" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="Course Details"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Course Details -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="36dp"
+                    android:background="@drawable/bg_rounded_light_gray"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Row1: Module Code-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Module Code"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseCodeTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{course.code}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row2: Module Name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Module Name"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseLongNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{course.longName}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row3: Module Level-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Module Level"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseLevelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{String.valueOf(course.level)}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row4: Module Credit Level-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Module Credit Level"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseCreditTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{String.valueOf(course.credit)}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row5: Pre-requisite -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Pre-requisite"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/preRequisiteTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{DataBindingUtils.arrayToString(course.preRequisite)}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row6: Co-requisite -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Co-requisite"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/coRequisiteTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{DataBindingUtils.arrayToString(course.coRequisite)}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row7: Pathway -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Pathway"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/pathwayTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{ Helpers.getPathwayLabel(course.pathway) }"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                    <!-- Row8: Module Description -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Module Description"
+                            android:textColor="@color/black"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseDescriptionTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{course.description}"
+                            android:textColor="@color/black"
+                            android:textSize="26sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/markCourseButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_wintec_yellow"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="@{isModuleCompleted ? `Mark as Incomplete` : `Mark as Complete`}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="36sp" />
+
+                    <Button
+                        android:id="@+id/courseUrlButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_wintec_yellow"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="See More"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="36sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
