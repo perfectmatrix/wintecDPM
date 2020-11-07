@@ -109,6 +109,8 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         boolean isModuleCompleted = completedModules.contains(course.getCode());
         if (isModuleCompleted) {
             holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle, 0);
+        } else {
+            holder.courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
         }
 
         if (!isPreRequisiteCompleted) {
