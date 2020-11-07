@@ -167,14 +167,13 @@
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/preRequisiteEditText"
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/preRequisiteAutocomplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:completionThreshold="1"
+                            android:hint="Add Pre-requisite" />
+
                     </LinearLayout>
 
                     <!-- Row6: Co-requisite -->
@@ -193,14 +192,12 @@
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/coRequisiteEditText"
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/coRequisiteAutocomplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:completionThreshold="1"
+                            android:hint="Add Co-requisite" />
                     </LinearLayout>
 
                     <!-- Row7: Pathway -->
