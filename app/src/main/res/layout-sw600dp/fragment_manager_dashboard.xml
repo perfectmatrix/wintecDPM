@@ -141,7 +141,8 @@
                     android:textColor="@color/lightGray"
                     android:textSize="38sp"
                     android:textStyle="bold"
-                    android:text="Manage Students"
+                    android:text="Manage Students"/>
+
             </LinearLayout>
 
             <ImageView
