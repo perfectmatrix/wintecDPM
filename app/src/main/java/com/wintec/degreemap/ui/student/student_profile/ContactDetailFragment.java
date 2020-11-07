@@ -86,9 +86,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                 @Override
                 public void onChanged(User user) {
                     if (user != null) {
-                        Glide.with(getContext())
-                                .load(user.getProfileUrl())
-                                .into(profileImage);
+                        Glide.with(view).load(user.getProfileUrl()).into(profileImage);
                         binding.setUser(user);
                     } else {
                         setEmptyUser();
