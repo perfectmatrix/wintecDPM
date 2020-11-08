@@ -77,7 +77,7 @@
             android:layout_height="320dp"
             android:layout_margin="26dp"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/blue"  >
+            app:cardBackgroundColor="@color/red"  >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -151,7 +151,7 @@
             android:layout_height="320dp"
             android:layout_margin="26dp"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/red">
+            app:cardBackgroundColor="@color/blue">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
