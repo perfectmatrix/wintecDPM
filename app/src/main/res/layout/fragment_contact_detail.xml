@@ -87,6 +87,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_with_border"
                         android:padding="6dp"
+                        android:inputType="number"
                         android:text="@={user.key}" />
 
                     <!-- First Name -->
@@ -144,6 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
+                        android:inputType="number"
                         android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
