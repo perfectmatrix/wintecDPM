@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.student.student_profile.AboutUsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="About us"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro"
+                android:gravity="center"
+                android:textSize="40sp"
+                android:textColor="@color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <!-- 1. Video -->
+                <FrameLayout
+                    android:layout_width="480dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="center_horizontal">
+                    <VideoView
+                        android:id="@+id/video_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bachelor of Applied Information of Technology"
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:textAlignment="center"
+                    android:textSize="32sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at ex aliquam, rhoncus risus et, luctus lectus. Suspendisse et lorem laoreet arcu ullamcorper dignissim et in dui."
+                    android:fontFamily="@font/source_sans_pro"
+                    android:textSize="26sp"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:onClick="jumpTo"
+                    android:id="@+id/btn_km_bachelor_it"
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:text="Know More"
+                    android:textSize="32sp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_wintec_yellow"
+                    android:textAllCaps="false"/>
+
+                <!-- 2. Graduate Profile -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Graduate Profile"
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:textSize="32sp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="320dp"
+                        android:layout_height="240dp"
+                        android:src="@drawable/picture_gallagher_student"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            android:fontFamily="@font/source_sans_pro"
+                            android:textSize="26sp"
+                            android:textColor="@color/black"/>
+
+                        <Button
+                            android:onClick="jumpTo"
+                            android:id="@+id/btn_km_gallagher"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:text="Know More"
+                            android:textSize="32sp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/btn_wintec_yellow"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 3. Design Factory -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Design Factory NZ"
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:textSize="32sp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp">
+                    <ImageView
+                        android:layout_width="320dp"
+                        android:layout_height="240dp"
+                        android:src="@drawable/picture_design_factory"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            android:fontFamily="@font/source_sans_pro"
+                            android:textSize="26sp"
+                            android:textColor="@color/black"/>
+
+                        <Button
+                            android:onClick="jumpTo"
+                            android:id="@+id/btn_km_design_factory"
+                            android:layout_width="320dp"
+                            android:layout_height="80dp"
+                            android:text="Know More"
+                            android:textSize="32sp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/btn_wintec_yellow"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

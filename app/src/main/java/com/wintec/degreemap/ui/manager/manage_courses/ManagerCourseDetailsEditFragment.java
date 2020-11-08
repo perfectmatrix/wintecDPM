@@ -1,0 +1,91 @@
+package com.wintec.degreemap.ui.manager.manage_courses;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.MultiAutoCompleteTextView;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.wintec.degreemap.R;
+import com.wintec.degreemap.data.model.Course;
+import com.wintec.degreemap.databinding.FragmentManagerCourseDetailsEditBinding;
+import com.wintec.degreemap.viewmodel.CourseViewModel;
+
+import java.util.List;
+
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
+
+public class ManagerCourseDetailsEditFragment extends Fragment implements View.OnClickListener {
+    private FragmentManagerCourseDetailsEditBinding binding;
+    private MultiAutoCompleteTextView preRequisiteTextView, coRequisiteTextView;
+    private AutoCompleteCourseAdapter autoCompleteCourseAdapter;
+    private Button btnSave, btnCancel;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_details_edit, container, false);
+        View view = binding.getRoot();
+
+        preRequisiteTextView = view.findViewById(R.id.preRequisiteAutocomplete);
+        coRequisiteTextView = view.findViewById(R.id.coRequisiteAutocomplete);
+        btnSave = view.findViewById(R.id.btn_courseEdit_save);
+        btnCancel = view.findViewById(R.id.btn_courseEdit_cancel);
+
+        btnSave.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
+
+        CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
+
+        String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
+        courseViewModel.getCourseDetails(courseCode).observe(getViewLifecycleOwner(), new Observer<Course>() {
+            @Override
+            public void onChanged(Course course) {
+                if (course != null) {
+                    binding.setCourse(course);
+                }
+            }
+        });
+
+        autoCompleteCourseAdapter = new AutoCompleteCourseAdapter(getContext());
+        preRequisiteTextView.setAdapter(autoCompleteCourseAdapter);
+        coRequisiteTextView.setAdapter(autoCompleteCourseAdapter);
+        preRequisiteTextView.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        coRequisiteTextView.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+
+        // Setup pre-requisites and co-requisites auto complete
+        courseViewModel.getCourseList().observe(getViewLifecycleOwner(), new Observer<List<Course>>() {
+            @Override
+            public void onChanged(List<Course> courseList) {
+                if (courseList != null) {
+                    autoCompleteCourseAdapter.setCourses(courseList);
+                }
+            }
+        });
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_courseDetails_edit:
+                saveData();
+                break;
+        }
+    }
+
+    public void saveData() {
+
+    }
+}

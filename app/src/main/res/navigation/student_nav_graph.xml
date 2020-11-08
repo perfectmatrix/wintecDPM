@@ -31,14 +31,14 @@
         android:label="StudentProfileFragment"
         tools:layout="@layout/fragment_student_profile" >
         <action
-            android:id="@+id/action_studentProfileFragment_to_studentProfile_Developers"
-            app:destination="@id/studentProfile_Developers" />
+            android:id="@+id/action_studentProfileFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
         <action
-            android:id="@+id/action_studentProfileFragment_to_studentProfile_AboutUs"
-            app:destination="@id/studentProfile_AboutUs" />
+            android:id="@+id/action_studentProfileFragment_to_developersFragment"
+            app:destination="@id/developersFragment" />
         <action
-            android:id="@+id/action_studentProfileFragment_to_studentProfile_ContactDetail"
-            app:destination="@id/studentProfile_ContactDetail" />
+            android:id="@+id/action_studentProfileFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentCourseDetailsFragment"
@@ -50,19 +50,23 @@
         android:name="com.wintec.degreemap.ui.shared.RoleSelectionActivity"
         android:label="activity_role_selection"
         tools:layout="@layout/activity_role_selection" />
-    <activity
-        android:id="@+id/studentProfile_Developers"
-        android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfile_Developers"
-        android:label="StudentProfile_Developers"
-        tools:layout="@layout/activity_developers" />
-    <activity
-        android:id="@+id/studentProfile_AboutUs"
-        android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfile_AboutUs"
-        android:label="activity_about_us"
-        tools:layout="@layout/activity_about_us" />
-    <activity
-        android:id="@+id/studentProfile_ContactDetail"
-        android:name="com.wintec.degreemap.ui.student.student_profile.StudentProfile_ContactDetail"
-        android:label="StudentProfile_ContactDetail"
-        tools:layout="@layout/activity_contact_details"/>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.wintec.degreemap.ui.student.student_profile.ContactDetailFragment"
+        android:label="ContactDetailFragment"
+        tools:layout="@layout/fragment_contact_detail">
+        <action
+            android:id="@+id/action_contactDetailFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/developersFragment"
+        android:name="com.wintec.degreemap.ui.student.student_profile.DevelopersFragment"
+        android:label="DevelopersFragment"
+        tools:layout="@layout/fragment_developers" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.wintec.degreemap.ui.student.student_profile.AboutUsFragment"
+        android:label="AboutUsFragment"
+        tools:layout="@layout/fragment_about_us" />
 </navigation>

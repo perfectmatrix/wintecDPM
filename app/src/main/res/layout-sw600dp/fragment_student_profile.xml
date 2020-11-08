@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor">
+
+    <!-- Profile -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Profile"
+        android:fontFamily="@font/source_sans_pro"
+        android:background="@color/colorPrimary"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/black"/>
+
+    <!-- Profile Image -->
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_circle_black"
+        android:src="@drawable/ic_profile"
+        app:tint="@color/black"
+        android:padding="20dp" 
+        android:layout_margin="40dp"/>
+
+    <!-- Contact Details -->
+    <LinearLayout
+        android:onClick="navigateTo"
+        android:id="@+id/student_contact_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_with_top_bottom_line"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:layout_width="580dp"
+            android:layout_height="wrap_content"
+            android:text="My Contact Details"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="start"
+            android:layout_marginLeft="80dp"
+            android:textColor="@color/black"
+            android:textSize="40dp"/>
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_arrow_right"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- Developer Group -->
+    <TextView
+        android:onClick="navigateTo"
+        android:id="@+id/developer_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Developer Group"
+        android:fontFamily="@font/source_sans_pro"
+        android:gravity="start"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="40dp"
+        android:textColor="@color/black"
+        android:textSize="34dp"/>
+
+    <!-- About Us -->
+    <TextView
+        android:onClick="navigateTo"
+        android:id="@+id/about_us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About us"
+        android:fontFamily="@font/source_sans_pro"
+        android:gravity="start"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:textSize="34dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/normalGray"
+        android:layout_marginLeft="80dp"
+        android:textSize="26sp"
+        android:layout_marginTop="50dp"
+        android:text="APP Version: V1.0"
+        android:fontFamily="@font/source_sans_pro"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/normalGray"
+        android:layout_marginLeft="80dp"
+        android:textSize="26sp"
+        android:layout_marginTop="20dp"
+        android:text="API Version: 7.0"
+        android:fontFamily="@font/source_sans_pro"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/normalGray"
+        android:layout_marginLeft="80dp"
+        android:textSize="26sp"
+        android:layout_marginTop="20dp"
+        android:text="OS: Android"
+        android:fontFamily="@font/source_sans_pro"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/normalGray"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="80dp"
+        android:textSize="22sp"
+        android:text="© Perfect Matrix | Wintec"
+        android:fontFamily="@font/source_sans_pro"/>
+
+</LinearLayout>

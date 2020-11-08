@@ -25,6 +25,7 @@ import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
@@ -74,14 +75,14 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
-        pathwayTextView.setText(getPathwayLabel(pathway));
+        pathwayTextView.setText(getPathwayLabel(new ArrayList<>(Arrays.asList(pathway))));
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
         // get all course data
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
-        courseViewModel.getCourseList().observe(getActivity(), new Observer<List<Course>>() {
+        courseViewModel.getCourseList().observe(getViewLifecycleOwner(), new Observer<List<Course>>() {
             @Override
             public void onChanged(List<Course> courseList) {
                 if (courseList != null) {
@@ -90,7 +91,7 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
                     switch (position) {
                         case ALL_COURSE: {
                             for (Course course : courseList) {
-                                if (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE))
+                                if (course.getPathway().contains(mSelectedPathway) || course.getPathway().contains(PATHWAY_CORE))
                                     mFilteredCourseList.add(course);
                             }
                             break;
@@ -99,7 +100,7 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getPathway().equalsIgnoreCase(mSelectedPathway) || course.getPathway().equalsIgnoreCase(PATHWAY_CORE)))
+                                if (course.getYear() == position && (course.getPathway().contains(mSelectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
                                     mFilteredCourseList.add(course);
                             }
                             break;

@@ -19,4 +19,14 @@
     </style>
 
 
+    <style name="BottomNavTablet" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">0dip</item>
+    </style>
+
+    <style name="BottomNavTablet.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">26sp</item>
+        <item name="android:padding">0dip</item>
+    </style>
+
 </resources>

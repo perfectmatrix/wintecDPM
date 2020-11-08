@@ -19,13 +19,13 @@ public class CourseRepository {
     public CourseListLiveData getCourseList() {
         if(courseList == null)
         {
-            courseList = new CourseListLiveData(FirebaseUtils.getCourseRef());
+            courseList = new CourseListLiveData(FirebaseUtils.getCourseRef().orderByChild("semester"));
             return courseList;
         }
         return courseList;
     }
 
     public CourseDetailsLiveData getCourseDetails(String courseCode) {
-        return new CourseDetailsLiveData(FirebaseUtils.getCourseDetailsRef(courseCode));
+        return new CourseDetailsLiveData(FirebaseUtils.getCourseRef().child(courseCode));
     }
 }
