@@ -27,6 +27,12 @@ public final class Constants {
     public static final String PATHWAY_SOFTWARE_ENGINEERING = "software";
     public static final String PATHWAY_CORE = "core";
 
+    public static final String PATHWAY_NETWORK_ENGINEERING_LABEL = "Network Engineering";
+    public static final String PATHWAY_WEB_DEVELOPMENT_LABEL = "Web Development";
+    public static final String PATHWAY_DATABASE_ARCHITECTURE_LABEL = "Database Architecture";
+    public static final String PATHWAY_SOFTWARE_ENGINEERING_LABEL = "Software Engineering";
+    public static final String PATHWAY_CORE_LABEL = "Core";
+
     // Gender
     public static final String GENDER_NOT_SAY = "notSay";
     public static final String GENDER_DIVERSE = "diverse";

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="course"
             type="com.wintec.degreemap.data.model.Course" />
+
+        <import type="com.wintec.degreemap.util.Constants" />
     </data>
 
     <LinearLayout
@@ -216,14 +220,36 @@
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/pathwayEditText"
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/networkCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{Constants.PATHWAY_NETWORK_ENGINEERING_LABEL}" />
+
+                            <CheckBox
+                                android:id="@+id/webCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{Constants.PATHWAY_WEB_DEVELOPMENT_LABEL}" />
+
+                            <CheckBox
+                                android:id="@+id/databaseCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL}" />
+
+                            <CheckBox
+                                android:id="@+id/softwareCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <!-- Row8: Module Description -->

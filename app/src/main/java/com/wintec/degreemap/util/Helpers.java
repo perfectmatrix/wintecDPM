@@ -19,10 +19,15 @@ import java.util.Arrays;
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
+import static com.wintec.degreemap.util.Constants.PATHWAY_CORE_LABEL;
 import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL;
 import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING_LABEL;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
+import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT_LABEL;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public final class Helpers {
@@ -38,11 +43,11 @@ public final class Helpers {
 
     public static String getPathwayLabel(ArrayList<String> pathway) {
         return pathway != null ? pathway.toString()
-                .replace(PATHWAY_NETWORK_ENGINEERING, "Network Engineering")
-                .replace(PATHWAY_WEB_DEVELOPMENT, "Web Development")
-                .replace(PATHWAY_DATABASE_ARCHITECTURE, "Database Architecture")
-                .replace(PATHWAY_SOFTWARE_ENGINEERING, "Software Engineering")
-                .replace(PATHWAY_CORE, "Core")
+                .replace(PATHWAY_NETWORK_ENGINEERING, PATHWAY_NETWORK_ENGINEERING_LABEL)
+                .replace(PATHWAY_WEB_DEVELOPMENT, PATHWAY_WEB_DEVELOPMENT_LABEL)
+                .replace(PATHWAY_DATABASE_ARCHITECTURE, PATHWAY_DATABASE_ARCHITECTURE_LABEL)
+                .replace(PATHWAY_SOFTWARE_ENGINEERING, PATHWAY_SOFTWARE_ENGINEERING_LABEL)
+                .replace(PATHWAY_CORE, PATHWAY_CORE_LABEL)
                 .replace("[", "")
                 .replace("]", "") : "";
     }
