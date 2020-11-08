@@ -8,6 +8,10 @@
             type="com.wintec.degreemap.data.model.Course" />
 
         <import type="com.wintec.degreemap.util.Constants" />
+
+        <import type="com.wintec.degreemap.util.DataBindingUtils" />
+
+        <import type="android.text.TextUtils" />
     </data>
 
     <LinearLayout
@@ -176,7 +180,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:completionThreshold="1"
-                            android:hint="Add Pre-requisite" />
+                            android:hint="Add Pre-requisite"
+                            android:text="@{ DataBindingUtils.arrayToAutoComplete(course.preRequisite) }" />
 
                     </LinearLayout>
 
@@ -201,7 +206,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:completionThreshold="1"
-                            android:hint="Add Co-requisite" />
+                            android:hint="Add Co-requisite"
+                            android:text="@{DataBindingUtils.arrayToAutoComplete(course.coRequisite)}" />
                     </LinearLayout>
 
                     <!-- Row7: Pathway -->
@@ -230,24 +236,28 @@
                                 android:id="@+id/networkCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:checked="@{course.pathway.contains(Constants.PATHWAY_NETWORK_ENGINEERING)}"
                                 android:text="@{Constants.PATHWAY_NETWORK_ENGINEERING_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/webCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:checked="@{course.pathway.contains(Constants.PATHWAY_WEB_DEVELOPMENT)}"
                                 android:text="@{Constants.PATHWAY_WEB_DEVELOPMENT_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/databaseCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:checked="@{course.pathway.contains(Constants.PATHWAY_DATABASE_ARCHITECTURE)}"
                                 android:text="@{Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/softwareCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:checked="@{course.pathway.contains(Constants.PATHWAY_SOFTWARE_ENGINEERING)}"
                                 android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
                         </LinearLayout>
                     </LinearLayout>

@@ -10,4 +10,10 @@ public final class DataBindingUtils {
                 ? "None"
                 : value.toString().replace("[", "").replace("]", "");
     }
+
+    public static String arrayToAutoComplete(ArrayList<String> value) {
+        return value == null || value.isEmpty()
+                ? ""
+                : value.toString().replace("[", "").replace("]", "").concat(", ");
+    }
 }

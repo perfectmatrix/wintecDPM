@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">DegreeMap</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- symbols -->
+    <string name="empty"></string>
+    <string name="comma">,</string>
 
     <!-- string array for spinner to choose year -->
     <string-array name="chooseYear">
