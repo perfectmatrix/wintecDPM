@@ -40,7 +40,6 @@ import static com.wintec.degreemap.util.Constants.GENDER_FEMALE;
 import static com.wintec.degreemap.util.Constants.GENDER_MALE;
 import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
 import static com.wintec.degreemap.util.Constants.KEY_USER_KEY;
-import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.REQUEST_PICK_IMAGE;
 import static com.wintec.degreemap.util.Constants.REQUEST_STORAGE_PERMISSION;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;

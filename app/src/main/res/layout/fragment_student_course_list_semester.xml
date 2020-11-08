@@ -10,12 +10,12 @@
         android:id="@+id/pathwayTextView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:padding="16dp"
-        android:fontFamily="@font/source_sans_pro"
         android:background="@color/colorPrimary"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:padding="16dp"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,8 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_semester_student"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:gravity="center"
                 android:text="Semester 1"
-                android:gravity="center"/>
+                android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_s1_courses"
@@ -59,8 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_semester_student"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:gravity="center"
                 android:text="Semester 2"
-                android:gravity="center"/>
+                android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_s2_courses"

@@ -12,12 +12,12 @@
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimary"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/source_sans_pro_semibold"
         android:padding="16dp"
         android:text="Profile"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <!-- Profile Image -->
     <de.hdodenhof.circleimageview.CircleImageView
@@ -48,7 +48,7 @@
             android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
-            android:fontFamily="@font/source_sans_pro"
+            android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="start"
             android:text="My Contact Details"
             android:textColor="@color/black"
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/source_sans_pro_semibold"
         android:gravity="start"
         android:onClick="navigateTo"
         android:text="The Developer Group"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/source_sans_pro_semibold"
         android:gravity="start"
         android:onClick="navigateTo"
         android:text="About us"

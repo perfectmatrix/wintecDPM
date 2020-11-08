@@ -30,12 +30,12 @@
                     android:layout_height="60dp"
                     android:layout_marginBottom="10dp"
                     android:background="@color/colorPrimary"
-                    android:fontFamily="@font/source_sans_pro"
+                    android:fontFamily="@font/source_sans_pro_semibold"
                     android:padding="16dp"
                     android:text="My Details"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -43,13 +43,25 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:text="Record your details"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
                     <!-- Avatar -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Profile Image" />
+                        android:text="Profile Image"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/details_avatar"
@@ -64,7 +76,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="ID" />
+                        android:text="ID"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_id"
@@ -72,7 +86,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_with_border"
-                        android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
                         android:text="@={user.key}" />
 
@@ -82,7 +95,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="First Name" />
+                        android:text="First Name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_first_name"
@@ -100,7 +115,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Last Name" />
+                        android:text="Last Name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_last_name"
@@ -118,7 +135,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Phone Number" />
+                        android:text="Phone Number"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_phone"
@@ -136,7 +155,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Email" />
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_email"
@@ -154,7 +175,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Address" />
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/details_address"
@@ -172,8 +195,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="What gender do you identify as?" />
-
+                        android:text="What gender do you identify as?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <RadioGroup
                         android:id="@+id/radio_gender"
@@ -221,20 +245,20 @@
 
                         <Button
                             android:id="@+id/btn_details_save"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:background="@drawable/btn_wintec_yellow"
-                            android:fontFamily="@font/source_sans_pro"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:text="Save"
                             android:textColor="@color/black" />
 
                         <Button
                             android:id="@+id/btn_details_cancel"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/btn_wintec_black"
-                            android:fontFamily="@font/source_sans_pro"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:onClick="navigateTo"
                             android:text="Cancel"
                             android:textColor="#fff" />

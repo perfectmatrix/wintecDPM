@@ -26,12 +26,12 @@
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
             android:background="@color/colorPrimary"
-            android:fontFamily="@font/source_sans_pro"
+            android:fontFamily="@font/source_sans_pro_semibold"
             android:padding="16dp"
             android:text="Course Details"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <ScrollView
             android:layout_width="match_parent"
