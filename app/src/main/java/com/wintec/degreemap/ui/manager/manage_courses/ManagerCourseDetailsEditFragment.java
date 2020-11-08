@@ -17,8 +17,10 @@ import androidx.navigation.Navigation;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.databinding.FragmentManagerCourseDetailsEditBinding;
+import com.wintec.degreemap.util.Constants;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
@@ -56,6 +58,10 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
             public void onChanged(Course course) {
                 if (course != null) {
                     binding.setCourse(course);
+                    binding.setIsPathwayNetwork(course.getPathway().contains(Constants.PATHWAY_NETWORK_ENGINEERING));
+                    binding.setIsPathwayWeb(course.getPathway().contains(Constants.PATHWAY_WEB_DEVELOPMENT));
+                    binding.setIsPathwayDatabase(course.getPathway().contains(Constants.PATHWAY_DATABASE_ARCHITECTURE));
+                    binding.setIsPathwaySoftware(course.getPathway().contains(Constants.PATHWAY_SOFTWARE_ENGINEERING));
                 }
             }
         });
@@ -111,7 +117,8 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
 
         courseViewModel.saveCourse(binding.getCourse().getCode(),
-                course, binding.getCourse().getPathway(),
+                course,
+                getPathways(),
                 binding.getCourse().getCoRequisite(),
                 binding.getCourse().getPreRequisite());
 
@@ -120,5 +127,36 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
 
         NavController navController = Navigation.findNavController(view);
         navController.navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
+    }
+
+    private ArrayList<String> getPathways() {
+        ArrayList<String> pathways = new ArrayList<>();
+
+        // If none of the checkbox is selected, then the pathway is core
+        // otherwise, check each pathway selected
+        if (!binding.getIsPathwayWeb() &&
+                !binding.getIsPathwayNetwork() &&
+                !binding.getIsPathwayDatabase() &&
+                !binding.getIsPathwaySoftware()) {
+            pathways.add(Constants.PATHWAY_CORE);
+        } else {
+            if (binding.getIsPathwayNetwork()) {
+                pathways.add(Constants.PATHWAY_NETWORK_ENGINEERING);
+            }
+
+            if (binding.getIsPathwayWeb()) {
+                pathways.add(Constants.PATHWAY_WEB_DEVELOPMENT);
+            }
+
+            if (binding.getIsPathwayDatabase()) {
+                pathways.add(Constants.PATHWAY_DATABASE_ARCHITECTURE);
+            }
+
+            if (binding.getIsPathwaySoftware()) {
+                pathways.add(Constants.PATHWAY_SOFTWARE_ENGINEERING);
+            }
+        }
+
+        return pathways;
     }
 }

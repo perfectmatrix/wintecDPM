@@ -7,11 +7,27 @@
             name="course"
             type="com.wintec.degreemap.data.model.Course" />
 
+        <variable
+            name="isPathwayNetwork"
+            type="boolean" />
+
+        <variable
+            name="isPathwayWeb"
+            type="boolean" />
+
+        <variable
+            name="isPathwayDatabase"
+            type="boolean" />
+
+        <variable
+            name="isPathwaySoftware"
+            type="boolean" />
+
+
         <import type="com.wintec.degreemap.util.Constants" />
 
         <import type="com.wintec.degreemap.util.DataBindingUtils" />
 
-        <import type="android.text.TextUtils" />
     </data>
 
     <LinearLayout
@@ -263,28 +279,28 @@
                                 android:id="@+id/networkCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:checked="@{course.pathway.contains(Constants.PATHWAY_NETWORK_ENGINEERING)}"
+                                android:checked="@={isPathwayNetwork}"
                                 android:text="@{Constants.PATHWAY_NETWORK_ENGINEERING_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/webCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:checked="@{course.pathway.contains(Constants.PATHWAY_WEB_DEVELOPMENT)}"
+                                android:checked="@={isPathwayWeb}"
                                 android:text="@{Constants.PATHWAY_WEB_DEVELOPMENT_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/databaseCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:checked="@{course.pathway.contains(Constants.PATHWAY_DATABASE_ARCHITECTURE)}"
+                                android:checked="@={isPathwayDatabase}"
                                 android:text="@{Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL}" />
 
                             <CheckBox
                                 android:id="@+id/softwareCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:checked="@{course.pathway.contains(Constants.PATHWAY_SOFTWARE_ENGINEERING)}"
+                                android:checked="@={isPathwaySoftware}"
                                 android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
                         </LinearLayout>
                     </LinearLayout>
