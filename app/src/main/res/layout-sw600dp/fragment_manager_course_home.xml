@@ -43,7 +43,7 @@
             android:id="@+id/card_network"
             android:layout_width="250dp"
             android:layout_height="320dp"
-            android:layout_margin="26dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/purple"  >
             <LinearLayout
@@ -75,7 +75,7 @@
             android:id="@+id/card_web"
             android:layout_width="250dp"
             android:layout_height="320dp"
-            android:layout_margin="26dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/red"  >
             <LinearLayout
@@ -116,7 +116,7 @@
             android:id="@+id/card_database"
             android:layout_width="250dp"
             android:layout_height="320dp"
-            android:layout_margin="26dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/green">
             <LinearLayout
@@ -149,7 +149,7 @@
             android:id="@+id/card_software"
             android:layout_width="250dp"
             android:layout_height="320dp"
-            android:layout_margin="26dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/blue">
             <LinearLayout
