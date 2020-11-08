@@ -11,6 +11,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
@@ -79,8 +81,15 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_courseDetails_edit:
+            case R.id.btn_courseEdit_save:
                 saveData();
+                break;
+            case R.id.btn_courseEdit_cancel:
+                Bundle bundle = new Bundle();
+                bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+
+                NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
                 break;
         }
     }
