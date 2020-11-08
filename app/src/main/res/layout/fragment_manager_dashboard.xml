@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/back_arrow"
             android:onClick="navigateTo"
-            android:layout_width="30dp"
+            android:layout_width="16dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_arrow_back"
             android:layout_marginLeft="10dp"
