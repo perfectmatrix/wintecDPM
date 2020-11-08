@@ -39,13 +39,13 @@
         <!-- Title -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/source_sans_pro"
             android:text="Course Details"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="40sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="26dp"
+                    android:layout_margin="50dp"
                     android:background="@drawable/bg_rounded_light_gray"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -73,12 +73,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Code"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -89,7 +89,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={course.code}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                     <!-- Row2: Module Name-->
@@ -100,12 +100,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Name"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -116,7 +116,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={course.longName}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                     <!-- Row3: Module Level-->
@@ -127,12 +127,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Level"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -143,7 +143,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={`` + course.level}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                     <!-- Row4: Module Credit Level-->
@@ -154,12 +154,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Credit Level"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -170,7 +170,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={ `` + course.credit}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                     <!-- Module Url -->
@@ -181,12 +181,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="URL"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -197,7 +197,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={course.url}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                     <!-- Row5: Pre-requisite -->
@@ -208,18 +208,19 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Pre-requisite"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <MultiAutoCompleteTextView
                             android:id="@+id/preRequisiteAutocomplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:completionThreshold="1"
                             android:hint="Add Pre-requisite"
                             android:text="@{ DataBindingUtils.arrayToAutoComplete(course.preRequisite) }" />
@@ -234,18 +235,19 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Co-requisite"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <MultiAutoCompleteTextView
                             android:id="@+id/coRequisiteAutocomplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:completionThreshold="1"
                             android:hint="Add Co-requisite"
                             android:text="@{DataBindingUtils.arrayToAutoComplete(course.coRequisite)}" />
@@ -259,12 +261,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Pathway"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -277,6 +279,7 @@
                                 android:id="@+id/networkCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="24sp"
                                 android:checked="@={isPathwayNetwork}"
                                 android:text="@{Constants.PATHWAY_NETWORK_ENGINEERING_LABEL}" />
 
@@ -284,6 +287,7 @@
                                 android:id="@+id/webCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="24sp"
                                 android:checked="@={isPathwayWeb}"
                                 android:text="@{Constants.PATHWAY_WEB_DEVELOPMENT_LABEL}" />
 
@@ -291,6 +295,7 @@
                                 android:id="@+id/databaseCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="24sp"
                                 android:checked="@={isPathwayDatabase}"
                                 android:text="@{Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL}" />
 
@@ -298,6 +303,7 @@
                                 android:id="@+id/softwareCheckbox"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="24sp"
                                 android:checked="@={isPathwaySoftware}"
                                 android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
                         </LinearLayout>
@@ -307,7 +313,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginBottom="40dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -317,7 +323,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Description"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <EditText
@@ -328,7 +334,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={course.description}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -336,8 +342,8 @@
                 <!-- Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
+                    android:layout_height="80dp"
+                    android:layout_marginHorizontal="50dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center_horizontal">
 
@@ -352,7 +358,7 @@
                         android:text="Save"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/btn_courseEdit_cancel"
@@ -366,7 +372,7 @@
                         android:text="Cancel"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="28sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
