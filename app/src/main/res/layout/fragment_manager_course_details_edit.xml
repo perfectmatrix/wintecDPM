@@ -141,6 +141,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
+                            android:inputType="number"
                             android:text="@={`` + course.level}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -166,6 +167,7 @@
                             android:id="@+id/courseCreditEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="number"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@={ `` + course.credit}"
