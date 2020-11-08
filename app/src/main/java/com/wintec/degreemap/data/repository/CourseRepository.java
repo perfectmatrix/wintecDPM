@@ -34,22 +34,22 @@ public class CourseRepository {
     public void saveCourse(String courseCode,
                            Course course,
                            ArrayList<String> pathway,
-                           ArrayList<String> coRequisite,
-                           ArrayList<String> preRequisite) {
+                           ArrayList<String> preRequisite,
+                           ArrayList<String> coRequisite) {
         DatabaseReference courseRef = FirebaseUtils.getCourseRef();
         courseRef.child(courseCode).setValue(course);
 
-        // Save pathway, co-requisites and pre-requisites
+        // Save pathway, pre-requisites and co-requisites
         for (String p : pathway) {
             courseRef.child(courseCode).child("pathway").child(p).setValue(true);
         }
 
-        for (String moduleCode : coRequisite) {
-            courseRef.child(courseCode).child("coRequisite").child(moduleCode).setValue(true);
-        }
-
         for (String moduleCode : preRequisite) {
             courseRef.child(courseCode).child("preRequisite").child(moduleCode).setValue(true);
+        }
+
+        for (String moduleCode : coRequisite) {
+            courseRef.child(courseCode).child("coRequisite").child(moduleCode).setValue(true);
         }
     }
 }

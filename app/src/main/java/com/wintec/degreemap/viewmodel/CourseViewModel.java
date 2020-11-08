@@ -27,8 +27,8 @@ public class CourseViewModel extends ViewModel {
     public void saveCourse(String courseCode,
                            Course course,
                            ArrayList<String> pathway,
-                           ArrayList<String> coRequisite,
-                           ArrayList<String> preRequisite) {
-        courseRepository.saveCourse(courseCode, course, pathway, coRequisite, preRequisite);
+                           ArrayList<String> preRequisite,
+                           ArrayList<String> coRequisite) {
+        courseRepository.saveCourse(courseCode, course, pathway, preRequisite, coRequisite);
     }
 }

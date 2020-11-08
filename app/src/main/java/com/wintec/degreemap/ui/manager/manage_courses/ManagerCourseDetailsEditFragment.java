@@ -21,9 +21,11 @@ import com.wintec.degreemap.util.Constants;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
+import static com.wintec.degreemap.util.StringUtils.convertToArrayList;
 
 public class ManagerCourseDetailsEditFragment extends Fragment implements View.OnClickListener {
     private FragmentManagerCourseDetailsEditBinding binding;
@@ -119,8 +121,8 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         courseViewModel.saveCourse(binding.getCourse().getCode(),
                 course,
                 getPathways(),
-                binding.getCourse().getCoRequisite(),
-                binding.getCourse().getPreRequisite());
+                convertToArrayList(preRequisiteTextView.getText().toString()),
+                convertToArrayList(coRequisiteTextView.getText().toString()));
 
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
