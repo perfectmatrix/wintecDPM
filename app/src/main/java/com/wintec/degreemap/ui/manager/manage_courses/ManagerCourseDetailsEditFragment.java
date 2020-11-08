@@ -28,6 +28,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
     private MultiAutoCompleteTextView preRequisiteTextView, coRequisiteTextView;
     private AutoCompleteCourseAdapter autoCompleteCourseAdapter;
     private Button btnSave, btnCancel;
+    private View view;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_details_edit, container, false);
-        View view = binding.getRoot();
+        view = binding.getRoot();
 
         preRequisiteTextView = view.findViewById(R.id.preRequisiteAutocomplete);
         coRequisiteTextView = view.findViewById(R.id.coRequisiteAutocomplete);
@@ -95,6 +96,29 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
     }
 
     public void saveData() {
+        Course course = new Course(null,
+                null,
+                binding.getCourse().getCredit(),
+                binding.getCourse().getDescription(),
+                binding.getCourse().getLongName(),
+                binding.getCourse().getLevel(),
+                null,
+                binding.getCourse().getSemester(),
+                null,
+                binding.getCourse().getUrl(),
+                binding.getCourse().getYear());
 
+        CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
+
+        courseViewModel.saveCourse(binding.getCourse().getCode(),
+                course, binding.getCourse().getPathway(),
+                binding.getCourse().getCoRequisite(),
+                binding.getCourse().getPreRequisite());
+
+        Bundle bundle = new Bundle();
+        bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+
+        NavController navController = Navigation.findNavController(view);
+        navController.navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
     }
 }

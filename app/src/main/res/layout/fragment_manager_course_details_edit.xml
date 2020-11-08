@@ -73,7 +73,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="@{course.code}"
+                            android:text="@={course.code}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -100,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="@{course.longName}"
+                            android:text="@={course.longName}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -127,7 +127,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="@{String.valueOf(course.level)}"
+                            android:text="@={`` + course.level}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -154,7 +154,34 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="@{String.valueOf(course.credit)}"
+                            android:text="@={ `` + course.credit}"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <!-- Module Url -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="URL"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/courseUrlTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_with_border"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@={course.url}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -285,7 +312,7 @@
                             android:layout_height="120dp"
                             android:background="@drawable/bg_with_border"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="@{course.description}"
+                            android:text="@={course.description}"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>

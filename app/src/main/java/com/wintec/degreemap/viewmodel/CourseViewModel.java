@@ -1,7 +1,5 @@
 package com.wintec.degreemap.viewmodel;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.wintec.degreemap.data.firebaselivedata.CourseDetailsLiveData;
@@ -9,20 +7,28 @@ import com.wintec.degreemap.data.firebaselivedata.CourseListLiveData;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.data.repository.CourseRepository;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class CourseViewModel extends ViewModel {
-    private CourseRepository mCourseRepository;
+    private CourseRepository courseRepository;
 
     public CourseViewModel() {
-        this.mCourseRepository = CourseRepository.getInstance();
+        this.courseRepository = CourseRepository.getInstance();
     }
 
     public CourseListLiveData getCourseList() {
-        return mCourseRepository.getCourseList();
+        return courseRepository.getCourseList();
     }
 
     public CourseDetailsLiveData getCourseDetails(String courseCode) {
-        return mCourseRepository.getCourseDetails(courseCode);
+        return courseRepository.getCourseDetails(courseCode);
+    }
+
+    public void saveCourse(String courseCode,
+                           Course course,
+                           ArrayList<String> pathway,
+                           ArrayList<String> coRequisite,
+                           ArrayList<String> preRequisite) {
+        courseRepository.saveCourse(courseCode, course, pathway, coRequisite, preRequisite);
     }
 }
