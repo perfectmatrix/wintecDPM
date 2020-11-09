@@ -1,10 +1,7 @@
 package com.wintec.degreemap.ui.manager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -29,6 +26,7 @@ public class ManagerHome extends AppCompatActivity {
                 navController.navigate(R.id.action_managerHomeOptions_to_manageCourseHomeFragment);
                 break;
             case R.id.manage_students:
+                navController.navigate(R.id.action_managerHomeOptions_to_manageStudentListFragment);
                 break;
             case R.id.back_arrow:
                 navController.navigate(R.id.action_managerHomeOptions_to_roleSelectionActivity);

@@ -2,10 +2,10 @@
 <resources>
     <color name="colorPrimary">#FFDD00</color>
     <color name="colorPrimaryDark">#FFCB2D</color>
-    <color name="colorAccent">#3a3a3c</color>
+    <color name="colorAccent">#32343E</color>
 
     <color name="backgroundColor">#FCFCFC</color>
-    <color name="managerBackgroundColor">#FFEFE6</color>
+    <color name="managerBackgroundColor">#FCFCFC</color>
 
     <color name="lighterGray">#f5f5f5</color>
     <color name="lightGray">#EDEDED</color>
