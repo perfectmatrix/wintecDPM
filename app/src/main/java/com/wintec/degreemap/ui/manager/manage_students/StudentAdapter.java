@@ -3,6 +3,7 @@ package com.wintec.degreemap.ui.manager.manage_students;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     }
 
     public class StudentViewHolder extends RecyclerView.ViewHolder {
-        public CardView studentCard;
+        public LinearLayout studentCard;
         public TextView studentNameTextView;
         public TextView studentIdTextView;
 
