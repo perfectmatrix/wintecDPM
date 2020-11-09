@@ -174,7 +174,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         boolean isKeyUpdated = !currentUserKey.equals(binding.getUser().getKey());
 
         // If key has been updated, delete the previous record
-        if (isKeyUpdated) {
+        if (isKeyUpdated && !currentUserKey.isEmpty()) {
             userViewModel.deleteUser(currentUserKey);
         }
 

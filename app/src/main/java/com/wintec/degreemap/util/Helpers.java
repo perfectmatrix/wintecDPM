@@ -3,20 +3,13 @@ package com.wintec.degreemap.util;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 
-import com.wintec.degreemap.R;
-import com.wintec.degreemap.data.model.Course;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE_LABEL;
@@ -28,7 +21,6 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT_LABEL;
-import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public final class Helpers {
     public static String getFileExtension(Context context, Uri uri) {

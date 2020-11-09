@@ -21,8 +21,9 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
+        app:itemIconSize="40dp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav"
+        app:menu="@menu/bottom_nav_tablet"
         style="@style/BottomNavigation"
         android:background="@color/colorPrimary"/>
 

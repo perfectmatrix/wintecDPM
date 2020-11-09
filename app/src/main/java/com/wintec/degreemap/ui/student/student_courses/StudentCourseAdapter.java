@@ -95,13 +95,13 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
                 holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_purple : R.drawable.bg_course_item_purple_disabled);
                 break;
             case PATHWAY_WEB_DEVELOPMENT:
-                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_blue : R.drawable.bg_course_item_blue_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_red : R.drawable.bg_course_item_red_disabled);
                 break;
             case PATHWAY_DATABASE_ARCHITECTURE:
                 holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_green : R.drawable.bg_course_item_green_disabled);
                 break;
             case PATHWAY_SOFTWARE_ENGINEERING:
-                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_red : R.drawable.bg_course_item_red_disabled);
+                holder.courseCardLayout.setBackgroundResource(isPreRequisiteCompleted ? R.drawable.bg_course_item_blue : R.drawable.bg_course_item_blue_disabled);
                 break;
         }
 

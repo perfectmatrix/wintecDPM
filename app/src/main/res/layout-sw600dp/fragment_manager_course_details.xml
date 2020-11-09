@@ -20,13 +20,13 @@
         <!-- Title -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
             android:gravity="center"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/source_sans_pro"
             android:text="Course Details"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="40sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -34,31 +34,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-            android:layout_height="60dp"
+                android:layout_height="60dp"
                 android:orientation="vertical">
 
                 <!-- Course Details -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="26dp"
+                    android:layout_margin="60dp"
                     android:background="@drawable/bg_rounded_light_gray"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="26dp">
 
                     <!-- Row1: Module Code-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Code"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -68,22 +68,22 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{course.code}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row2: Module Name-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Name"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -93,22 +93,22 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{course.longName}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row3: Module Level-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Level"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -118,22 +118,22 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{String.valueOf(course.level)}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row4: Module Credit Level-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Credit Level"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -143,22 +143,22 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{String.valueOf(course.credit)}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row5: Pre-requisite -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Pre-requisite"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -168,7 +168,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{DataBindingUtils.arrayToString(course.preRequisite)}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row6: Co-requisite -->
@@ -178,12 +178,12 @@
                         android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Co-requisite"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -193,22 +193,22 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{DataBindingUtils.arrayToString(course.coRequisite)}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row7: Pathway -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="30dp">
 
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Pathway"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -218,14 +218,14 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{ Helpers.getPathwayLabel(course.pathway) }"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                     <!-- Row8: Module Description -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginBottom="30dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -235,7 +235,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Description"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="28sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -245,7 +245,7 @@
                             android:fontFamily="@font/source_sans_pro"
                             android:text="@{course.description}"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -253,8 +253,8 @@
                 <!-- Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
+                    android:layout_height="80dp"
+                    android:layout_marginHorizontal="60dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center_horizontal">
 
@@ -262,14 +262,14 @@
                     android:id="@+id/btn_courseDetails_edit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                    android:textColor="#fff"
+                        android:textColor="#fff"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
-                    android:background="@drawable/btn_wintec_gray"
+                        android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro"
-                    android:text="Edit Module"
+                        android:text="Edit Module"
                         android:textAllCaps="false"
-                        android:textSize="16sp" />
+                        android:textSize="30sp" />
 
                     <Button
                     android:id="@+id/btn_courseDetails_delete"
@@ -278,12 +278,12 @@
                         android:layout_margin="8dp"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                    android:background="@drawable/btn_wintec_red"
+                        android:background="@drawable/btn_wintec_red"
                         android:fontFamily="@font/source_sans_pro"
-                    android:text="Delete Module"
+                        android:text="Delete Module"
                         android:textAllCaps="false"
-                    android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textColor="#fff"
+                        android:textSize="30sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

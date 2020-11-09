@@ -7,14 +7,17 @@
     tools:context=".ui.shared.SplashScreenActivity"
     android:background="@color/colorPrimary">
 
+
     <com.agrawalsuneet.dotsloader.loaders.LazyLoader
         android:id="@+id/myLoaderProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="332dp"
         android:layout_marginTop="91dp"
-        android:layout_marginEnd="365dp"
+        android:layout_marginEnd="339dp"
         android:layout_marginBottom="20dp"
         app:lazyloader_animDur="800"
         app:lazyloader_dotsDist="10dp"
@@ -25,7 +28,6 @@
         app:lazyloader_secondDelayDur="300"
         app:lazyloader_secondDotColor="@color/green"
         app:lazyloader_thirdDotColor="#fff" />
-
 
     <ImageView
         android:id="@+id/logo"
