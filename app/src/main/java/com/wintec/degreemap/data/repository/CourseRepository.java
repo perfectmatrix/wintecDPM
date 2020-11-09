@@ -55,6 +55,6 @@ public class CourseRepository {
 
     public void deleteCourse(String courseCode) {
         DatabaseReference courseRef = FirebaseUtils.getCourseRef();
-        courseRef.child(courseCode).child("isActive").setValue(false);
+        courseRef.child(courseCode).removeValue();
     }
 }
