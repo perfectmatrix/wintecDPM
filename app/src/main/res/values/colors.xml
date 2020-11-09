@@ -16,6 +16,7 @@
     <color name="managerBlack">#333647</color>
     <color name="managerYellow">#FFC142</color>
     <color name="managerByellow">#EA9F0A</color>
+    <color name="managerModuleBg">#EAF0F0</color>
     <color name="white">#FFFFFF</color>
 
     <color name="purple">#7F38F2</color>
