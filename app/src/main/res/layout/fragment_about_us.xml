@@ -6,31 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.student.student_profile.AboutUsFragment">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="About us"
-                android:layout_marginBottom="10dp"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/source_sans_pro_semibold"
-                android:padding="16dp"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:padding="16dp"
+            android:text="About us"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp">
+
                 <FrameLayout
                     android:layout_width="416dp"
                     android:layout_height="234dp"
@@ -38,14 +41,15 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
+
                     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
                         android:id="@+id/youtube_player_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        app:videoId="3T0BeP1czcE"
                         app:autoPlay="false"
-                        app:showFullScreenButton="false" />
+                        app:showFullScreenButton="false"
+                        app:videoId="3T0BeP1czcE" />
                 </FrameLayout>
 
                 <TextView
@@ -75,7 +79,6 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/btn_wintec_yellow"
                     android:fontFamily="@font/source_sans_pro_bold"
-                    android:onClick="jumpTo"
                     android:text="Know More"
                     android:textAllCaps="false"
                     android:textSize="14sp" />
@@ -89,19 +92,21 @@
                     android:text="Graduate Profile"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
-                
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="160dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/picture_gallagher_student"/>
+                        android:src="@drawable/picture_gallagher_student" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -113,14 +118,13 @@
                             android:textSize="12sp" />
 
                         <Button
-                            android:onClick="jumpTo"
                             android:id="@+id/btn_km_gallagher"
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:text="Know More"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/btn_wintec_yellow"
-                            android:textAllCaps="false"/>
+                            android:text="Know More"
+                            android:textAllCaps="false" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -137,15 +141,17 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="160dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/picture_design_factory"/>
+                        android:src="@drawable/picture_design_factory" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -157,22 +163,16 @@
                             android:textSize="11sp" />
 
                         <Button
-                            android:onClick="jumpTo"
                             android:id="@+id/btn_km_design_factory"
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:text="Know More"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/btn_wintec_yellow"
-                            android:textAllCaps="false"/>
+                            android:text="Know More"
+                            android:textAllCaps="false" />
                     </LinearLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
-        </LinearLayout>
-    </ScrollView>
-
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>

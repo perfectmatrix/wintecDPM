@@ -5,24 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Developers"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/source_sans_pro_semibold"
-                android:padding="16dp"
-                android:gravity="center"
-                android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Developers"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,12 +35,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Perfect Matrix"
-                    android:fontFamily="@font/source_sans_pro_black"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:text="Perfect Matrix"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -48,47 +51,52 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Team Members"
-                    android:fontFamily="@font/source_sans_pro_black"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/source_sans_pro_black"
+                    android:text="Team Members"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <!-- Marinel -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_marinel"/>
+                        android:src="@drawable/picture_developers_marinel" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Marinel Basa"/>
+                            android:text="Marinel Basa"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Developer"/>
+                            android:text="Developer" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="marinelbasa@gmail.com"/>
+                            android:text="marinelbasa@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -96,35 +104,40 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_jingyi"/>
+                        android:src="@drawable/picture_developers_jingyi" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Jingyi Niu"/>
+                            android:text="Jingyi Niu"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Developer"/>
+                            android:text="Developer" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="niu.jy1203@gmail.com"/>
+                            android:text="niu.jy1203@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -132,35 +145,40 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_subash"/>
+                        android:src="@drawable/picture_developers_subash" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Subash Karki"/>
+                            android:text="Subash Karki"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="UX/UI Designer"/>
+                            android:text="UX/UI Designer" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="karkisubash122@gmail.com"/>
+                            android:text="karkisubash122@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -168,35 +186,40 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_jiang"/>
+                        android:src="@drawable/picture_developers_jiang" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Jiang Wu"/>
+                            android:text="Jiang Wu"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Developer"/>
+                            android:text="Developer" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="napianhai6631@gmail.com"/>
+                            android:text="napianhai6631@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -204,35 +227,40 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_parash"/>
+                        android:src="@drawable/picture_developers_parash" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Parash Kc"/>
+                            android:text="Parash Kc"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Data Collector"/>
+                            android:text="Data Collector" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="parashkc.26@gmail.com"/>
+                            android:text="parashkc.26@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -240,39 +268,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
                     android:gravity="left"
-                    android:layout_marginBottom="20dp">
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/picture_developers_mohan"/>
+                        android:src="@drawable/picture_developers_mohan" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
                             android:fontFamily="@font/source_sans_pro_black"
-                            android:text="Mohan Kumar"/>
+                            android:text="Mohan Kumar"
+                            android:textColor="@color/black" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Data Collector"/>
+                            android:text="Data Collector" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="nrmhnkumar@gmail.com"/>
+                            android:text="nrmhnkumar@gmail.com" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>
