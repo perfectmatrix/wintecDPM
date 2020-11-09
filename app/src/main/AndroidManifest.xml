@@ -14,12 +14,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.shared.TutorialPart2"></activity>
         <activity android:name=".ui.shared.TutorialPart1" />
-        <activity android:name=".ui.manager.manage_students.ManageStudentListFragment" />
         <activity android:name=".ui.manager.ManagerLogin" />
         <activity
             android:name=".ui.manager.ManagerHome"
             android:label="Manager"
-            android:parentActivityName=".ui.shared.RoleSelectionActivity" />
+            android:parentActivityName=".ui.shared.RoleSelectionActivity"
+            android:theme="@style/AppThemeManager"/>
         <activity
             android:name=".ui.student.StudentHome"
             android:label="Student"

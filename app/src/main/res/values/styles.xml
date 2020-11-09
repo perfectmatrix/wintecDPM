@@ -1,16 +1,9 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="BottomNavigation">
-        <item name="itemBackground">@color/colorPrimary</item>
-        <item name="itemIconTint">@color/black</item>
-        <item name="itemTextColor">@color/black</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -18,6 +11,17 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppThemeManager" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/managerBlack</item>
+        <item name="colorPrimaryDark">@color/managerBlack</item>
+        <item name="colorAccent">@color/managerBlack</item>
+    </style>
+
+    <style name="BottomNavigation">
+        <item name="itemBackground">@color/colorPrimary</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemTextColor">@color/black</item>
+    </style>
 
     <style name="BottomNavTablet">
         <item name="android:textSize">0sp</item>
