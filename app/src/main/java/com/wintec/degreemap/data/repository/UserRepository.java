@@ -7,19 +7,28 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.wintec.degreemap.data.firebaselivedata.CourseDetailsLiveData;
 import com.wintec.degreemap.data.firebaselivedata.UserDetailsLiveData;
+import com.wintec.degreemap.data.firebaselivedata.UserListLiveData;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.util.FirebaseUtils;
 
 public class UserRepository {
     private static UserRepository userRepository;
+    private UserListLiveData userList;
 
     public static UserRepository getInstance() {
         if (userRepository == null) {
             userRepository = new UserRepository();
         }
         return userRepository;
+    }
+
+    public UserListLiveData getUserList() {
+        if (userList == null) {
+            userList = new UserListLiveData(FirebaseUtils.getUserRef());
+            return userList;
+        }
+        return userList;
     }
 
     public UserDetailsLiveData getUserDetails(String userKey) {

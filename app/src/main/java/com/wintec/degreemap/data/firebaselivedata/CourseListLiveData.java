@@ -4,8 +4,6 @@ import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.wintec.degreemap.data.model.Course;
@@ -16,7 +14,7 @@ import java.util.List;
 public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
     private final Query query;
     private final CourseValueEventListener listener = new CourseValueEventListener();
-    private List<Course> mCourseList;
+    private List<Course> courseList;
 
     public CourseListLiveData(Query q) {
         this.query = q;
@@ -37,7 +35,7 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            mCourseList = new ArrayList<>();
+            courseList = new ArrayList<>();
             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                 ArrayList<String> coRequisite = new ArrayList<>();
                 if (snapshot.child("coRequisite").getValue() != null) {
@@ -72,9 +70,9 @@ public class CourseListLiveData extends FirebaseBaseLiveData<List<Course>> {
                         snapshot.child("url").getValue(String.class),
                         snapshot.child("year").getValue(Integer.class));
 
-                mCourseList.add(course);
+                courseList.add(course);
             }
-            setValue(mCourseList);
+            setValue(courseList);
         }
 
         @Override

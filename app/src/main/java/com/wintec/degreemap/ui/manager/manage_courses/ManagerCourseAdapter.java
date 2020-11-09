@@ -21,14 +21,13 @@ import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
 import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 
 public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdapter.CourseViewHolder> {
-    private List<Course> mCourseList;
-    private Course mSelectedCourse;
-    private String mSelectedPathway;
-    private OnItemClickListener mListener;
+    private List<Course> courseList;
+    private String selectedPathway;
+    private OnItemClickListener listener;
 
     public ManagerCourseAdapter(String selectedPathway) {
         super();
-        mSelectedPathway = selectedPathway;
+        this.selectedPathway = selectedPathway;
     }
 
     public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -48,17 +47,17 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
 
         @Override
         public void onClick(View view) {
-            if (mListener != null) {
+            if (listener != null) {
                 int position = getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION) {
-                    mListener.onItemClick(position);
+                    listener.onItemClick(position);
                 }
             }
         }
     }
 
     public void setCourses(List<Course> courseList) {
-        this.mCourseList = courseList;
+        this.courseList = courseList;
         notifyDataSetChanged();
     }
 
@@ -72,11 +71,11 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        mSelectedCourse = mCourseList.get(position);
-        holder.courseCodeTextView.setText(mSelectedCourse.getCode());
-        holder.courseNameTextView.setText(mSelectedCourse.getLongName());
+        Course selectedCourse = courseList.get(position);
+        holder.courseCodeTextView.setText(selectedCourse.getCode());
+        holder.courseNameTextView.setText(selectedCourse.getLongName());
 
-        switch (mSelectedPathway) {
+        switch (selectedPathway) {
             case PATHWAY_NETWORK_ENGINEERING:
                 holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_purple);
                 break;
@@ -94,7 +93,7 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
 
     @Override
     public int getItemCount() {
-        return mCourseList == null ? 0 : mCourseList.size();
+        return courseList == null ? 0 : courseList.size();
     }
 
     public interface OnItemClickListener {
@@ -102,6 +101,6 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
+        this.listener = listener;
     }
 }

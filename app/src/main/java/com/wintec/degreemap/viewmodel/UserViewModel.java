@@ -4,8 +4,8 @@ import android.net.Uri;
 
 import androidx.lifecycle.ViewModel;
 
-import com.google.firebase.storage.StorageReference;
 import com.wintec.degreemap.data.firebaselivedata.UserDetailsLiveData;
+import com.wintec.degreemap.data.firebaselivedata.UserListLiveData;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.data.repository.UserRepository;
 
@@ -14,6 +14,10 @@ public class UserViewModel extends ViewModel {
 
     public UserViewModel() {
         this.userRepository = UserRepository.getInstance();
+    }
+
+    public UserListLiveData getUserList() {
+        return userRepository.getUserList();
     }
 
     public UserDetailsLiveData getUserDetails(String userKey) {

@@ -18,6 +18,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
@@ -37,9 +38,7 @@ import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class ManagerCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener {
-    private RecyclerView recyclerView;
     private ManagerCourseAdapter managerCourseAdapter;
-    private RecyclerView.LayoutManager layoutManager;
     private String selectedPathway;
     private List<Course> filteredCourseList;
 
@@ -56,15 +55,17 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
         spinner.setOnItemSelectedListener(this);
 
         selectedPathway = getArguments().getString(BUNDLE_PATHWAY);
+
         managerCourseAdapter = new ManagerCourseAdapter(selectedPathway);
+        managerCourseAdapter.setOnItemClickListener(this);
 
         // set recyclerView data
-        recyclerView = view.findViewById(R.id.recyclerview_all_courses);
+        LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerview_all_courses);
+
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(managerCourseAdapter);
-        managerCourseAdapter.setOnItemClickListener(this);
 
         // set pathway title and background color
         setPathwayTextViewFormatting(view, selectedPathway);
