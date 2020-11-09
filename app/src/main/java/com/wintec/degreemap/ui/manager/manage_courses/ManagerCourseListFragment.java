@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,11 +37,11 @@ import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
 public class ManagerCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener {
-    private RecyclerView mRecyclerView;
-    private ManagerCourseAdapter mManagerCourseAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private String mSelectedPathway;
-    private List<Course> mFilteredCourseList;
+    private RecyclerView recyclerView;
+    private ManagerCourseAdapter managerCourseAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private String selectedPathway;
+    private List<Course> filteredCourseList;
 
     @Nullable
     @Override
@@ -56,19 +55,19 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        mSelectedPathway = getArguments().getString(BUNDLE_PATHWAY);
-        mManagerCourseAdapter = new ManagerCourseAdapter(mSelectedPathway);
+        selectedPathway = getArguments().getString(BUNDLE_PATHWAY);
+        managerCourseAdapter = new ManagerCourseAdapter(selectedPathway);
 
         // set recyclerView data
-        mRecyclerView = view.findViewById(R.id.recyclerview_all_courses);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(view.getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mManagerCourseAdapter);
-        mManagerCourseAdapter.setOnItemClickListener(this);
+        recyclerView = view.findViewById(R.id.recyclerview_all_courses);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(managerCourseAdapter);
+        managerCourseAdapter.setOnItemClickListener(this);
 
         // set pathway title and background color
-        setPathwayTextViewFormatting(view, mSelectedPathway);
+        setPathwayTextViewFormatting(view, selectedPathway);
 
         return view;
     }
@@ -86,13 +85,13 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
             @Override
             public void onChanged(List<Course> courseList) {
                 if (courseList != null) {
-                    mFilteredCourseList = new ArrayList<>();
+                    filteredCourseList = new ArrayList<>();
 
                     switch (position) {
                         case ALL_COURSE: {
                             for (Course course : courseList) {
-                                if (course.getPathway().contains(mSelectedPathway) || course.getPathway().contains(PATHWAY_CORE))
-                                    mFilteredCourseList.add(course);
+                                if (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE))
+                                    filteredCourseList.add(course);
                             }
                             break;
                         }
@@ -100,13 +99,13 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getPathway().contains(mSelectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
-                                    mFilteredCourseList.add(course);
+                                if (course.getYear() == position && (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
+                                    filteredCourseList.add(course);
                             }
                             break;
                         }
                     }
-                    mManagerCourseAdapter.setCourses(mFilteredCourseList);
+                    managerCourseAdapter.setCourses(filteredCourseList);
                 }
             }
         });
@@ -119,7 +118,8 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_CODE, mFilteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);

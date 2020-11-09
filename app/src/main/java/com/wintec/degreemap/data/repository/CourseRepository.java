@@ -52,4 +52,9 @@ public class CourseRepository {
             courseRef.child(courseCode).child("coRequisite").child(moduleCode).setValue(true);
         }
     }
+
+    public void deleteCourse(String courseCode) {
+        DatabaseReference courseRef = FirebaseUtils.getCourseRef();
+        courseRef.child(courseCode).child("isActive").setValue(false);
+    }
 }

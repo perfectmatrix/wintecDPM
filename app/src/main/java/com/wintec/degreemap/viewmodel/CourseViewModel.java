@@ -31,4 +31,8 @@ public class CourseViewModel extends ViewModel {
                            ArrayList<String> coRequisite) {
         courseRepository.saveCourse(courseCode, course, pathway, preRequisite, coRequisite);
     }
+
+    public void deleteCourse(String courseCode) {
+        courseRepository.deleteCourse(courseCode);
+    }
 }

@@ -47,6 +47,9 @@
         <action
             android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment"
             app:destination="@id/managerCourseDetailsEditFragment" />
+        <action
+            android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseListFragment"
+            app:destination="@id/managerCourseListFragment" />
     </fragment>
     <fragment
         android:id="@+id/managerCourseDetailsEditFragment"

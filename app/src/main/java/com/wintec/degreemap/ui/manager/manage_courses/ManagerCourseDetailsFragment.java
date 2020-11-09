@@ -21,10 +21,12 @@ import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
+import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
 import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class ManagerCourseDetailsFragment extends Fragment implements View.OnClickListener {
     private FragmentManagerCourseDetailsBinding binding;
+    String selectedPathway;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
         view.findViewById(R.id.btn_courseDetails_delete).setOnClickListener(this);
 
         String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
+        selectedPathway = getArguments().getString(BUNDLE_PATHWAY);
 
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.getCourseDetails(courseCode).observe(getViewLifecycleOwner(), new Observer<Course>() {
@@ -60,6 +63,20 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
                 NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment, bundle);
                 break;
+            case R.id.btn_courseDetails_delete:
+                deleteData(view);
+                break;
         }
+    }
+
+    private void deleteData(View view) {
+        CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
+        courseViewModel.deleteCourse(binding.getCourse().getCode());
+
+        Bundle bundle = new Bundle();
+        bundle.putString(BUNDLE_PATHWAY, selectedPathway);
+
+        NavController navController = Navigation.findNavController(view);
+        navController.navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseListFragment, bundle);
     }
 }
