@@ -18,26 +18,24 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
+                android:gravity="center"
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/source_sans_pro_semibold"
                 android:text="My Details"
-                android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="40sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
-
-
+                android:padding="60dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_sans_pro_semibold"
                     android:text="Record your details"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="15sp"/>
 
@@ -48,13 +46,12 @@
                     android:layout_gravity="center_horizontal"
                     android:text="Profile Image"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/details_avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/icon_profile_edit_image"/>
 
@@ -65,7 +62,7 @@
                     android:text="ID"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_id"
@@ -73,7 +70,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- First Name -->
@@ -83,7 +81,7 @@
                     android:text="First Name"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_first_name"
@@ -91,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- Last Name -->
@@ -101,7 +100,7 @@
                     android:text="Last Name"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_last_name"
@@ -109,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- Phone Number -->
@@ -119,7 +119,7 @@
                     android:text="Phone Number"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_phone"
@@ -127,7 +127,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- Email -->
@@ -137,7 +138,7 @@
                     android:text="Email"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_email"
@@ -145,7 +146,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- Address -->
@@ -155,7 +157,7 @@
                     android:text="Address"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/details_address"
@@ -163,7 +165,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_with_border"
                     android:padding="6dp"
-                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"/>
 
                 <!-- Gender -->
@@ -173,30 +176,34 @@
                     android:text="Gender"
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:textSize="18sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"/>
 
                 <CheckBox android:id="@+id/checkbox_nothing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prefer not to say"
+                    android:textSize="28sp"
                     android:onClick="onCheckboxClicked"/>
                 <CheckBox android:id="@+id/checkbox_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
+                    android:textSize="28sp"
                     android:onClick="onCheckboxClicked"/>
                 <CheckBox android:id="@+id/checkbox_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
+                    android:textSize="28sp"
                     android:onClick="onCheckboxClicked"/>
                 <CheckBox android:id="@+id/checkbox_diverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gender diverse"
+                    android:textSize="28sp"
                     android:onClick="onCheckboxClicked"
-                    android:layout_marginBottom="30sp"/>
+                    android:layout_marginBottom="60dp"/>
 
                 <!-- Buttons -->
                 <LinearLayout
@@ -207,17 +214,21 @@
                     android:layout_marginBottom="40dp">
                     <Button
                         android:id="@+id/btn_details_save"
-                        android:layout_width="150dp"
+                        android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:text="Save"
+                        android:padding="20dp"
+                        android:textSize="28sp"
                         android:textColor="@color/black"
                         android:background="@drawable/btn_wintec_yellow"
                         android:fontFamily="@font/source_sans_pro"/>
                     <Button
                         android:onClick="jumpTo"
                         android:id="@+id/btn_details_cancel"
-                        android:layout_width="150dp"
+                        android:layout_width="250dp"
                         android:layout_height="match_parent"
+                        android:textSize="28sp"
+                        android:padding="20dp"
                         android:layout_marginLeft="20dp"
                         android:text="Cancel"
                         android:textColor="#fff"

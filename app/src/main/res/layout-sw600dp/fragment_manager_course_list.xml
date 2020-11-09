@@ -14,16 +14,16 @@
         <TextView
             android:id="@+id/pathwayTextView"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/source_sans_pro"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:background="@drawable/bg_with_top_bottom_line_yellow"
             android:gravity="center"
             android:orientation="vertical">
@@ -47,8 +47,8 @@
                     android:id="@+id/recyclerview_all_courses"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="20dp"
-                    android:padding="8dp"
+                    android:layout_marginBottom="30dp"
+                    android:padding="16dp"
                     android:scrollbars="vertical" />
             </LinearLayout>
         </ScrollView>
@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
+        android:layout_margin="30dp"
         android:contentDescription="Add Course"
         app:borderWidth="0dp"
         android:src="@drawable/ic_add_white" />

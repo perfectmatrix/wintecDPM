@@ -81,13 +81,13 @@ public class ManagerCourseAdapter extends RecyclerView.Adapter<ManagerCourseAdap
                 holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_purple);
                 break;
             case PATHWAY_WEB_DEVELOPMENT:
-                holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_blue);
+                holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_red);
                 break;
             case PATHWAY_DATABASE_ARCHITECTURE:
                 holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_green);
                 break;
             case PATHWAY_SOFTWARE_ENGINEERING:
-                holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_red);
+                holder.courseCardLayout.setBackgroundResource(R.drawable.bg_course_item_blue);
                 break;
         }
     }

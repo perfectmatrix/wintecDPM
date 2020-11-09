@@ -16,18 +16,19 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:text="Developers"
+                android:gravity="center"
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/source_sans_pro_semibold"
-                android:padding="16dp"
-                android:gravity="center"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="40sp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="50dp">
+
                 <!-- Group Picture -->
                 <TextView
                     android:layout_width="match_parent"
@@ -35,12 +36,12 @@
                     android:text="Perfect Matrix"
                     android:fontFamily="@font/source_sans_pro_black"
                     android:textAlignment="center"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"/>
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:src="@drawable/picture_developers_team"/>
 
                 <!-- Team member -->
@@ -50,8 +51,8 @@
                     android:text="Team Members"
                     android:fontFamily="@font/source_sans_pro_black"
                     android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:layout_marginTop="20dp"
+                    android:textSize="30sp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginBottom="20dp"
                     android:textColor="@color/black"/>
 
@@ -63,8 +64,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_marinel"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -76,17 +77,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Marinel Basa"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="Developer"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="marinelbasa@gmail.com"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -99,8 +103,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_jingyi"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -112,17 +116,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Jingyi Niu"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="Developer"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="niu.jy1203@gmail.com"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -135,8 +142,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_subash"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -148,17 +155,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Subash Karki"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="UX/UI Designer"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="karkisubash122@gmail.com"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -171,8 +181,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_jiang"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -184,17 +194,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Jiang Wu"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Developer"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
+                            android:textSize="24sp"
                             android:text="napianhai6631@gmail.com"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -207,8 +220,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_parash"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -220,16 +233,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Parash Kc"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Data Collector"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="parashkc.26@gmail.com"/>
                     </LinearLayout>
@@ -243,8 +259,8 @@
                     android:gravity="left"
                     android:layout_marginBottom="20dp">
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:src="@drawable/picture_developers_mohan"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -256,16 +272,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
+                            android:textSize="28sp"
                             android:fontFamily="@font/source_sans_pro_black"
                             android:text="Mohan Kumar"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Data Collector"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="24sp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="nrmhnkumar@gmail.com"/>
                     </LinearLayout>
