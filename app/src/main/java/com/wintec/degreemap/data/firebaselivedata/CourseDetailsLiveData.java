@@ -10,7 +10,7 @@ import com.wintec.degreemap.data.model.Course;
 
 import java.util.ArrayList;
 
-public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course>  {
+public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course> {
     private final DatabaseReference reference;
     private final CourseValueEventListener listener = new CourseValueEventListener();
 
@@ -29,40 +29,42 @@ public class CourseDetailsLiveData extends FirebaseBaseLiveData<Course>  {
 
         @Override
         public void onDataChange(DataSnapshot snapshot) {
-            ArrayList<String> coRequisite = new ArrayList<>();
-            if (snapshot.child("coRequisite").getValue() != null) {
-                for (DataSnapshot preReq : snapshot.child("coRequisite").getChildren()) {
-                    coRequisite.add(preReq.getKey());
+            if (snapshot.getValue() != null) {
+                ArrayList<String> coRequisite = new ArrayList<>();
+                if (snapshot.child("coRequisite").getValue() != null) {
+                    for (DataSnapshot preReq : snapshot.child("coRequisite").getChildren()) {
+                        coRequisite.add(preReq.getKey());
+                    }
                 }
-            }
 
-            ArrayList<String> preRequisite = new ArrayList<>();
-            if (snapshot.child("preRequisite").getValue() != null) {
-                for (DataSnapshot preReq : snapshot.child("preRequisite").getChildren()) {
-                    preRequisite.add(preReq.getKey());
+                ArrayList<String> preRequisite = new ArrayList<>();
+                if (snapshot.child("preRequisite").getValue() != null) {
+                    for (DataSnapshot preReq : snapshot.child("preRequisite").getChildren()) {
+                        preRequisite.add(preReq.getKey());
+                    }
                 }
-            }
 
-            ArrayList<String> pathway = new ArrayList<>();
-            if (snapshot.child("pathway").getValue() != null) {
-                for (DataSnapshot path : snapshot.child("pathway").getChildren()) {
-                    pathway.add(path.getKey());
+                ArrayList<String> pathway = new ArrayList<>();
+                if (snapshot.child("pathway").getValue() != null) {
+                    for (DataSnapshot path : snapshot.child("pathway").getChildren()) {
+                        pathway.add(path.getKey());
+                    }
                 }
+
+                Course course = new Course(snapshot.getKey(),
+                        coRequisite,
+                        snapshot.child("credit").getValue(Integer.class),
+                        snapshot.child("description").getValue(String.class),
+                        snapshot.child("longName").getValue(String.class),
+                        snapshot.child("level").getValue(Integer.class),
+                        preRequisite,
+                        snapshot.child("semester").getValue(Integer.class),
+                        pathway,
+                        snapshot.child("url").getValue(String.class),
+                        snapshot.child("year").getValue(Integer.class));
+
+                setValue(course);
             }
-
-            Course course = new Course(snapshot.getKey(),
-                    coRequisite,
-                    snapshot.child("credit").getValue(Integer.class),
-                    snapshot.child("description").getValue(String.class),
-                    snapshot.child("longName").getValue(String.class),
-                    snapshot.child("level").getValue(Integer.class),
-                    preRequisite,
-                    snapshot.child("semester").getValue(Integer.class),
-                    pathway,
-                    snapshot.child("url").getValue(String.class),
-                    snapshot.child("year").getValue(Integer.class));
-
-            setValue(course);
         }
 
         @Override
