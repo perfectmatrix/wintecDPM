@@ -11,10 +11,10 @@
 
     <!-- Circular Image-->
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/picture_gallagher_student" />
+        android:layout_gravity="center_vertical" />
 
     <!-- Student Info -->
     <LinearLayout
@@ -32,7 +32,6 @@
             android:layout_toEndOf="@+id/imageView"
             android:fontFamily="@font/source_sans_pro"
             android:gravity="center_vertical"
-            android:text="Student Name"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -44,7 +43,6 @@
             android:layout_toEndOf="@+id/imageView"
             android:fontFamily="@font/source_sans_pro"
             android:gravity="center_vertical"
-            android:text="Student ID"
             android:textColor="@color/gray"
             android:textSize="16sp" />
     </LinearLayout>
