@@ -33,19 +33,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/managerBackgroundColor"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
-            android:fontFamily="@font/source_sans_pro"
-            android:text="Course Details"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:layout_marginBottom="10dp"
+            android:background="@color/managerBlack"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:padding="16dp"
+            android:text="Edit Course Details"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -61,206 +62,142 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="26dp"
-                    android:background="@drawable/bg_rounded_light_gray"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <!-- Row1: Module Code-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
                         <TextView
-                            android:layout_width="160dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="Module Code"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Code"
                             android:textColor="@color/black"
                             android:textSize="20sp"
+                            android:layout_marginBottom="5dp"
                             android:textStyle="bold" />
 
                         <EditText
                             android:id="@+id/courseCodeEditText"
+                            android:text="@{course.code}"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="@={course.code}"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_manager_course"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp" />
+
 
                     <!-- Row2: Module Name-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
+                   <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="Module Name"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Name"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                       android:layout_marginBottom="5dp"/>
 
                         <EditText
                             android:id="@+id/courseLongNameEditText"
+                            android:text="@{course.longName}"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="@={course.longName}"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_manager_course"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp" />
+
 
                     <!-- Row3: Module Level-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="Module Level"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Level"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
                         <EditText
                             android:id="@+id/courseLevelEditText"
+                            android:text="@{String.valueOf(course.level)}"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:inputType="number"
-                            android:text="@={`` + course.level}"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_manager_course"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp" />
+
 
                     <!-- Row4: Module Credit Level-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
+                    <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
-                            android:text="Module Credit Level"
+                            android:text="Credit Level"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
                         <EditText
                             android:id="@+id/courseCreditEditText"
+                            android:text="@{String.valueOf(course.credit)}"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="@={ `` + course.credit}"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_manager_course"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-
-                    <!-- Module Url -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="160dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="URL"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/courseUrlTextView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="@={course.url}"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp" />
 
                     <!-- Row5: Pre-requisite -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
+                   <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:text="Pre-requisite"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
                         <MultiAutoCompleteTextView
                             android:id="@+id/preRequisiteAutocomplete"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:completionThreshold="1"
+                            android:background="@drawable/bg_manager_course"
                             android:hint="Add Pre-requisite"
-                            android:text="@{ DataBindingUtils.arrayToAutoComplete(course.preRequisite) }" />
-
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"/>
 
                     <!-- Row6: Co-requisite -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="30dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
+                   <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/source_sans_pro"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:text="Co-requisite"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
                         <MultiAutoCompleteTextView
                             android:id="@+id/coRequisiteAutocomplete"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:completionThreshold="1"
                             android:hint="Add Co-requisite"
-                            android:text="@{DataBindingUtils.arrayToAutoComplete(course.coRequisite)}" />
-                    </LinearLayout>
+                            android:background="@drawable/bg_manager_course"
+                            android:layout_marginBottom="10dp"/>
 
                     <!-- Row7: Pathway -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
+                    <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/source_sans_pro"
@@ -303,20 +240,14 @@
                                 android:checked="@={isPathwaySoftware}"
                                 android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
                         </LinearLayout>
-                    </LinearLayout>
+
 
                     <!-- Row8: Module Description -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-                        <TextView
+                   <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/source_sans_pro"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:text="Module Description"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -324,14 +255,15 @@
 
                         <EditText
                             android:id="@+id/courseDescriptionEditText"
+                            android:text="@{course.description}"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
-                            android:background="@drawable/bg_with_border"
-                            android:fontFamily="@font/source_sans_pro"
-                            android:text="@={course.description}"
+                            android:background="@drawable/bg_manager_course"
+                            android:fontFamily="@font/source_sans_pro_semibold"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp" />
+
 
                 </LinearLayout>
 

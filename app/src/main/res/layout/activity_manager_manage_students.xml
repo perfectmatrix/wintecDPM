@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.manager.manage_students.ManageStudentsHome"
-    android:background="@color/managerBackgroundColor">
+    tools:context=".ui.manager.manage_students.ManageStudentsHome" >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Manage Students"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/source_sans_pro"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+        android:background="@color/managerBlack"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

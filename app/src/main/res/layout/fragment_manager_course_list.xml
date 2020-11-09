@@ -15,11 +15,11 @@
             android:id="@+id/pathwayTextView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
-            android:fontFamily="@font/source_sans_pro"
+            android:background="@color/managerBlack"
+            android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"

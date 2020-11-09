@@ -12,14 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/managerBlack">
-        <ImageView
-            android:id="@+id/back_arrow"
-            android:onClick="navigateTo"
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_arrow_back"
-            android:layout_marginLeft="25dp"
-            app:tint="@color/white" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -30,7 +23,10 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
 
+
         <TextView
+            android:id="@+id/back_arrow"
+            android:onClick="navigateTo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/source_sans_pro_semibold"
@@ -65,10 +61,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_courses"
-        app:cardBackgroundColor="@color/managerYellow"
         app:cardCornerRadius="14dp"
         android:layout_width="300dp"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:layout_margin="8dp"
         android:onClick="navigateTo">
 
@@ -76,40 +71,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/ic_manager_courses">
 
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    app:tint="@color/managerBlack"
-                    android:layout_width="98dp"
-                    android:layout_height="98dp"
-                    android:background="@drawable/bg_circle_managerwhite"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_courses" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="130dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text="Courses"
+                    android:text="Manage Courses"
                     android:textAlignment="center"
                     android:textColor="@color/managerBlack"
                     android:textSize="25sp" />
             </LinearLayout>
 
             <ImageView
-                app:tint="#fff"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_circle_black_transparent"
+                app:tint="#000"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="135dp"
                 android:padding="16dp"
                 android:src="@drawable/ic_arrow_right" />
         </LinearLayout>
@@ -117,10 +105,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_students"
-        app:cardBackgroundColor="@color/managerYellow"
         app:cardCornerRadius="14dp"
         android:layout_width="300dp"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:layout_margin="8dp"
         android:onClick="navigateTo">
 
@@ -128,7 +115,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/ic_manager_student">
 
             <LinearLayout
                 android:layout_width="200dp"
@@ -137,31 +125,23 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    app:tint="@color/managerBlack"
-                    android:layout_width="98dp"
-                    android:layout_height="98dp"
-                    android:background="@drawable/bg_circle_managerwhite"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_school" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="130dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text="Students"
-                    android:textAlignment="center"
+                    android:text="Manage Students"
                     android:textColor="@color/managerBlack"
                     android:textSize="25sp" />
             </LinearLayout>
 
             <ImageView
-                app:tint="#fff"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_circle_black_transparent"
+                app:tint="#000"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="135dp"
                 android:padding="16dp"
                 android:src="@drawable/ic_arrow_right" />
         </LinearLayout>
