@@ -95,11 +95,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_web"
+            android:id="@+id/card_software"
             android:layout_width="140dp"
             android:layout_height="180dp"
             android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/red"
+            app:cardBackgroundColor="@color/blue"
             app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/bg_circle_white"
-                    android:src="@drawable/ic_pathway_web"
+                    android:src="@drawable/ic_pathway_software"
                     android:padding="5dp"/>
 
                 <TextView
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text="Web\nDevelopment"
+                    android:text="Software\nEngineering"
                     android:textAlignment="center"
                     android:textColor="@color/lightGray"
                     android:textSize="20dp" />
@@ -168,11 +168,11 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_software"
+            android:id="@+id/card_web"
             android:layout_width="140dp"
             android:layout_height="180dp"
             android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/blue"
+            app:cardBackgroundColor="@color/red"
             app:cardCornerRadius="14dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/bg_circle_white"
-                    android:src="@drawable/ic_pathway_software"
+                    android:src="@drawable/ic_pathway_web"
                     android:padding="5dp"/>
 
                 <TextView
@@ -191,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text="Software\nEngineering"
+                    android:text="Web\nDevelopment"
                     android:textAlignment="center"
                     android:textColor="@color/lightGray"
                     android:textSize="20dp" />

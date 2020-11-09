@@ -11,22 +11,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/managerBlack">
         <ImageView
             android:id="@+id/back_arrow"
             android:onClick="navigateTo"
-            android:layout_width="30dp"
+            android:layout_width="20dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_arrow_back"
-            android:layout_marginLeft="10dp"
-            app:tint="@color/black" />
+            android:layout_marginLeft="25dp"
+            app:tint="@color/white" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="center"
             android:text="Dashboard"
-            android:textSize="24sp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="right"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="20dp"
+            android:text="Logout"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
@@ -44,14 +58,14 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/source_sans_pro_semibold"
         android:text="Let's get started"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_courses"
-        app:cardBackgroundColor="@color/blue"
+        app:cardBackgroundColor="@color/managerYellow"
         app:cardCornerRadius="14dp"
         android:layout_width="300dp"
         android:layout_height="180dp"
@@ -67,15 +81,15 @@
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    app:tint="@color/black"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/bg_circle_white"
+                    app:tint="@color/managerBlack"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/bg_circle_managerwhite"
                     android:padding="16dp"
                     android:src="@drawable/ic_courses" />
 
@@ -83,11 +97,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/source_sans_pro"
-                    android:text="Manage Courses"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Courses"
                     android:textAlignment="center"
-                    android:textColor="@color/lightGray"
-                    android:textSize="20sp" />
+                    android:textColor="@color/managerBlack"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <ImageView
@@ -103,7 +117,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_students"
-        app:cardBackgroundColor="@color/green"
+        app:cardBackgroundColor="@color/managerYellow"
         app:cardCornerRadius="14dp"
         android:layout_width="300dp"
         android:layout_height="180dp"
@@ -119,15 +133,15 @@
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    app:tint="@color/black"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/bg_circle_white"
+                    app:tint="@color/managerBlack"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/bg_circle_managerwhite"
                     android:padding="16dp"
                     android:src="@drawable/ic_school" />
 
@@ -135,11 +149,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/source_sans_pro"
-                    android:text="Manage Students"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Students"
                     android:textAlignment="center"
-                    android:textColor="@color/lightGray"
-                    android:textSize="20sp" />
+                    android:textColor="@color/managerBlack"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <ImageView
