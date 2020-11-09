@@ -38,14 +38,14 @@ public class UserListLiveData extends FirebaseBaseLiveData<List<User>> {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             userList = new ArrayList<>();
-
-            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                User user = snapshot.getValue(User.class);
-                user.setKey(snapshot.getKey());
-                userList.add(user);
+            if (dataSnapshot != null) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    User user = snapshot.getValue(User.class);
+                    user.setKey(snapshot.getKey());
+                    userList.add(user);
+                }
+                setValue(userList);
             }
-            
-            setValue(userList);
         }
 
         @Override
