@@ -38,10 +38,11 @@
                     android:textSize="20sp"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"/>
+
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/picture_developers_team"/>
+                    android:layout_height="250dp"
+                    android:src="@drawable/picture_developers_team" />
 
                 <!-- Team member -->
                 <TextView
