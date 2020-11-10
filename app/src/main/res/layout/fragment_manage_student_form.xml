@@ -22,8 +22,8 @@
             android:layout_height="60dp"
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
-            android:text="Student Details"
             android:gravity="center"
+            android:text="Student Details"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -447,24 +447,29 @@
                         android:id="@+id/btn_details_save"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_yellow"
-                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:fontFamily="@font/source_sans_pro"
                         android:text="Save"
-                        android:textColor="@color/black" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/btn_details_cancel"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_margin="8dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_wintec_gray"
-                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:background="@drawable/btn_wintec_yellow"
+                        android:fontFamily="@font/source_sans_pro"
                         android:onClick="navigateTo"
                         android:text="Cancel"
-                        android:textColor="#fff" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
