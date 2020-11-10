@@ -19,7 +19,6 @@ import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentManageStudentDetailsBinding;
 import com.wintec.degreemap.viewmodel.UserViewModel;
 
-import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
 
 public class ManageStudentDetailsFragment extends Fragment implements View.OnClickListener {
@@ -87,7 +86,16 @@ public class ManageStudentDetailsFragment extends Fragment implements View.OnCli
                 navController.navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentFormFragment, bundle);
                 break;
             case R.id.btn_student_delete:
+                deleteData(view);
                 break;
         }
+    }
+
+    private void deleteData(View view) {
+        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.deleteUser(binding.getUser().getKey());
+
+        NavController navController = Navigation.findNavController(view);
+        navController.navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentListFragment);
     }
 }
