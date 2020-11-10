@@ -66,7 +66,7 @@ public final class Helpers {
 
     public static String getGenderLabel(String gender) {
         if (gender == null || gender.isEmpty())
-            return "Not specified";
+            return "(empty)";
 
         switch (gender) {
             case GENDER_NOT_SAY:
@@ -78,7 +78,7 @@ public final class Helpers {
             case GENDER_MALE:
                 return GENDER_MALE_LABEL;
             default:
-                return "Not specified";
+                return "(empty)";
         }
     }
 }

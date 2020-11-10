@@ -2,11 +2,17 @@ package com.wintec.degreemap.ui.manager.manage_students;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Patterns;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,37 +24,24 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.provider.MediaStore;
-import android.util.Patterns;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputLayout;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
-import com.wintec.degreemap.databinding.FragmentContactDetailBinding;
 import com.wintec.degreemap.databinding.FragmentManageStudentFormBinding;
-import com.wintec.degreemap.ui.student.student_profile.ContactDetailFragment;
 import com.wintec.degreemap.util.Helpers;
 import com.wintec.degreemap.viewmodel.UserViewModel;
 
 import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
-import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
 import static com.wintec.degreemap.util.Constants.GENDER_DIVERSE;
 import static com.wintec.degreemap.util.Constants.GENDER_FEMALE;
 import static com.wintec.degreemap.util.Constants.GENDER_MALE;
 import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
-import static com.wintec.degreemap.util.Constants.KEY_USER_KEY;
 import static com.wintec.degreemap.util.Constants.REQUEST_PICK_IMAGE;
 import static com.wintec.degreemap.util.Constants.REQUEST_STORAGE_PERMISSION;
-import static com.wintec.degreemap.util.Constants.SHARED_PREFERENCES;
 
 public class ManageStudentFormFragment extends Fragment implements View.OnClickListener {
     private FragmentManageStudentFormBinding binding;

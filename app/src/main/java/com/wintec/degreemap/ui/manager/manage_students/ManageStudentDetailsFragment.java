@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.wintec.degreemap.R;
@@ -17,9 +19,10 @@ import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentManageStudentDetailsBinding;
 import com.wintec.degreemap.viewmodel.UserViewModel;
 
+import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
 
-public class ManageStudentDetailsFragment extends Fragment {
+public class ManageStudentDetailsFragment extends Fragment implements View.OnClickListener {
     private FragmentManageStudentDetailsBinding binding;
     private ImageView profileImage;
     private View view;
@@ -33,6 +36,9 @@ public class ManageStudentDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manage_student_details, container, false);
         view = binding.getRoot();
+
+        view.findViewById(R.id.btn_student_edit).setOnClickListener(this);
+        view.findViewById(R.id.btn_student_delete).setOnClickListener(this);
 
         profileImage = view.findViewById(R.id.details_avatar);
 
@@ -68,5 +74,20 @@ public class ManageStudentDetailsFragment extends Fragment {
     private void setEmptyUser() {
         User user = new User("", "", "", "", "", "", "", "", "");
         binding.setUser(user);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_student_edit:
+                Bundle bundle = new Bundle();
+                bundle.putString(BUNDLE_USER_KEY, binding.getUser().getKey());
+
+                NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentFormFragment, bundle);
+                break;
+            case R.id.btn_student_delete:
+                break;
+        }
     }
 }
