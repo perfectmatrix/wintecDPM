@@ -181,7 +181,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:text="@{user.address.empty ? `(empty)` : user.address}"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <!-- Gender -->
 
