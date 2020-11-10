@@ -28,179 +28,185 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:gravity="center"
                     android:background="@color/colorPrimary"
                     android:fontFamily="@font/source_sans_pro_semibold"
+                    android:gravity="center"
                     android:text="My Details"
                     android:textColor="@color/black"
                     android:textSize="40sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="60dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
                         android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Record your details"
-                        android:textSize="30sp"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="15sp"/>
+                        android:textSize="30sp" />
 
                     <!-- Avatar -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Profile Image"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Profile Image"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/details_avatar"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/icon_profile_edit_image"/>
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_circle_black"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_profile" />
 
                     <!-- ID -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ID"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black" />
+                        android:text="ID"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
                         android:background="@drawable/bg_with_border"
+                        android:fontFamily="@font/source_sans_pro"
                         android:inputType="number"
                         android:padding="6dp"
-                        android:textSize="24sp"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.key}" />
+                        android:text="@={user.key}"
+                        android:textSize="24sp" />
 
                     <!-- First Name -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="First Name"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="First Name"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_with_border"
-                        android:padding="6dp"
-                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.firstName}" />
+                        android:padding="6dp"
+                        android:text="@={user.firstName}"
+                        android:textSize="24sp" />
 
                     <!-- Last Name -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Name"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Last Name"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_last_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_with_border"
-                        android:padding="6dp"
-                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.lastName}" />
+                        android:padding="6dp"
+                        android:text="@={user.lastName}"
+                        android:textSize="24sp" />
 
                     <!-- Phone Number -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phone Number"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Phone Number"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:background="@drawable/bg_with_border"
-                        android:padding="6dp"
-                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.phone}" />
+                        android:inputType="number"
+                        android:padding="6dp"
+                        android:text="@={user.phone}"
+                        android:textSize="24sp" />
 
                     <!-- Email -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_with_border"
-                        android:padding="6dp"
-                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.email}" />
+                        android:padding="6dp"
+                        android:text="@={user.email}"
+                        android:textSize="24sp" />
 
                     <!-- Address -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Address"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <EditText
                         android:id="@+id/details_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_with_border"
-                        android:padding="6dp"
-                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_with_border"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="@={user.address}" />
+                        android:padding="6dp"
+                        android:text="@={user.address}"
+                        android:textSize="24sp" />
 
                     <!-- Gender -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gender"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/source_sans_pro_semibold"
-                        android:textSize="28sp"
-                        android:textColor="@color/black"/>
+                        android:text="Gender"
+                        android:textColor="@color/black"
+                        android:textSize="28sp" />
 
                     <RadioGroup
                         android:id="@+id/radio_gender"
@@ -213,33 +219,33 @@
                             android:id="@+id/radio_notSay"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="24sp"
                             android:checked="@{user.gender.equals(Constants.GENDER_NOT_SAY)}"
-                            android:text="Prefer not to say" />
+                            android:text="Prefer not to say"
+                            android:textSize="24sp" />
 
                         <RadioButton
                             android:id="@+id/radio_diverse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="24sp"
                             android:checked="@{user.gender.equals(Constants.GENDER_DIVERSE)}"
-                            android:text="Gender diverse" />
+                            android:text="Gender diverse"
+                            android:textSize="24sp" />
 
                         <RadioButton
                             android:id="@+id/radio_male"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="24sp"
                             android:checked="@{user.gender.equals(Constants.GENDER_MALE)}"
-                            android:text="Male" />
+                            android:text="Male"
+                            android:textSize="24sp" />
 
                         <RadioButton
                             android:id="@+id/radio_female"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="24sp"
                             android:checked="@{user.gender.equals(Constants.GENDER_FEMALE)}"
-                            android:text="Female" />
+                            android:text="Female"
+                            android:textSize="24sp" />
                     </RadioGroup>
 
                     <!-- Buttons -->
@@ -254,25 +260,25 @@
                             android:id="@+id/btn_details_save"
                             android:layout_width="250dp"
                             android:layout_height="match_parent"
-                            android:text="Save"
-                            android:padding="20dp"
-                            android:textSize="28sp"
                             android:background="@drawable/btn_wintec_yellow"
                             android:fontFamily="@font/source_sans_pro_semibold"
-                            android:textColor="@color/black" />
+                            android:padding="20dp"
+                            android:text="Save"
+                            android:textColor="@color/black"
+                            android:textSize="28sp" />
 
                         <Button
                             android:id="@+id/btn_details_cancel"
                             android:layout_width="250dp"
                             android:layout_height="match_parent"
-                            android:padding="20dp"
-                            android:textSize="28sp"
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/btn_wintec_black"
                             android:fontFamily="@font/source_sans_pro_semibold"
                             android:onClick="navigateTo"
+                            android:padding="20dp"
                             android:text="Cancel"
-                            android:textColor="#fff" />
+                            android:textColor="#fff"
+                            android:textSize="28sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

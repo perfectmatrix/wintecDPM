@@ -54,7 +54,10 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_profile_edit_image" />
+                    android:background="@drawable/ic_circle_black"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_profile" />
 
                 <!-- ID -->
                 <LinearLayout
