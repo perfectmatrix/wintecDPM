@@ -8,17 +8,17 @@
     <TextView
         android:id="@+id/pathwayTextView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="100dp"
         android:padding="16dp"
         android:fontFamily="@font/source_sans_pro"
         android:background="@color/colorPrimary"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="24sp" />
+        android:textSize="40sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:background="@drawable/bg_with_top_bottom_line"
         android:gravity="center"
         android:orientation="vertical">
@@ -40,7 +40,7 @@
             <!-- Semester 1-->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="80dp"
                 android:background="@drawable/bg_semester_manager"
                 android:text="Semester 1"
                 android:gravity="center"/>
@@ -49,14 +49,14 @@
                 android:id="@+id/recyclerview_s1_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:scrollbars="vertical"
                 android:layout_marginBottom="20dp"/>
 
             <!-- Semester 2-->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="80dp"
                 android:background="@drawable/bg_semester_manager"
                 android:text="Semester 2"
                 android:gravity="center"/>
@@ -65,7 +65,7 @@
                 android:id="@+id/recyclerview_s2_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:scrollbars="vertical"
                 android:layout_marginBottom="20dp"/>
 

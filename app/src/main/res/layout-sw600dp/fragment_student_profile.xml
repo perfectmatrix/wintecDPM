@@ -13,8 +13,6 @@
         android:text="Profile"
         android:fontFamily="@font/source_sans_pro"
         android:background="@color/colorPrimary"
-        android:textAlignment="center"
-        android:padding="16dp"
         android:gravity="center"
         android:textSize="40sp"
         android:textColor="@color/black"/>
