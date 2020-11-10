@@ -411,25 +411,31 @@
                         android:id="@+id/radio_network"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Network Engineering" />
-
-                    <RadioButton
-                        android:id="@+id/radio_software"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Software Engineering" />
-
-                    <RadioButton
-                        android:id="@+id/radio_database"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Database Architecture" />
+                        android:checked="@{user.pathway.equals(Constants.PATHWAY_NETWORK_ENGINEERING)}"
+                        android:text="@{Constants.PATHWAY_NETWORK_ENGINEERING_LABEL}" />
 
                     <RadioButton
                         android:id="@+id/radio_web"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Web Development" />
+                        android:checked="@{user.pathway.equals(Constants.PATHWAY_WEB_DEVELOPMENT)}"
+                        android:text="@{Constants.PATHWAY_WEB_DEVELOPMENT_LABEL}" />
+
+                    <RadioButton
+                        android:id="@+id/radio_database"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{user.pathway.equals(Constants.PATHWAY_DATABASE_ARCHITECTURE)}"
+                        android:text="@{Constants.PATHWAY_DATABASE_ARCHITECTURE_LABEL}" />
+
+                    <RadioButton
+                        android:id="@+id/radio_software"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@{user.pathway.equals(Constants.PATHWAY_SOFTWARE_ENGINEERING)}"
+                        android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
+
+
                 </RadioGroup>
                 <!-- Buttons -->
                 <LinearLayout

@@ -40,6 +40,10 @@ import static com.wintec.degreemap.util.Constants.GENDER_DIVERSE;
 import static com.wintec.degreemap.util.Constants.GENDER_FEMALE;
 import static com.wintec.degreemap.util.Constants.GENDER_MALE;
 import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
+import static com.wintec.degreemap.util.Constants.PATHWAY_DATABASE_ARCHITECTURE;
+import static com.wintec.degreemap.util.Constants.PATHWAY_NETWORK_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_SOFTWARE_ENGINEERING;
+import static com.wintec.degreemap.util.Constants.PATHWAY_WEB_DEVELOPMENT;
 import static com.wintec.degreemap.util.Constants.REQUEST_PICK_IMAGE;
 import static com.wintec.degreemap.util.Constants.REQUEST_STORAGE_PERMISSION;
 
@@ -62,10 +66,16 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
 
         view.findViewById(R.id.btn_details_save).setOnClickListener(this);
         view.findViewById(R.id.btn_details_cancel).setOnClickListener(this);
+
         view.findViewById(R.id.radio_notSay).setOnClickListener(this);
         view.findViewById(R.id.radio_diverse).setOnClickListener(this);
         view.findViewById(R.id.radio_male).setOnClickListener(this);
         view.findViewById(R.id.radio_female).setOnClickListener(this);
+
+        view.findViewById(R.id.radio_network).setOnClickListener(this);
+        view.findViewById(R.id.radio_web).setOnClickListener(this);
+        view.findViewById(R.id.radio_database).setOnClickListener(this);
+        view.findViewById(R.id.radio_software).setOnClickListener(this);
 
         textInputId = view.findViewById(R.id.textInputId);
         textInputFirstName = view.findViewById(R.id.textInputFirstName);
@@ -139,6 +149,22 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
             case R.id.radio_female:
                 if (((RadioButton) view).isChecked())
                     binding.getUser().setGender(GENDER_FEMALE);
+                break;
+            case R.id.radio_network:
+                if (((RadioButton) view).isChecked())
+                    binding.getUser().setPathway(PATHWAY_NETWORK_ENGINEERING);
+                break;
+            case R.id.radio_web:
+                if (((RadioButton) view).isChecked())
+                    binding.getUser().setPathway(PATHWAY_WEB_DEVELOPMENT);
+                break;
+            case R.id.radio_database:
+                if (((RadioButton) view).isChecked())
+                    binding.getUser().setPathway(PATHWAY_DATABASE_ARCHITECTURE);
+                break;
+            case R.id.radio_software:
+                if (((RadioButton) view).isChecked())
+                    binding.getUser().setPathway(PATHWAY_SOFTWARE_ENGINEERING);
                 break;
             case R.id.details_avatar:
                 openFileChooser();
