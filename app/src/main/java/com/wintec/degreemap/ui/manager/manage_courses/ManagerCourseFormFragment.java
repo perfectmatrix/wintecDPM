@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
+import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
 import static com.wintec.degreemap.util.StringUtils.convertToArrayList;
 
 public class ManagerCourseFormFragment extends Fragment implements View.OnClickListener {
@@ -100,8 +101,10 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
                 "",
                 0,
                 new ArrayList<String>(),
-                0, new ArrayList<String>(),
-                "", 1);
+                0,
+                new ArrayList<String>(),
+                "",
+                0);
         binding.setCourse(course);
     }
 
@@ -114,6 +117,7 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
             case R.id.btn_courseEdit_cancel:
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+                bundle.putString(BUNDLE_PATHWAY, getArguments().getString(BUNDLE_PATHWAY));
 
                 NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
                 break;
@@ -143,6 +147,7 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
 
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+        bundle.putString(BUNDLE_PATHWAY, getArguments().getString(BUNDLE_PATHWAY));
 
         NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
     }

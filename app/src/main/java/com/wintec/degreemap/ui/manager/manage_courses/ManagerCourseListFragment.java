@@ -134,6 +134,7 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
             case R.id.addCourseButton:
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, "");
+                bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
                 NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseListFragment_to_managerCourseFormFragment, bundle);
                 break;

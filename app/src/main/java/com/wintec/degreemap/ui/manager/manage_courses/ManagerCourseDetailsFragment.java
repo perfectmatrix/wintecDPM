@@ -59,21 +59,23 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
             case R.id.btn_courseDetails_edit:
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+                bundle.putString(BUNDLE_PATHWAY, getArguments().getString(BUNDLE_PATHWAY));
 
                 NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseFormFragment, bundle);
                 break;
             case R.id.btn_courseDetails_delete:
-                deleteData(view);
+                deleteData();
                 break;
         }
     }
 
-    private void deleteData(View view) {
+    private void deleteData() {
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.deleteCourse(binding.getCourse().getCode());
 
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_PATHWAY, selectedPathway);
+        bundle.putString(BUNDLE_PATHWAY, getArguments().getString(BUNDLE_PATHWAY));
 
         NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseListFragment, bundle);
     }
