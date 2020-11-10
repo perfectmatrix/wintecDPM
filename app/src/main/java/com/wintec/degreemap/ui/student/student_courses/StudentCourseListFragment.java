@@ -1,7 +1,9 @@
 package com.wintec.degreemap.ui.student.student_courses;
 
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +37,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
+import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.KEY_SELECTED_PATHWAY;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
@@ -48,6 +52,8 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
     private RecyclerView.LayoutManager layoutManager;
     private String selectedPathway;
     private List<Course> filteredCourseList;
+    private SharedPreferences prefs;
+    private List<String> completedModules;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -69,12 +75,11 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
-
         // get selected pathway
-        SharedPreferences prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         selectedPathway = prefs.getString(KEY_SELECTED_PATHWAY, "");
 
-        List<String> completedModules = getCompletedModules(prefs);
+        completedModules = getCompletedModules(prefs);
         studentCourseAdapter = new StudentCourseAdapter(selectedPathway, completedModules);
 
         // set recyclerView data
@@ -88,8 +93,42 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         // set pathway title and background color
         setPathwayTextViewFormatting(view, selectedPathway);
 
+        //Set item touch helper 123456789
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+
         return view;
     }
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            int position = viewHolder.getAdapterPosition();
+            TextView courseNameTextView = viewHolder.itemView.findViewById(R.id.courseLongName);
+            if(direction == ItemTouchHelper.LEFT) {
+                //do something
+                markCompleteOrIncomplete(filteredCourseList.get(position).getCode());
+
+                if(courseNameTextView != null){
+                    if (completedModules.contains(filteredCourseList.get(position).getCode())) {
+                        courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle, 0);
+                    } else {
+                        courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
+                    }
+                }
+            }
+            studentCourseAdapter.notifyItemChanged(position);
+            studentCourseAdapter.notifyDataSetChanged();
+        }
+
+    };
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
         TextView pathwayTextView = view.findViewById(R.id.pathwayTextView);
@@ -140,5 +179,30 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
 
         NavHostFragment.findNavController(this).navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
+    }
+
+
+
+    private void markCompleteOrIncomplete(String courseCode) {
+        if (completedModules.contains(courseCode)) {
+            completedModules.remove(courseCode);
+        } else {
+            completedModules.add(courseCode);
+        }
+
+        saveCompletedModules();
+        updateModulesList();
+    }
+
+    private void saveCompletedModules() {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(KEY_COMPLETED_MODULES, TextUtils.join(",", completedModules));
+        editor.apply();
+    }
+
+    private void updateModulesList(){
+        completedModules = getCompletedModules(prefs);
+        studentCourseAdapter = new StudentCourseAdapter(selectedPathway, completedModules);
+        studentCourseAdapter.notifyDataSetChanged();
     }
 }
