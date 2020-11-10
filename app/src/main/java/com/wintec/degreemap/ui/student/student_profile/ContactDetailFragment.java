@@ -22,8 +22,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
@@ -242,7 +240,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
             userViewModel.deleteUser(currentUserKey);
         }
 
-        userViewModel.insertUser(binding.getUser().getKey(),
+        userViewModel.saveUser(binding.getUser().getKey(),
                 profileImageUri,
                 Helpers.getFileExtension(getContext(), profileImageUri),
                 user);
