@@ -141,6 +141,7 @@
                         android:background="@null"
                         android:fontFamily="@font/source_sans_pro"
                         android:padding="6dp"
+                        android:inputType="text"
                         android:text="@={user.firstName}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -184,6 +185,7 @@
                     android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:inputType="text"
                     android:text="@={user.lastName}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -271,6 +273,7 @@
                     android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:inputType="text"
                     android:text="@={user.email}" />
 
                 </com.google.android.material.textfield.TextInputLayout>

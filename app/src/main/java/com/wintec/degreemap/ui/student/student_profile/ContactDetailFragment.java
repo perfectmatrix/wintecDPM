@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     private SharedPreferences prefs;
     private View view;
 
-    private TextInputLayout textInputId;
+    private TextInputLayout textInputId, textInputFirstName, textInputLastName, textInputEmail;
 
     @Nullable
     @Override
@@ -73,6 +74,9 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         view.findViewById(R.id.radio_female).setOnClickListener(this);
 
         textInputId = view.findViewById(R.id.textInputId);
+        textInputFirstName = view.findViewById(R.id.textInputFirstName);
+        textInputLastName = view.findViewById(R.id.textInputLastName);
+        textInputEmail = view.findViewById(R.id.textInputEmail);
 
         loadData();
 
@@ -173,10 +177,43 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         }
     }
 
-    public void saveData() {
-        if (!validateId())
-            return;
+    private boolean validateFirstName() {
+        if (binding.getUser().getFirstName().trim().isEmpty()) {
+            textInputFirstName.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputFirstName.setError(null);
+            return true;
+        }
+    }
 
+    private boolean validateLastName() {
+        if (binding.getUser().getLastName().trim().isEmpty()) {
+            textInputLastName.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputLastName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmail() {
+        String email = binding.getUser().getEmail().trim();
+        if (email.isEmpty()) {
+            textInputEmail.setError("Field can't be empty");
+            return false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            textInputEmail.setError("Please enter a valid email address");
+            return false;
+        } else {
+            textInputEmail.setError(null);
+            return true;
+        }
+    }
+
+    public void saveData() {
+        if (!validateId() || !validateFirstName() || !validateLastName() || !validateEmail())
+            return;
 
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = new User(null,
