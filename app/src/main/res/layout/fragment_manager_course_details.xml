@@ -6,7 +6,9 @@
         <variable
             name="course"
             type="com.wintec.degreemap.data.model.Course" />
+
         <import type="com.wintec.degreemap.util.DataBindingUtils" />
+
         <import type="com.wintec.degreemap.util.Helpers" />
 
     </data>
@@ -19,7 +21,7 @@
         <!-- Title -->
         <TextView
             android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
@@ -35,7 +37,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-            android:layout_height="60dp"
+                android:layout_height="60dp"
                 android:orientation="vertical">
 
                 <!-- Course Details -->
@@ -260,30 +262,30 @@
                     android:gravity="center_horizontal">
 
                     <Button
-                    android:id="@+id/btn_courseDetails_edit"
+                        android:id="@+id/btn_courseDetails_edit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                    android:textColor="#fff"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
-                    android:background="@drawable/btn_wintec_gray"
+                        android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro"
-                    android:text="Edit Module"
+                        android:text="Edit Module"
                         android:textAllCaps="false"
+                        android:textColor="#fff"
                         android:textSize="16sp" />
 
                     <Button
-                    android:id="@+id/btn_courseDetails_delete"
+                        android:id="@+id/btn_courseDetails_delete"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                    android:background="@drawable/btn_wintec_red"
+                        android:background="@drawable/btn_wintec_red"
                         android:fontFamily="@font/source_sans_pro"
-                    android:text="Delete Module"
+                        android:text="Delete Module"
                         android:textAllCaps="false"
-                    android:textColor="#fff"
+                        android:textColor="#fff"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
