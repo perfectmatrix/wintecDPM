@@ -24,11 +24,11 @@ public class UserViewModel extends ViewModel {
         return userRepository.getUserDetails(userKey);
     }
 
-    public void insertUser(String userKey, Uri profileImage, String profileImageExtension, User user) {
+    public void saveUser(String userKey, Uri profileImage, String profileImageExtension, User user) {
         if (profileImage == null) {
-            userRepository.insertUser(userKey, user);
+            userRepository.saveUser(userKey, user);
         } else {
-            userRepository.insertUserWithProfile(userKey, profileImage, profileImageExtension, user);
+            userRepository.saveUserWithProfile(userKey, profileImage, profileImageExtension, user);
         }
     }
 

@@ -35,12 +35,12 @@ public class UserRepository {
         return new UserDetailsLiveData(FirebaseUtils.getUserRef().child(userKey));
     }
 
-    public void insertUser(String userKey, User user) {
+    public void saveUser(String userKey, User user) {
         DatabaseReference userRef = FirebaseUtils.getUserRef();
         userRef.child(userKey).setValue(user);
     }
 
-    public void insertUserWithProfile(final String userKey, Uri profileImage, String profileImageExtension, final User user) {
+    public void saveUserWithProfile(final String userKey, Uri profileImage, String profileImageExtension, final User user) {
         StorageReference profileImageRef = FirebaseUtils.getProfileImageRef();
         StorageReference fileRef = profileImageRef.child(userKey + '.' + profileImageExtension);
 
@@ -54,7 +54,7 @@ public class UserRepository {
                 String profileImageUrl = profileImageUrlTask.getResult().toString();
                 user.setProfileUrl(profileImageUrl);
 
-                insertUser(userKey, user);
+                saveUser(userKey, user);
             }
         });
     }
