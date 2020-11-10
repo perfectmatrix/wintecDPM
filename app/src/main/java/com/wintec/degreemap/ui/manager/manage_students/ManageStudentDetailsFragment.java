@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
 import com.wintec.degreemap.R;
@@ -82,8 +83,7 @@ public class ManageStudentDetailsFragment extends Fragment implements View.OnCli
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_USER_KEY, binding.getUser().getKey());
 
-                NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentFormFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentFormFragment, bundle);
                 break;
             case R.id.btn_student_delete:
                 deleteData(view);
@@ -95,7 +95,6 @@ public class ManageStudentDetailsFragment extends Fragment implements View.OnCli
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.deleteUser(binding.getUser().getKey());
 
-        NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentListFragment);
+        NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentListFragment);
     }
 }

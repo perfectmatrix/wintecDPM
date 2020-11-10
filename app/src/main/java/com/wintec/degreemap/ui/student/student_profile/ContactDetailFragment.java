@@ -24,6 +24,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputLayout;
@@ -154,8 +155,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                 saveData();
                 break;
             case R.id.btn_details_cancel:
-                NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
+                NavHostFragment.findNavController(this).navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
                 break;
         }
     }
@@ -251,7 +251,6 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         editor.putString(KEY_USER_KEY, binding.getUser().getKey());
         editor.apply();
 
-        NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
+        NavHostFragment.findNavController(this).navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
     }
 }

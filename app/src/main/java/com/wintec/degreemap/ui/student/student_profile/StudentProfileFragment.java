@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
 import com.wintec.degreemap.R;
@@ -58,16 +59,16 @@ public class StudentProfileFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        NavController navController = Navigation.findNavController(view);
+
         switch (view.getId()) {
             case R.id.about_us:
-                navController.navigate(R.id.action_studentProfileFragment_to_aboutUsFragment);
+                NavHostFragment.findNavController(this).navigate(R.id.action_studentProfileFragment_to_aboutUsFragment);
                 break;
             case R.id.developer_group:
-                navController.navigate(R.id.action_studentProfileFragment_to_developersFragment);
+                NavHostFragment.findNavController(this).navigate(R.id.action_studentProfileFragment_to_developersFragment);
                 break;
             case R.id.student_contact_details:
-                navController.navigate(R.id.action_studentProfileFragment_to_contactDetailFragment);
+                NavHostFragment.findNavController(this).navigate(R.id.action_studentProfileFragment_to_contactDetailFragment);
                 break;
         }
     }

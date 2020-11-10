@@ -25,7 +25,7 @@ public class AboutUsFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.btn_km_bachelor_it).setOnClickListener(this);
         view.findViewById(R.id.btn_km_gallagher).setOnClickListener(this);
         view.findViewById(R.id.btn_km_design_factory).setOnClickListener(this);
-        
+
         return view;
     }
 

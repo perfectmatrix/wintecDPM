@@ -53,7 +53,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (selectedPathway.isEmpty()) {
-            Navigation.findNavController(view).navigate(R.id.studentDashboardFragment);
+            NavHostFragment.findNavController(this).navigate(R.id.studentDashboardFragment);
             Toast.makeText(getContext(), "Select a pathway first", Toast.LENGTH_SHORT).show();
         }
     }
@@ -139,7 +139,6 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
 
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
     }
 }

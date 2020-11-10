@@ -23,6 +23,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputLayout;
@@ -173,8 +174,7 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
                 saveData();
                 break;
             case R.id.btn_details_cancel:
-                NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
+                NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
                 break;
         }
     }
@@ -266,7 +266,6 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
                 Helpers.getFileExtension(getContext(), profileImageUri),
                 user);
 
-        NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
+        NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
     }
 }

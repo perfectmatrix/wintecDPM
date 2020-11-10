@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
@@ -59,8 +60,7 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-                NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment, bundle);
                 break;
             case R.id.btn_courseDetails_delete:
                 deleteData(view);
@@ -75,7 +75,6 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
-        NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseListFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseListFragment, bundle);
     }
 }

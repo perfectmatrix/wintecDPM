@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -65,7 +66,6 @@ public class ManagerCourseHomeFragment extends Fragment implements View.OnClickL
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_PATHWAY, pathway);
 
-        NavController navController = Navigation.findNavController(v);
-        navController.navigate(R.id.action_managerCourseHomeFragment_to_managerCourseListFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseHomeFragment_to_managerCourseListFragment, bundle);
     }
 }

@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
@@ -97,8 +98,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-                NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
                 break;
         }
     }
@@ -127,8 +127,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-        NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
     }
 
     private ArrayList<String> getPathways() {

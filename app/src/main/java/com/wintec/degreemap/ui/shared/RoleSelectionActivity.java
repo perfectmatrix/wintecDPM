@@ -17,7 +17,6 @@ import com.wintec.degreemap.ui.student.StudentHome;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_role_selection);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 
     // Method for users to select role: [Student] or [Manager]
