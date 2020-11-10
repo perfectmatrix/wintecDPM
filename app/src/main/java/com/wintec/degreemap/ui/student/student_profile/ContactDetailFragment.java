@@ -68,6 +68,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         profileImage.setOnClickListener(this);
 
         view.findViewById(R.id.btn_details_save).setOnClickListener(this);
+        view.findViewById(R.id.btn_details_cancel).setOnClickListener(this);
         view.findViewById(R.id.radio_notSay).setOnClickListener(this);
         view.findViewById(R.id.radio_diverse).setOnClickListener(this);
         view.findViewById(R.id.radio_male).setOnClickListener(this);
@@ -97,7 +98,7 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                         if (!user.getProfileUrl().isEmpty()) {
                             Glide.with(view).load(user.getProfileUrl()).into(profileImage);
                         }
-                        
+
                         binding.setUser(user);
                     } else {
                         setEmptyUser();
@@ -151,6 +152,10 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
                 break;
             case R.id.btn_details_save:
                 saveData();
+                break;
+            case R.id.btn_details_cancel:
+                NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
                 break;
         }
     }
