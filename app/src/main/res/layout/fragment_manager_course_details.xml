@@ -36,13 +36,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="26dp">
 
                 <!-- Course Details -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="26dp"
                     android:background="@drawable/bg_rounded_light_gray"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -334,36 +334,35 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    android:layout_marginBottom="30dp"
-                    android:gravity="center_horizontal">
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btn_courseDetails_edit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="8dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro"
                         android:text="Edit Module"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                     <Button
                         android:id="@+id/btn_courseDetails_delete"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_red"
                         android:fontFamily="@font/source_sans_pro"
                         android:text="Delete Module"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
