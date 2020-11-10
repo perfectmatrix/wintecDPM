@@ -25,6 +25,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.textfield.TextInputLayout;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentContactDetailBinding;
@@ -52,6 +53,8 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
     private SharedPreferences prefs;
     private View view;
 
+    private TextInputLayout textInputId;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         view.findViewById(R.id.radio_diverse).setOnClickListener(this);
         view.findViewById(R.id.radio_male).setOnClickListener(this);
         view.findViewById(R.id.radio_female).setOnClickListener(this);
+
+        textInputId = view.findViewById(R.id.textInputId);
 
         loadData();
 
@@ -158,7 +163,21 @@ public class ContactDetailFragment extends Fragment implements View.OnClickListe
         }
     }
 
+    private boolean validateId() {
+        if (binding.getUser().getKey().trim().isEmpty()) {
+            textInputId.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputId.setError(null);
+            return true;
+        }
+    }
+
     public void saveData() {
+        if (!validateId())
+            return;
+
+
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = new User(null,
                 binding.getUser().getProfileUrl(),

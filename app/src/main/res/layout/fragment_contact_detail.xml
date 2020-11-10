@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -38,16 +39,6 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text="Record your details"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
                 <!-- Avatar -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,44 +57,93 @@
                     android:src="@drawable/icon_profile_edit_image" />
 
                 <!-- ID -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/source_sans_pro"
-                    android:text="ID"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/details_id"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="ID"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:text="Recommended"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
-                    android:inputType="number"
-                    android:padding="6dp"
-                    android:text="@={user.key}" />
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/details_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:padding="6dp"
+                        android:text="@={user.key}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <!-- First Name -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/source_sans_pro"
-                    android:text="First Name"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/details_first_name"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="First Name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:text="Recommended"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputFirstName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
-                    android:fontFamily="@font/source_sans_pro"
-                    android:padding="6dp"
-                    android:text="@={user.firstName}" />
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/details_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:padding="6dp"
+                        android:text="@={user.firstName}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Last Name -->
                 <TextView
