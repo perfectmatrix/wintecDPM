@@ -456,7 +456,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_wintec_black"
+                        android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro_semibold"
                         android:onClick="navigateTo"
                         android:text="Cancel"
