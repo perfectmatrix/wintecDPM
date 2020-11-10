@@ -5,6 +5,7 @@ public final class Constants {
     // Bundles
     public static final String BUNDLE_COURSE_CODE = "BundleCourseCode";
     public static final String BUNDLE_PATHWAY = "BundlePathway";
+    public static final String BUNDLE_USER_KEY = "BundleUserKey";
 
     // Shared Preferences Keys
     public static final String SHARED_PREFERENCES = "SharedPreferences";
@@ -38,6 +39,12 @@ public final class Constants {
     public static final String GENDER_DIVERSE = "diverse";
     public static final String GENDER_MALE = "male";
     public static final String GENDER_FEMALE = "female";
+
+
+    public static final String GENDER_NOT_SAY_LABEL = "Prefer not to say";
+    public static final String GENDER_DIVERSE_LABEL = "Diverse";
+    public static final String GENDER_MALE_LABEL = "Male";
+    public static final String GENDER_FEMALE_LABEL = "Female";
 
     // Request
     public static final int REQUEST_PICK_IMAGE = 1;

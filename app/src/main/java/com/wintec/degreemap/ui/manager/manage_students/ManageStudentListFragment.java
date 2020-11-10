@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
@@ -20,13 +22,18 @@ import com.wintec.degreemap.viewmodel.UserViewModel;
 
 import java.util.List;
 
-public class ManageStudentListFragment extends Fragment {
+import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
+
+public class ManageStudentListFragment extends Fragment implements StudentAdapter.OnItemClickListener {
+    private List<User> userList;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_manager_student_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_manage_student_list, container, false);
 
         final StudentAdapter studentAdapter = new StudentAdapter();
+        studentAdapter.setOnItemClickListener(this);
         LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview_all_students);
 
@@ -37,13 +44,24 @@ public class ManageStudentListFragment extends Fragment {
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserList().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
             @Override
-            public void onChanged(List<User> userList) {
-                if (userList != null) {
-                    studentAdapter.setUsers(userList);
+            public void onChanged(List<User> users) {
+                if (users != null) {
+                    userList = users;
+                    studentAdapter.setUsers(users);
                 }
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Bundle bundle = new Bundle();
+        bundle.putString(BUNDLE_USER_KEY, userList.get(position).getKey());
+
+        // navigate to course details fragment
+        NavController navController = NavHostFragment.findNavController(this);
+        navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentDetailsFragment, bundle);
     }
 }

@@ -119,7 +119,7 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
+            bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
         bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
         // navigate to course details fragment

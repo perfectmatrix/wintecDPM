@@ -10,6 +10,14 @@ import android.webkit.MimeTypeMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.wintec.degreemap.util.Constants.GENDER_DIVERSE;
+import static com.wintec.degreemap.util.Constants.GENDER_DIVERSE_LABEL;
+import static com.wintec.degreemap.util.Constants.GENDER_FEMALE;
+import static com.wintec.degreemap.util.Constants.GENDER_FEMALE_LABEL;
+import static com.wintec.degreemap.util.Constants.GENDER_MALE;
+import static com.wintec.degreemap.util.Constants.GENDER_MALE_LABEL;
+import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY;
+import static com.wintec.degreemap.util.Constants.GENDER_NOT_SAY_LABEL;
 import static com.wintec.degreemap.util.Constants.KEY_COMPLETED_MODULES;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE_LABEL;
@@ -53,6 +61,24 @@ public final class Helpers {
             return new ArrayList<>(Arrays.asList(TextUtils.split(completedModulesList, ",")));
         } else {
             return new ArrayList<>();
+        }
+    }
+
+    public static String getGenderLabel(String gender) {
+        if (gender == null || gender.isEmpty())
+            return "Not specified";
+
+        switch (gender) {
+            case GENDER_NOT_SAY:
+                return GENDER_NOT_SAY_LABEL;
+            case GENDER_DIVERSE:
+                return GENDER_DIVERSE_LABEL;
+            case GENDER_FEMALE:
+                return GENDER_FEMALE_LABEL;
+            case GENDER_MALE:
+                return GENDER_MALE_LABEL;
+            default:
+                return "Not specified";
         }
     }
 }
