@@ -25,17 +25,7 @@ public class AboutUsFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.btn_km_bachelor_it).setOnClickListener(this);
         view.findViewById(R.id.btn_km_gallagher).setOnClickListener(this);
         view.findViewById(R.id.btn_km_design_factory).setOnClickListener(this);
-
-        // Play video:https:www.youtube.com/watch?v=3T0BeP1czcE
-        VideoView videoView = view.findViewById(R.id.video_view);
-
-        String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.video_wintec_it;
-        Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
-
-        MediaController mediaController = new MediaController(getContext());
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
+        
         return view;
     }
 
