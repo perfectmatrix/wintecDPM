@@ -52,7 +52,9 @@
             app:destination="@id/managerCourseDetailsEditFragment" />
         <action
             android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseListFragment"
-            app:destination="@id/managerCourseListFragment" />
+            app:destination="@id/managerCourseListFragment"
+            app:popUpTo="@id/managerCourseListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/managerCourseDetailsEditFragment"
@@ -61,7 +63,9 @@
         tools:layout="@layout/fragment_manager_course_details_edit">
         <action
             android:id="@+id/action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment"
-            app:destination="@id/managerCourseDetailsFragment" />
+            app:destination="@id/managerCourseDetailsFragment"
+            app:popUpTo="@id/managerCourseListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/manageStudentListFragment"
@@ -85,7 +89,12 @@
             app:destination="@id/manageStudentFormFragment" />
         <action
             android:id="@+id/action_manageStudentDetailsFragment_to_manageStudentListFragment"
-            app:destination="@id/manageStudentListFragment" />
+            app:destination="@id/manageStudentListFragment"
+            app:popUpTo="@id/manageStudentListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_manageStudentDetailsFragment_to_manageStudentFormFragment2"
+            app:destination="@id/manageStudentFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/manageStudentFormFragment"
@@ -94,6 +103,13 @@
         tools:layout="@layout/fragment_manage_student_form">
         <action
             android:id="@+id/action_manageStudentFormFragment_to_manageStudentListFragment"
-            app:destination="@id/manageStudentListFragment" />
+            app:destination="@id/manageStudentListFragment"
+            app:popUpTo="@id/manageStudentListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_manageStudentFormFragment_to_manageStudentDetailsFragment"
+            app:destination="@id/manageStudentDetailsFragment"
+            app:popUpTo="@id/manageStudentDetailsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

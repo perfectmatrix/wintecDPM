@@ -57,7 +57,9 @@
         tools:layout="@layout/fragment_contact_detail">
         <action
             android:id="@+id/action_contactDetailFragment_to_studentProfileFragment"
-            app:destination="@id/studentProfileFragment" />
+            app:destination="@id/studentProfileFragment"
+            app:popUpTo="@id/studentProfileFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/developersFragment"

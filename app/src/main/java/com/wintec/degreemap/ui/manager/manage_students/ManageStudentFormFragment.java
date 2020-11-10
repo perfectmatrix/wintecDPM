@@ -266,6 +266,6 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
                 Helpers.getFileExtension(getContext(), profileImageUri),
                 user);
 
-        NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
+        NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentDetailsFragment);
     }
 }
