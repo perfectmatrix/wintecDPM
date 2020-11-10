@@ -70,6 +70,7 @@
                     android:layout_marginBottom="10dp"
                     android:inputType="number"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.key}"
                     android:textSize="18sp" />
 
@@ -94,6 +95,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.firstName}"
                     android:textSize="18sp" />
 
@@ -117,6 +119,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.lastName}"
                     android:textSize="18sp" />
                 <!-- Phone Number -->
@@ -138,6 +141,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="number"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.phone.empty ? `(empty)` : user.phone }"
                     android:textSize="18sp" />
 
@@ -160,6 +164,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.email}"
                     android:textSize="18sp" />
 
@@ -180,6 +185,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.address.empty ? `(empty)` : user.address}"
                     android:textSize="18sp" />
 
@@ -201,6 +207,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{Helpers.getGenderLabel(user.gender)}"
                     android:textColor="@color/gray"
                     android:textSize="18sp" />
@@ -223,6 +230,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
+                    android:background="@drawable/bg_with_border"
                     android:text="@{user.pathway.empty ? `(empty)`: Helpers.getPathwayLabel(user.pathway)}"
                     android:textColor="@color/gray"
                     android:textSize="18sp" />
