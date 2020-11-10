@@ -75,6 +75,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
+
         // get selected pathway
         prefs = getActivity().getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         selectedPathway = prefs.getString(KEY_SELECTED_PATHWAY, "");
@@ -93,9 +94,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         // set pathway title and background color
         setPathwayTextViewFormatting(view, selectedPathway);
 
-        //Set item touch helper 123456789
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         return view;
@@ -113,7 +112,6 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
             int position = viewHolder.getAdapterPosition();
             TextView courseNameTextView = viewHolder.itemView.findViewById(R.id.courseLongName);
             if(direction == ItemTouchHelper.LEFT) {
-                //do something
                 markCompleteOrIncomplete(filteredCourseList.get(position).getCode());
 
                 if(courseNameTextView != null){
@@ -180,8 +178,6 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
 
         NavHostFragment.findNavController(this).navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
     }
-
-
 
     private void markCompleteOrIncomplete(String courseCode) {
         if (completedModules.contains(courseCode)) {
