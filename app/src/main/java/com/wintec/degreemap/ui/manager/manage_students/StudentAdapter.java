@@ -40,7 +40,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         User selectedUser = userList.get(position);
 
-        Glide.with(view).load(selectedUser.getProfileUrl()).into(holder.profileImageView);
+        if (!selectedUser.getProfileUrl().isEmpty())
+            Glide.with(view).load(selectedUser.getProfileUrl()).into(holder.profileImageView);
+
         holder.studentNameTextView.setText(selectedUser.getFirstName() + " " + selectedUser.getLastName());
         holder.studentIdTextView.setText(selectedUser.getKey());
     }
