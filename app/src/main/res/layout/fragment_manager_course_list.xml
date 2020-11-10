@@ -19,7 +19,7 @@
             android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
