@@ -21,28 +21,27 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
+        <!-- Spinner -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/bg_with_top_bottom_line"
             android:gravity="center"
             android:orientation="vertical">
-
             <Spinner
                 android:id="@+id/spinner_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
+        <!-- Recycler View -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview_all_courses"
                     android:layout_width="match_parent"
@@ -52,6 +51,7 @@
                     android:scrollbars="vertical" />
             </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

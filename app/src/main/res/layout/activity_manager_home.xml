@@ -14,8 +14,6 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/manager_nav_graph" />
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
