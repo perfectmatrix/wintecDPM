@@ -24,8 +24,8 @@
             android:layout_height="60dp"
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
-            android:text="Course Details"
             android:gravity="center"
+            android:text="Course Details"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -76,11 +76,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="Module Name"
                             android:textColor="@color/black"
@@ -282,6 +284,7 @@
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/source_sans_pro"
                             android:text="URL"
                             android:textColor="@color/black"
