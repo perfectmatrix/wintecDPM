@@ -44,7 +44,7 @@ public class StudentProfileFragment extends Fragment implements View.OnClickList
             userViewModel.getUserDetails(userKey).observe(getViewLifecycleOwner(), new Observer<User>() {
                 @Override
                 public void onChanged(User user) {
-                    if (user != null) {
+                    if (user != null && !user.getProfileUrl().isEmpty()) {
                         Glide.with(view)
                                 .load(user.getProfileUrl())
                                 .into((ImageView) view.findViewById(R.id.profileImageView));
