@@ -59,7 +59,6 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-                // navigate to course edit fragment
                 NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment, bundle);
                 break;

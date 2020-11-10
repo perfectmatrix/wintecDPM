@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.viewmodel.UserViewModel;
@@ -62,7 +61,6 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_USER_KEY, userList.get(position).getKey());
 
-        // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
         navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentDetailsFragment, bundle);
     }
@@ -74,10 +72,8 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_USER_KEY, "");
 
-                // navigate to course details fragment
                 NavController navController = NavHostFragment.findNavController(this);
                 navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentFormFragment, bundle);
-
                 break;
         }
     }

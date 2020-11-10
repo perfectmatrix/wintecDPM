@@ -70,7 +70,6 @@ public class StudentDashboardFragment extends Fragment implements View.OnClickLi
         editor.putString(KEY_SELECTED_PATHWAY, pathway);
         editor.apply();
 
-        // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
         navController.navigate(R.id.action_studentDashboardFragment_to_studentCourseListFragment);
     }

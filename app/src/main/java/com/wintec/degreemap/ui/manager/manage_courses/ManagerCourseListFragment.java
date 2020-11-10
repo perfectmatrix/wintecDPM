@@ -122,7 +122,6 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
             bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
         bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
-        // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
         navController.navigate(R.id.action_managerCourseListFragment_to_managerCourseDetailsFragment, bundle);
     }

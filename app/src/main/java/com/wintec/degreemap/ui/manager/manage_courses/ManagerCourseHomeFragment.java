@@ -65,7 +65,6 @@ public class ManagerCourseHomeFragment extends Fragment implements View.OnClickL
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_PATHWAY, pathway);
 
-        // navigate to course fragment
         NavController navController = Navigation.findNavController(v);
         navController.navigate(R.id.action_managerCourseHomeFragment_to_managerCourseListFragment, bundle);
     }

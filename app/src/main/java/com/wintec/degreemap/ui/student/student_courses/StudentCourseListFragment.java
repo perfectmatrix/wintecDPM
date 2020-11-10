@@ -139,7 +139,6 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
 
-        // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
         navController.navigate(R.id.action_studentCourseListFragment_to_studentCourseDetailsFragment, bundle);
     }
