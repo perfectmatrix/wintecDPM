@@ -16,19 +16,20 @@
         android:textColor="#000"
         android:textSize="20sp" />
 
+    <!-- Spinner -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/bg_with_bottom_line"
         android:gravity="center"
         android:orientation="vertical">
-
         <Spinner
             android:id="@+id/spinner_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <!-- Recycler View -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -45,6 +46,5 @@
                 android:layout_marginBottom="20dp"/>
         </LinearLayout>
     </ScrollView>
-
 
 </LinearLayout>
