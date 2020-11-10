@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_managerCourseListFragment_to_managerCourseDetailsFragment"
             app:destination="@id/managerCourseDetailsFragment" />
+        <action
+            android:id="@+id/action_managerCourseListFragment_to_managerCourseFormFragment"
+            app:destination="@id/managerCourseFormFragment" />
     </fragment>
     <activity
         android:id="@+id/roleSelectionActivity"
@@ -48,8 +51,8 @@
         android:label="ManagerCourseDetailsFragment"
         tools:layout="@layout/fragment_manager_course_details">
         <action
-            android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment"
-            app:destination="@id/managerCourseDetailsEditFragment" />
+            android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseFormFragment"
+            app:destination="@id/managerCourseFormFragment" />
         <action
             android:id="@+id/action_managerCourseDetailsFragment_to_managerCourseListFragment"
             app:destination="@id/managerCourseListFragment"
@@ -57,12 +60,12 @@
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/managerCourseDetailsEditFragment"
-        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseDetailsEditFragment"
-        android:label="ManagerCourseDetailsEditFragment"
-        tools:layout="@layout/fragment_manager_course_details_edit">
+        android:id="@+id/managerCourseFormFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_courses.ManagerCourseFormFragment"
+        android:label="ManagerCourseFormFragment"
+        tools:layout="@layout/fragment_manager_course_form">
         <action
-            android:id="@+id/action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment"
+            android:id="@+id/action_managerCourseFormFragment_to_managerCourseDetailsFragment"
             app:destination="@id/managerCourseDetailsFragment"
             app:popUpTo="@id/managerCourseListFragment"
             app:popUpToInclusive="true" />

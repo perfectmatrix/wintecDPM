@@ -31,13 +31,14 @@ import java.util.List;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.Constants.BUNDLE_PATHWAY;
+import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
 import static com.wintec.degreemap.util.Constants.FIRST_YEAR;
 import static com.wintec.degreemap.util.Constants.PATHWAY_CORE;
 import static com.wintec.degreemap.util.Constants.SECOND_YEAR;
 import static com.wintec.degreemap.util.Constants.THIRD_YEAR;
 import static com.wintec.degreemap.util.Helpers.getPathwayLabel;
 
-public class ManagerCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener {
+public class ManagerCourseListFragment extends Fragment implements AdapterView.OnItemSelectedListener, ManagerCourseAdapter.OnItemClickListener, View.OnClickListener {
     private ManagerCourseAdapter managerCourseAdapter;
     private String selectedPathway;
     private List<Course> filteredCourseList;
@@ -46,6 +47,8 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_manager_course_list, container, false);
+
+        view.findViewById(R.id.addCourseButton).setOnClickListener(this);
 
         Spinner spinner = view.findViewById(R.id.spinner_year);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(),
@@ -119,10 +122,21 @@ public class ManagerCourseListFragment extends Fragment implements AdapterView.O
     @Override
     public void onItemClick(int position) {
         Bundle bundle = new Bundle();
-            bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
+        bundle.putString(BUNDLE_COURSE_CODE, filteredCourseList.get(position).getCode());
         bundle.putString(BUNDLE_PATHWAY, selectedPathway);
 
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_managerCourseListFragment_to_managerCourseDetailsFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseListFragment_to_managerCourseDetailsFragment, bundle);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.addCourseButton:
+                Bundle bundle = new Bundle();
+                bundle.putString(BUNDLE_COURSE_CODE, "");
+
+                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseListFragment_to_managerCourseFormFragment, bundle);
+                break;
+        }
     }
 }

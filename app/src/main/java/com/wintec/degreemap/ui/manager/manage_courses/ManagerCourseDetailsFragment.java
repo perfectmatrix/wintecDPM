@@ -60,7 +60,7 @@ public class ManagerCourseDetailsFragment extends Fragment implements View.OnCli
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseDetailsEditFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsFragment_to_managerCourseFormFragment, bundle);
                 break;
             case R.id.btn_courseDetails_delete:
                 deleteData(view);

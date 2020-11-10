@@ -11,25 +11,23 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
-import com.wintec.degreemap.databinding.FragmentManagerCourseDetailsEditBinding;
+import com.wintec.degreemap.data.model.User;
+import com.wintec.degreemap.databinding.FragmentManagerCourseFormBinding;
 import com.wintec.degreemap.util.Constants;
 import com.wintec.degreemap.viewmodel.CourseViewModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_COURSE_CODE;
 import static com.wintec.degreemap.util.StringUtils.convertToArrayList;
 
-public class ManagerCourseDetailsEditFragment extends Fragment implements View.OnClickListener {
-    private FragmentManagerCourseDetailsEditBinding binding;
+public class ManagerCourseFormFragment extends Fragment implements View.OnClickListener {
+    private FragmentManagerCourseFormBinding binding;
     private MultiAutoCompleteTextView preRequisiteTextView, coRequisiteTextView;
     private AutoCompleteCourseAdapter autoCompleteCourseAdapter;
     private Button btnSave, btnCancel;
@@ -42,7 +40,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_details_edit, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_form, container, false);
         view = binding.getRoot();
 
         preRequisiteTextView = view.findViewById(R.id.preRequisiteAutocomplete);
@@ -56,18 +54,24 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         CourseViewModel courseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
 
         String courseCode = getArguments().getString(BUNDLE_COURSE_CODE);
-        courseViewModel.getCourseDetails(courseCode).observe(getViewLifecycleOwner(), new Observer<Course>() {
-            @Override
-            public void onChanged(Course course) {
-                if (course != null) {
-                    binding.setCourse(course);
-                    binding.setIsPathwayNetwork(course.getPathway().contains(Constants.PATHWAY_NETWORK_ENGINEERING));
-                    binding.setIsPathwayWeb(course.getPathway().contains(Constants.PATHWAY_WEB_DEVELOPMENT));
-                    binding.setIsPathwayDatabase(course.getPathway().contains(Constants.PATHWAY_DATABASE_ARCHITECTURE));
-                    binding.setIsPathwaySoftware(course.getPathway().contains(Constants.PATHWAY_SOFTWARE_ENGINEERING));
+        if (courseCode.isEmpty())
+            setEmptyCourse();
+        else {
+            courseViewModel.getCourseDetails(courseCode).observe(getViewLifecycleOwner(), new Observer<Course>() {
+                @Override
+                public void onChanged(Course course) {
+                    if (course != null) {
+                        binding.setCourse(course);
+                        binding.setIsPathwayNetwork(course.getPathway().contains(Constants.PATHWAY_NETWORK_ENGINEERING));
+                        binding.setIsPathwayWeb(course.getPathway().contains(Constants.PATHWAY_WEB_DEVELOPMENT));
+                        binding.setIsPathwayDatabase(course.getPathway().contains(Constants.PATHWAY_DATABASE_ARCHITECTURE));
+                        binding.setIsPathwaySoftware(course.getPathway().contains(Constants.PATHWAY_SOFTWARE_ENGINEERING));
+                    } else {
+                        setEmptyCourse();
+                    }
                 }
-            }
-        });
+            });
+        }
 
         autoCompleteCourseAdapter = new AutoCompleteCourseAdapter(getContext());
         preRequisiteTextView.setAdapter(autoCompleteCourseAdapter);
@@ -88,6 +92,19 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         return view;
     }
 
+    private void setEmptyCourse() {
+        Course course = new Course("",
+                new ArrayList<String>(),
+                0,
+                "",
+                "",
+                0,
+                new ArrayList<String>(),
+                0, new ArrayList<String>(),
+                "", 1);
+        binding.setCourse(course);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -98,7 +115,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
                 break;
         }
     }
@@ -127,7 +144,7 @@ public class ManagerCourseDetailsEditFragment extends Fragment implements View.O
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
 
-        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseDetailsEditFragment_to_managerCourseDetailsFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
     }
 
     private ArrayList<String> getPathways() {

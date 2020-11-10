@@ -23,19 +23,17 @@ public class StudentHome extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 
         // setup bottom nav to use student_nav_graph
-        NavController navController = findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupWithNavController(bottomNav, navController);
+        NavigationUI.setupWithNavController(bottomNav, findNavController(this, R.id.nav_host_fragment));
     }
 
     // Method to select actions in profile page: [Contact Details], [About us] or [Developers]
     public void navigateTo(View view) {
-        NavController navController = Navigation.findNavController(view);
         switch (view.getId()) {
             case R.id.btn_details_cancel:
-                navController.navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
+                Navigation.findNavController(view).navigate(R.id.action_contactDetailFragment_to_studentProfileFragment);
                 break;
             case R.id.back_arrow:
-                navController.navigate(R.id.action_studentDashboardFragment_to_roleSelectionActivity);
+                Navigation.findNavController(view).navigate(R.id.action_studentDashboardFragment_to_roleSelectionActivity);
                 break;
         }
     }

@@ -61,8 +61,7 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_USER_KEY, userList.get(position).getKey());
 
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentDetailsFragment, bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentListFragment_to_manageStudentDetailsFragment, bundle);
     }
 
     @Override
@@ -72,8 +71,7 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
                 Bundle bundle = new Bundle();
                 bundle.putString(BUNDLE_USER_KEY, "");
 
-                NavController navController = NavHostFragment.findNavController(this);
-                navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentFormFragment, bundle);
+                NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentListFragment_to_manageStudentFormFragment, bundle);
                 break;
         }
     }
