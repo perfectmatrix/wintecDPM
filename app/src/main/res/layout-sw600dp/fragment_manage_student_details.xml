@@ -20,13 +20,13 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
+            android:gravity="center"
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
             android:text="Student Details"
-            android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="40sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -41,12 +41,12 @@
                 <!-- Avatar -->
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/details_avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="5dp"
                     android:background="@drawable/ic_circle_black"
-                    android:padding="5dp"
+                    android:padding="15dp"
                     android:src="@drawable/ic_profile" />
 
                 <!-- ID -->
@@ -58,17 +58,17 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="ID"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:inputType="number"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.key}"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
 
                 <!-- First Name -->
@@ -79,20 +79,21 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="First Name"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.firstName}"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <!-- Last Name -->
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -100,18 +101,18 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Last Name"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.lastName}"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <!-- Phone Number -->
                 <TextView
@@ -121,17 +122,18 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Phone Number"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="24sp"
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="number"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
-                    android:text="@{user.phone.empty ? `(empty)` : user.phone }"
-                    android:textSize="18sp" />
+                    android:text="@{user.phone.empty ? `(empty)` : user.phone }"/>
 
                 <!-- Email -->
                 <TextView
@@ -141,17 +143,17 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Email"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.email}"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <!-- Address -->
                 <TextView
@@ -161,17 +163,17 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Address"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.address.empty ? `(empty)` : user.address}"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <!-- Gender -->
                 <TextView
@@ -181,18 +183,18 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Gender"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{Helpers.getGenderLabel(user.gender)}"
                     android:textColor="@color/gray"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <!-- Pathway -->
                 <TextView
@@ -202,18 +204,18 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:text="Pathway"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="28sp" />
                 <TextView
                     android:id="@+id/details_pathway"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="40dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:background="@drawable/bg_with_border"
                     android:text="@{user.pathway.empty ? `(empty)`: Helpers.getPathwayLabel(user.pathway)}"
                     android:textColor="@color/gray"
-                    android:textSize="18sp" />
+                    android:textSize="24sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -221,6 +223,7 @@
                     android:layout_marginHorizontal="26dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center_horizontal">
+
                     <Button
                         android:id="@+id/btn_student_edit"
                         android:layout_width="match_parent"
@@ -232,7 +235,8 @@
                         android:text="Edit details"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="28sp" />
+
                     <Button
                         android:id="@+id/btn_student_delete"
                         android:layout_width="match_parent"
@@ -245,7 +249,7 @@
                         android:text="Delete Student"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="28sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

@@ -16,9 +16,8 @@
             android:layout_height="60dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/source_sans_pro_semibold"
-            android:gravity="center"
-            android:padding="16dp"
             android:text="Developers"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
