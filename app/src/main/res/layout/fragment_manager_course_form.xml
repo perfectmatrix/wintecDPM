@@ -65,7 +65,7 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Row1: Module Code-->
+                    <!-- Module Code-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -83,12 +83,13 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="text"
                         android:text="@={course.code}"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
 
-                    <!-- Row2: Module Name-->
+                    <!-- Module Name-->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -106,12 +107,12 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="text"
                         android:text="@={course.longName}"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-
-                    <!-- Row3: Module Level-->
+                    <!-- Module Level-->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -129,12 +130,12 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="number"
                         android:text="@={`` + course.level}"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-
-                    <!-- Row4: Module Credit Level-->
+                    <!-- Module Credit Level-->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -152,11 +153,12 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="number"
                         android:text="@={`` + course.credit}"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <!-- Row5: Pre-requisite -->
+                    <!-- Pre-requisite -->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -176,7 +178,7 @@
                         android:completionThreshold="1"
                         android:hint="Add Pre-requisite" />
 
-                    <!-- Row6: Co-requisite -->
+                    <!-- Co-requisite -->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -196,7 +198,53 @@
                         android:completionThreshold="1"
                         android:hint="Add Co-requisite" />
 
-                    <!-- Row7: Pathway -->
+                    <!--  Year -->
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="Year"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/courseYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_manager_course"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="number"
+                        android:text="@={`` + course.year}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <!--  Semester -->
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="Semester"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/courseSemester"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_manager_course"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:inputType="number"
+                        android:text="@={`` + course.semester}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <!-- Pathway -->
                     <TextView
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -241,8 +289,29 @@
                             android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
                     </LinearLayout>
 
+                    <!--  URL -->
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/source_sans_pro"
+                        android:text="URL"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <!-- Row8: Module Description -->
+                    <EditText
+                        android:id="@+id/courseUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_manager_course"
+                        android:fontFamily="@font/source_sans_pro_semibold"
+                        android:text="@={course.url}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <!-- Module Description -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
