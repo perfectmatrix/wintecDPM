@@ -47,7 +47,7 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Row1: Module Code-->
+                    <!-- Module Code-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row2: Module Name-->
+                    <!-- Module Name-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row3: Module Level-->
+                    <!-- Module Level-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row4: Module Credit Level-->
+                    <!-- Module Credit Level-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row5: Pre-requisite -->
+                    <!-- Pre-requisite -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row6: Co-requisite -->
+                    <!-- Co-requisite -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -197,7 +197,57 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row7: Pathway -->
+                    <!-- Year-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Year"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{String.valueOf(course.year)}"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <!-- Semester -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="Semester"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseSemester"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{String.valueOf(course.semester)}"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <!-- Pathway -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -222,7 +272,33 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Row8: Module Description -->
+                    <!-- Url -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="URL"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/courseUrl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:text="@{course.url}"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <!-- Module Description -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
