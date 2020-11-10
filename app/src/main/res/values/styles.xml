@@ -21,6 +21,7 @@
         <item name="itemBackground">@color/colorPrimary</item>
         <item name="itemIconTint">@color/black</item>
         <item name="itemTextColor">@color/black</item>
+        <item name="fontFamily">@font/source_sans_pro_semibold</item>
     </style>
 
     <style name="BottomNavTablet">

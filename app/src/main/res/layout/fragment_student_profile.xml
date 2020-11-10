@@ -55,8 +55,8 @@
             android:textSize="20dp" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:background="@drawable/ic_arrow_right" />
     </LinearLayout>
 

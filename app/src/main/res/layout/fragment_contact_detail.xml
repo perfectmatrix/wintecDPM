@@ -146,6 +146,9 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Last Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -155,18 +158,41 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Recommended"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLastName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
                 <EditText
                     android:id="@+id/details_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:text="@={user.lastName}" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Phone Number -->
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -175,18 +201,42 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Optional"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputPhone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
                 <EditText
                     android:id="@+id/details_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
-                    android:inputType="number"
                     android:padding="6dp"
+                    android:inputType="number"
                     android:text="@={user.phone}" />
 
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -195,19 +245,43 @@
                     android:text="Email"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Recommended"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
 
                 <EditText
                     android:id="@+id/details_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:text="@={user.email}" />
 
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <!-- Address -->
-                <TextView
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -216,18 +290,42 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Optional"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputAddress"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
                 <EditText
                     android:id="@+id/details_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@null"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
                     android:text="@={user.address}" />
 
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <!-- Gender -->
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -235,6 +333,19 @@
                     android:text="What gender do you identify as?"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text="Optional"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
 
                 <RadioGroup
                     android:id="@+id/radio_gender"
