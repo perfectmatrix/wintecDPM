@@ -205,6 +205,28 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp" />
 
+                <!-- Pathway -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:text="Pathway"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/details_pathway"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:padding="6dp"
+                    android:text="@{user.pathway.empty ? `(empty)`: Helpers.getPathwayLabel(user.pathway)}"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

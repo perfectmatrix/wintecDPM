@@ -41,6 +41,24 @@ public final class Helpers {
         return mime.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    public static String getPathwayLabel(String pathway) {
+        if (pathway == null || pathway.isEmpty())
+            return "(empty)";
+        
+        switch (pathway) {
+            case PATHWAY_NETWORK_ENGINEERING:
+                return PATHWAY_NETWORK_ENGINEERING_LABEL;
+            case PATHWAY_WEB_DEVELOPMENT:
+                return PATHWAY_WEB_DEVELOPMENT_LABEL;
+            case PATHWAY_DATABASE_ARCHITECTURE:
+                return PATHWAY_DATABASE_ARCHITECTURE_LABEL;
+            case PATHWAY_SOFTWARE_ENGINEERING:
+                return PATHWAY_SOFTWARE_ENGINEERING_LABEL;
+            default:
+                return "(empty)";
+        }
+    }
+
     public static String getPathwayLabel(ArrayList<String> pathway) {
         return pathway != null ? pathway.toString()
                 .replace(PATHWAY_NETWORK_ENGINEERING, PATHWAY_NETWORK_ENGINEERING_LABEL)
