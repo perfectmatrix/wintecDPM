@@ -71,10 +71,29 @@
         <action
             android:id="@+id/action_manageStudentListFragment_to_manageStudentDetailsFragment"
             app:destination="@id/manageStudentDetailsFragment" />
+        <action
+            android:id="@+id/action_manageStudentListFragment_to_manageStudentFormFragment"
+            app:destination="@id/manageStudentFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/manageStudentDetailsFragment"
         android:name="com.wintec.degreemap.ui.manager.manage_students.ManageStudentDetailsFragment"
         android:label="ManageStudentDetailsFragment"
-        tools:layout="@layout/fragment_manage_student_details" />
+        tools:layout="@layout/fragment_manage_student_details" >
+        <action
+            android:id="@+id/action_manageStudentDetailsFragment_to_manageStudentFormFragment"
+            app:destination="@id/manageStudentFormFragment" />
+        <action
+            android:id="@+id/action_manageStudentDetailsFragment_to_manageStudentListFragment"
+            app:destination="@id/manageStudentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageStudentFormFragment"
+        android:name="com.wintec.degreemap.ui.manager.manage_students.ManageStudentFormFragment"
+        android:label="ManageStudentFormFragment"
+        tools:layout="@layout/fragment_manage_student_form">
+        <action
+            android:id="@+id/action_manageStudentFormFragment_to_manageStudentListFragment"
+            app:destination="@id/manageStudentListFragment" />
+    </fragment>
 </navigation>

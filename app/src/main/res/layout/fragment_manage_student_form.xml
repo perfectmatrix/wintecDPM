@@ -14,19 +14,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
+        android:background="@color/managerBackgroundColor"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
             android:padding="16dp"
-            android:text="My Details"
+            android:text="Student Details"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <ScrollView
@@ -396,30 +396,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pathway"
                     android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/source_sans_pro"/>
+                    android:fontFamily="@font/source_sans_pro"
+                    android:text="Pathway" />
+
                 <RadioGroup
+                    android:id="@+id/radioGroup_pathway"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:id="@+id/radioGroup_pathway"
                     android:layout_marginBottom="30dp">
+
                     <RadioButton
                         android:id="@+id/radio_network"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Network Engineering" />
+
                     <RadioButton
                         android:id="@+id/radio_software"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Software Engineering" />
+
                     <RadioButton
                         android:id="@+id/radio_database"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Database Architecture" />
+
                     <RadioButton
                         android:id="@+id/radio_web"
                         android:layout_width="wrap_content"

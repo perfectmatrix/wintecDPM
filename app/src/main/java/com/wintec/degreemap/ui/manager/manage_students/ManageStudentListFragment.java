@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.viewmodel.UserViewModel;
@@ -24,7 +25,7 @@ import java.util.List;
 
 import static com.wintec.degreemap.util.Constants.BUNDLE_USER_KEY;
 
-public class ManageStudentListFragment extends Fragment implements StudentAdapter.OnItemClickListener {
+public class ManageStudentListFragment extends Fragment implements StudentAdapter.OnItemClickListener, View.OnClickListener {
     private List<User> userList;
 
     @Nullable
@@ -32,6 +33,7 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_manage_student_list, container, false);
 
+        view.findViewById(R.id.addStudentButton).setOnClickListener(this);
         final StudentAdapter studentAdapter = new StudentAdapter();
         studentAdapter.setOnItemClickListener(this);
         LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
@@ -63,5 +65,20 @@ public class ManageStudentListFragment extends Fragment implements StudentAdapte
         // navigate to course details fragment
         NavController navController = NavHostFragment.findNavController(this);
         navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentDetailsFragment, bundle);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.addStudentButton:
+                Bundle bundle = new Bundle();
+                bundle.putString(BUNDLE_USER_KEY, "");
+
+                // navigate to course details fragment
+                NavController navController = NavHostFragment.findNavController(this);
+                navController.navigate(R.id.action_manageStudentListFragment_to_manageStudentFormFragment, bundle);
+
+                break;
+        }
     }
 }
