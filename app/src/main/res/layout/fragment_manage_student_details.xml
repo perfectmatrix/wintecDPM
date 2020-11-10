@@ -66,7 +66,7 @@
                     android:layout_marginBottom="10dp"
                     android:inputType="number"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.key}"
                     android:textSize="18sp" />
 
@@ -88,7 +88,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.firstName}"
                     android:textSize="18sp" />
 
@@ -109,7 +109,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="text"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.lastName}"
                     android:textSize="18sp" />
 
@@ -129,7 +129,7 @@
                     android:fontFamily="@font/source_sans_pro"
                     android:inputType="number"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.phone.empty ? `(empty)` : user.phone }"
                     android:textSize="18sp" />
 
@@ -149,7 +149,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.email}"
                     android:textSize="18sp" />
 
@@ -169,7 +169,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.address.empty ? `(empty)` : user.address}"
                     android:textSize="18sp" />
 
@@ -189,7 +189,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{Helpers.getGenderLabel(user.gender)}"
                     android:textColor="@color/gray"
                     android:textSize="18sp" />
@@ -210,7 +210,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/source_sans_pro"
                     android:padding="6dp"
-                    android:background="@drawable/bg_with_border"
+                    android:background="@drawable/bg_manager_course"
                     android:text="@{user.pathway.empty ? `(empty)`: Helpers.getPathwayLabel(user.pathway)}"
                     android:textColor="@color/gray"
                     android:textSize="18sp" />
@@ -218,34 +218,33 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    android:layout_marginBottom="30dp"
-                    android:gravity="center_horizontal">
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
                     <Button
                         android:id="@+id/btn_student_edit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="8dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Edit details"
+                        android:text="Edit"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
                     <Button
                         android:id="@+id/btn_student_delete"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_wintec_red"
                         android:fontFamily="@font/source_sans_pro"
-                        android:text="Delete Student"
+                        android:text="Delete"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

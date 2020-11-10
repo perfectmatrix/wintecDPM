@@ -432,9 +432,8 @@
                         android:layout_height="wrap_content"
                         android:checked="@{user.pathway.equals(Constants.PATHWAY_SOFTWARE_ENGINEERING)}"
                         android:text="@{Constants.PATHWAY_SOFTWARE_ENGINEERING_LABEL}" />
-
-
                 </RadioGroup>
+
                 <!-- Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -442,7 +441,6 @@
                     android:layout_marginBottom="40dp"
                     android:gravity="center"
                     android:orientation="horizontal">
-
                     <Button
                         android:id="@+id/btn_details_save"
                         android:layout_width="150dp"
@@ -452,8 +450,9 @@
                         android:background="@drawable/btn_wintec_yellow"
                         android:fontFamily="@font/source_sans_pro_semibold"
                         android:text="Save"
-                        android:textColor="@color/black" />
-
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"  />
                     <Button
                         android:id="@+id/btn_details_cancel"
                         android:layout_width="150dp"
@@ -463,8 +462,10 @@
                         android:background="@drawable/btn_wintec_gray"
                         android:fontFamily="@font/source_sans_pro_semibold"
                         android:onClick="navigateTo"
+                        android:textAllCaps="false"
                         android:text="Cancel"
-                        android:textColor="#fff" />
+                        android:textColor="#fff"
+                        android:textSize="18sp"  />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
