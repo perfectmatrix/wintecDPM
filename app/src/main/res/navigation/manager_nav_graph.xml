@@ -67,7 +67,7 @@
         <action
             android:id="@+id/action_managerCourseFormFragment_to_managerCourseDetailsFragment"
             app:destination="@id/managerCourseDetailsFragment"
-            app:popUpTo="@id/managerCourseListFragment"
+            app:popUpTo="@id/managerCourseDetailsFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
