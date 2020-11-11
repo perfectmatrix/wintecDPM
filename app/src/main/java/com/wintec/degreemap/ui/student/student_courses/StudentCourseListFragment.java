@@ -77,6 +77,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                 R.array.chooseYear, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
+        spinner.setSelection(FIRST_YEAR);
         spinner.setOnItemSelectedListener(this);
 
         // get selected pathway
