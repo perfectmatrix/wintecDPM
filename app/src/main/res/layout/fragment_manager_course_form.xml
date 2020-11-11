@@ -41,8 +41,8 @@
             android:layout_height="60dp"
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
-            android:text="Edit Course Details"
             android:gravity="center"
+            android:text="Edit Course Details"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -53,8 +53,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="26dp">
+                android:layout_margin="26dp"
+                android:orientation="vertical">
 
                 <!-- Course Details -->
                 <LinearLayout
@@ -64,23 +64,40 @@
                     android:padding="16dp">
 
                     <!-- Module Code-->
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Code"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Module Code"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseCodeEditText"
-                        android:enabled="@{course.code.empty ? true : false}"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
+                        android:enabled="@{course.code.empty ? true : false}"
                         android:fontFamily="@font/source_sans_pro_semibold"
                         android:inputType="text"
                         android:text="@={course.code}"
@@ -88,15 +105,32 @@
                         android:textSize="18sp" />
 
                     <!-- Module Name-->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Name"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Module Name"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseLongNameEditText"
@@ -111,15 +145,32 @@
                         android:textSize="18sp" />
 
                     <!-- Module Level-->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Level"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Module Level"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseLevelEditText"
@@ -134,15 +185,32 @@
                         android:textSize="18sp" />
 
                     <!-- Module Credit Level-->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="Credit Level"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Module Credit Level"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseCreditEditText"
@@ -157,15 +225,32 @@
                         android:textSize="18sp" />
 
                     <!-- Pre-requisite -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Pre-requisite"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Pre-requisite"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Optional"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <MultiAutoCompleteTextView
                         android:id="@+id/preRequisiteAutocomplete"
@@ -174,18 +259,38 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:completionThreshold="1"
-                        android:hint="Add Pre-requisite" />
+                        android:fontFamily="@font/source_sans_pro"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <!-- Co-requisite -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Co-requisite"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Co-requisite"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Optional"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <MultiAutoCompleteTextView
                         android:id="@+id/coRequisiteAutocomplete"
@@ -194,18 +299,38 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_manager_course"
                         android:completionThreshold="1"
-                        android:hint="Add Co-requisite" />
+                        android:fontFamily="@font/source_sans_pro"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <!--  Year -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="Year"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Year"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseYear"
@@ -220,15 +345,32 @@
                         android:textSize="18sp" />
 
                     <!--  Semester -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="Semester"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Semester"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Recommended"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseSemester"
@@ -243,14 +385,32 @@
                         android:textSize="18sp" />
 
                     <!-- Pathway -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="Pathway"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Pathway"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Optional"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -288,15 +448,32 @@
                     </LinearLayout>
 
                     <!--  URL -->
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:text="URL"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="URL"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Optional"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseUrl"
@@ -310,15 +487,32 @@
                         android:textSize="18sp" />
 
                     <!-- Module Description -->
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="Module Description"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Module Description"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_sans_pro_semibold"
+                            android:text="Optional"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/courseDescriptionEditText"
@@ -330,8 +524,6 @@
                         android:text="@={course.description}"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
-
-
                 </LinearLayout>
 
                 <!-- Buttons -->
