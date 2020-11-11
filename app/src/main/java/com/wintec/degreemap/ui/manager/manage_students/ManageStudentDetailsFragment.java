@@ -1,11 +1,13 @@
 package com.wintec.degreemap.ui.manager.manage_students;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -86,12 +88,22 @@ public class ManageStudentDetailsFragment extends Fragment implements View.OnCli
                 NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentDetailsFragment_to_manageStudentFormFragment, bundle);
                 break;
             case R.id.btn_student_delete:
-                deleteData(view);
+                AlertDialog deleteDialog = new AlertDialog.Builder(getActivity())
+                        .setTitle("Delete Student?")
+                        .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                deleteData();
+                            }
+                        })
+                        .setNegativeButton("Cancel", null)
+                        .create();
+                deleteDialog.show();
                 break;
         }
     }
 
-    private void deleteData(View view) {
+    private void deleteData() {
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.deleteUser(binding.getUser().getKey());
 
