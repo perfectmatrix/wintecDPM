@@ -91,18 +91,27 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseCodeEditText"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseCode"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:enabled="@{course.code.empty ? true : false}"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="text"
-                        android:text="@={course.code}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseCodeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:enabled="@{course.code.empty ? true : false}"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="text"
+                            android:padding="6dp"
+                            android:text="@={course.code}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Module Name-->
                     <LinearLayout
@@ -132,17 +141,26 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseLongNameEditText"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="text"
-                        android:text="@={course.longName}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseLongNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="text"
+                            android:padding="6dp"
+                            android:text="@={course.longName}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Module Level-->
                     <LinearLayout
@@ -172,17 +190,25 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseLevelEditText"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseLevel"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="number"
-                        android:text="@={`` + course.level}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseLevelEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="number"
+                            android:padding="6dp"
+                            android:text="@={`` + course.level}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Module Credit Level-->
                     <LinearLayout
@@ -212,17 +238,25 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseCreditEditText"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseCredit"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="number"
-                        android:text="@={`` + course.credit}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseCreditEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="number"
+                            android:padding="6dp"
+                            android:text="@={`` + course.credit}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Pre-requisite -->
                     <LinearLayout
@@ -252,17 +286,24 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <MultiAutoCompleteTextView
-                        android:id="@+id/preRequisiteAutocomplete"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputPreRequisite"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:completionThreshold="1"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/preRequisiteAutocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:completionThreshold="1"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Co-requisite -->
                     <LinearLayout
@@ -292,17 +333,24 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <MultiAutoCompleteTextView
-                        android:id="@+id/coRequisiteAutocomplete"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCoRequisite"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:completionThreshold="1"
-                        android:fontFamily="@font/source_sans_pro"
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/coRequisiteAutocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:completionThreshold="1"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!--  Year -->
                     <LinearLayout
@@ -332,17 +380,25 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseYear"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseYear"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="number"
-                        android:text="@={`` + course.year}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="number"
+                            android:padding="6dp"
+                            android:text="@={`` + course.year}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!--  Semester -->
                     <LinearLayout
@@ -372,17 +428,25 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseSemester"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputSemester"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:inputType="number"
-                        android:text="@={`` + course.semester}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseSemester"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:inputType="number"
+                            android:padding="6dp"
+                            android:text="@={`` + course.semester}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Pathway -->
                     <LinearLayout
@@ -475,16 +539,24 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseUrl"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputCourseUrl"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="@={course.url}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseUrl"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:padding="6dp"
+                            android:text="@={course.url}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Module Description -->
                     <LinearLayout
@@ -514,16 +586,24 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/courseDescriptionEditText"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputDescription"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_manager_course"
-                        android:fontFamily="@font/source_sans_pro_semibold"
-                        android:text="@={course.description}"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/courseDescriptionEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:fontFamily="@font/source_sans_pro"
+                            android:padding="6dp"
+                            android:text="@={course.description}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <!-- Buttons -->
