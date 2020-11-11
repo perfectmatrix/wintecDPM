@@ -15,7 +15,6 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
-import com.wintec.degreemap.data.model.User;
 import com.wintec.degreemap.databinding.FragmentManagerCourseFormBinding;
 import com.wintec.degreemap.util.Constants;
 import com.wintec.degreemap.viewmodel.CourseViewModel;

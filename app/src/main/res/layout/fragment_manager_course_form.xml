@@ -76,7 +76,7 @@
 
                     <EditText
                         android:id="@+id/courseCodeEditText"
-                        android:enabled="false"
+                        android:enabled="@{course.code.empty ? true : false}"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginBottom="10dp"
