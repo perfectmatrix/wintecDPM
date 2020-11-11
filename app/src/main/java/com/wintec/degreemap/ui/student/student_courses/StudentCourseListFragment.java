@@ -2,6 +2,7 @@ package com.wintec.degreemap.ui.student.student_courses;
 
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -32,6 +33,8 @@ import com.wintec.degreemap.viewmodel.CourseViewModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.wintec.degreemap.util.Constants.ALL_COURSE;
@@ -119,6 +122,20 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
             studentCourseAdapter.notifyDataSetChanged();
         }
 
+
+        @Override
+        public void onChildDraw(@NonNull Canvas canvas, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+            int position = viewHolder.getAdapterPosition();
+            boolean isModuleCompleted = completedModules.contains(filteredCourseList.get(position).getCode());
+
+            new RecyclerViewSwipeDecorator.Builder(getContext(), canvas, recyclerView, viewHolder, dX + 20, dY, actionState, isCurrentlyActive)
+                    .addBackgroundColor(getContext().getColor(R.color.backgroundColor))
+                    .addActionIcon(isModuleCompleted ? R.drawable.ic_cancel : R.drawable.ic_check_box)
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(canvas, recyclerView, viewHolder, dX / 3, dY, actionState, isCurrentlyActive);
+        }
     };
 
     private void setPathwayTextViewFormatting(View view, String pathway) {
