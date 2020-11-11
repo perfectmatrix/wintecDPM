@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.wintec.degreemap.R;
 import com.wintec.degreemap.data.model.Course;
 import com.wintec.degreemap.databinding.FragmentManagerCourseFormBinding;
@@ -32,6 +33,8 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
     private AutoCompleteCourseAdapter autoCompleteCourseAdapter;
     private Button btnSave, btnCancel;
     private View view;
+    private TextInputLayout textInputCode, textInputName, textInputLevel, textInputCredit, textInputYear, textInputSemester;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,13 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manager_course_form, container, false);
         view = binding.getRoot();
+
+        textInputCode = view.findViewById(R.id.textInputCourseCode);
+        textInputName = view.findViewById(R.id.textInputCourseName);
+        textInputLevel = view.findViewById(R.id.textInputCourseLevel);
+        textInputCredit = view.findViewById(R.id.textInputCourseCredit);
+        textInputYear = view.findViewById(R.id.textInputCourseYear);
+        textInputSemester = view.findViewById(R.id.textInputSemester);
 
         preRequisiteTextView = view.findViewById(R.id.preRequisiteAutocomplete);
         coRequisiteTextView = view.findViewById(R.id.coRequisiteAutocomplete);
@@ -129,7 +139,20 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
         }
     }
 
+    private boolean validateCode() {
+        if (binding.getCourse().getCode().trim().isEmpty()) {
+            textInputCode.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputCode.setError(null);
+            return true;
+        }
+    }
+
     public void saveData() {
+        if (!validateCode())
+            return;
+
         Course course = new Course(null,
                 null,
                 binding.getCourse().getCredit(),
