@@ -139,6 +139,56 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
         }
     }
 
+    private boolean validateSemester() {
+        if (binding.getCourse().getSemester() < 1 || binding.getCourse().getSemester() > 10) {
+            textInputSemester.setError("Invalid field input");
+            return false;
+        } else {
+            textInputSemester.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateYear() {
+        if (binding.getCourse().getYear() < 1 || binding.getCourse().getYear() > 5) {
+            textInputYear.setError("Invalid field input");
+            return false;
+        } else {
+            textInputYear.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateCredit() {
+        if (binding.getCourse().getCredit() < 1 || binding.getCourse().getCredit() > 50) {
+            textInputCredit.setError("Invalid field input");
+            return false;
+        } else {
+            textInputCredit.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateLevel() {
+        if (binding.getCourse().getLevel() < 1 || binding.getCourse().getLevel() > 10) {
+            textInputLevel.setError("Invalid field input");
+            return false;
+        } else {
+            textInputLevel.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateName() {
+        if (binding.getCourse().getLongName().trim().isEmpty()) {
+            textInputName.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputName.setError(null);
+            return true;
+        }
+    }
+
     private boolean validateCode() {
         if (binding.getCourse().getCode().trim().isEmpty()) {
             textInputCode.setError("Field can't be empty");
@@ -150,7 +200,7 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
     }
 
     public void saveData() {
-        if (!validateCode())
+        if (!validateCode() || !validateName() || !validateLevel() || !validateCredit() || !validateYear() || !validateSemester())
             return;
 
         Course course = new Course(null,
