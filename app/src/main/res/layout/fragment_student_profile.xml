@@ -39,7 +39,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/bg_with_top_bottom_line"
-        android:onClick="navigateTo"
         android:orientation="horizontal"
         android:paddingTop="20dp"
         android:paddingBottom="20dp">
@@ -69,7 +68,6 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/source_sans_pro_semibold"
         android:gravity="start"
-        android:onClick="navigateTo"
         android:text="The Developer Group"
         android:textColor="@color/black"
         android:textSize="20dp" />
@@ -83,8 +81,20 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/source_sans_pro_semibold"
         android:gravity="start"
-        android:onClick="navigateTo"
         android:text="About us"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <!-- Disclaimer -->
+    <TextView
+        android:id="@+id/disclaimer"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:gravity="start"
+        android:text="Disclaimer"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
