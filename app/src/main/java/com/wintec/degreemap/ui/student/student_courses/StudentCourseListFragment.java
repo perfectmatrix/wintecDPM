@@ -131,7 +131,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
 
             new RecyclerViewSwipeDecorator.Builder(getContext(), canvas, recyclerView, viewHolder, dX + 20, dY, actionState, isCurrentlyActive)
                     .addBackgroundColor(getContext().getColor(R.color.backgroundColor))
-                    .addActionIcon(isModuleCompleted ? R.drawable.ic_cancel : R.drawable.ic_check_box)
+                    .addActionIcon(isModuleCompleted ? R.drawable.ic_mark_incomplete : R.drawable.ic_mark_complete)
                     .create()
                     .decorate();
 
