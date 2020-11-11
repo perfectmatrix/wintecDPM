@@ -107,21 +107,14 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         }
 
         @Override
+        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+            return makeMovementFlags(0, ItemTouchHelper.LEFT);
+        }
+
+        @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
             int position = viewHolder.getAdapterPosition();
-            TextView courseNameTextView = viewHolder.itemView.findViewById(R.id.courseLongName);
-            if (direction == ItemTouchHelper.LEFT) {
-                markCompleteOrIncomplete(filteredCourseList.get(position).getCode());
-
-                if (courseNameTextView != null) {
-                    if (completedModules.contains(filteredCourseList.get(position).getCode())) {
-                        courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle, 0);
-                    } else {
-                        courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
-                    }
-                }
-            }
+            markCompleteOrIncomplete(filteredCourseList.get(position).getCode());
             studentCourseAdapter.notifyItemChanged(position);
             studentCourseAdapter.notifyDataSetChanged();
         }
