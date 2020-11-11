@@ -111,10 +111,10 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
 
             int position = viewHolder.getAdapterPosition();
             TextView courseNameTextView = viewHolder.itemView.findViewById(R.id.courseLongName);
-            if(direction == ItemTouchHelper.LEFT) {
+            if (direction == ItemTouchHelper.LEFT) {
                 markCompleteOrIncomplete(filteredCourseList.get(position).getCode());
 
-                if(courseNameTextView != null){
+                if (courseNameTextView != null) {
                     if (completedModules.contains(filteredCourseList.get(position).getCode())) {
                         courseNameTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle, 0);
                     } else {
@@ -187,18 +187,12 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
         }
 
         saveCompletedModules();
-        updateModulesList();
+        studentCourseAdapter.setCompletedModules(getCompletedModules(prefs));
     }
 
     private void saveCompletedModules() {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(KEY_COMPLETED_MODULES, TextUtils.join(",", completedModules));
         editor.apply();
-    }
-
-    private void updateModulesList(){
-        completedModules = getCompletedModules(prefs);
-        studentCourseAdapter = new StudentCourseAdapter(selectedPathway, completedModules);
-        studentCourseAdapter.notifyDataSetChanged();
     }
 }

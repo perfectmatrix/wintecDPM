@@ -65,6 +65,11 @@ public class StudentCourseAdapter extends RecyclerView.Adapter<StudentCourseAdap
         notifyDataSetChanged();
     }
 
+    public void setCompletedModules(List<String> completedModules) {
+        this.completedModules = completedModules;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public CourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
