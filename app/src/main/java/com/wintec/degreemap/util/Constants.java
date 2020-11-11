@@ -16,10 +16,11 @@ public final class Constants {
     public static final String KEY_USER_KEY = "KeyUserKey";
 
     // Course Year
-    public static final int FIRST_YEAR = 0;
-    public static final int SECOND_YEAR = 1;
-    public static final int THIRD_YEAR = 2;
-    public static final int ALL_COURSE = 3;
+    public static final int ALL_COURSE = 0;
+    public static final int FIRST_YEAR = 1;
+    public static final int SECOND_YEAR = 2;
+    public static final int THIRD_YEAR = 3;
+
     // Course Pathway
     public static final String PATHWAY_NETWORK_ENGINEERING = "network";
     public static final String PATHWAY_WEB_DEVELOPMENT = "web";
