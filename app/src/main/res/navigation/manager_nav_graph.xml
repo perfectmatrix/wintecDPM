@@ -67,7 +67,7 @@
         <action
             android:id="@+id/action_managerCourseFormFragment_to_managerCourseDetailsFragment"
             app:destination="@id/managerCourseDetailsFragment"
-            app:popUpTo="@id/managerCourseDetailsFragment"
+            app:popUpTo="@id/managerCourseListFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_managerCourseFormFragment_to_managerCourseListFragment"
@@ -117,7 +117,7 @@
         <action
             android:id="@+id/action_manageStudentFormFragment_to_manageStudentDetailsFragment"
             app:destination="@id/manageStudentDetailsFragment"
-            app:popUpTo="@id/manageStudentDetailsFragment"
+            app:popUpTo="@id/manageStudentListFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>
