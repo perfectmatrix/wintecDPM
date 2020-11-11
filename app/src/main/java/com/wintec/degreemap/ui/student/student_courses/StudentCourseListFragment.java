@@ -165,7 +165,7 @@ public class StudentCourseListFragment extends Fragment implements AdapterView.O
                         case SECOND_YEAR:
                         case THIRD_YEAR: {
                             for (Course course : courseList) {
-                                if (course.getYear() == position && (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
+                                if (course.getYear() == position + 1 && (course.getPathway().contains(selectedPathway) || course.getPathway().contains(PATHWAY_CORE)))
                                     filteredCourseList.add(course);
                             }
                             break;
