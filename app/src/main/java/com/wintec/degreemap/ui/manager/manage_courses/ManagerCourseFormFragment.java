@@ -115,10 +115,16 @@ public class ManagerCourseFormFragment extends Fragment implements View.OnClickL
                 break;
             case R.id.btn_courseEdit_cancel:
                 Bundle bundle = new Bundle();
-                bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
                 bundle.putString(BUNDLE_PATHWAY, getArguments().getString(BUNDLE_PATHWAY));
 
-                NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
+                // Redirect to course list when creating new course, otherwise go to course details
+                if (getArguments().getString(BUNDLE_COURSE_CODE, "").isEmpty()) {
+                    NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseListFragment, bundle);
+                } else {
+                    bundle.putString(BUNDLE_COURSE_CODE, binding.getCourse().getCode());
+                    NavHostFragment.findNavController(this).navigate(R.id.action_managerCourseFormFragment_to_managerCourseDetailsFragment, bundle);
+                }
+
                 break;
         }
     }

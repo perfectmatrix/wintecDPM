@@ -69,6 +69,11 @@
             app:destination="@id/managerCourseDetailsFragment"
             app:popUpTo="@id/managerCourseDetailsFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_managerCourseFormFragment_to_managerCourseListFragment"
+            app:destination="@id/managerCourseListFragment"
+            app:popUpTo="@id/managerCourseListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/manageStudentListFragment"
