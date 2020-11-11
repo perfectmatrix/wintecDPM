@@ -172,7 +172,14 @@ public class ManageStudentFormFragment extends Fragment implements View.OnClickL
                 saveData();
                 break;
             case R.id.btn_details_cancel:
-                NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
+                // Redirect to student list when creating new user, otherwise go to student details page
+                if (getArguments().getString(BUNDLE_USER_KEY, "").isEmpty()) {
+                    NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentListFragment);
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString(BUNDLE_USER_KEY, getArguments().getString(BUNDLE_USER_KEY));
+                    NavHostFragment.findNavController(this).navigate(R.id.action_manageStudentFormFragment_to_manageStudentDetailsFragment, bundle);
+                }
                 break;
         }
     }
