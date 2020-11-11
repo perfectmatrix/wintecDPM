@@ -35,19 +35,19 @@ public class AboutUsFragment extends Fragment implements View.OnClickListener {
         Intent i;
         switch (view.getId()) {
             case R.id.btn_km_bachelor_it:
-                String url1 = "http://www.google.com";
+                String url1 = "https://www.wintec.ac.nz/study-at-wintec/courses/information-technology/bachelor-of-applied-information-technology";
                 i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url1));
                 startActivity(i);
                 break;
             case R.id.btn_km_gallagher:
-                String url2 = "https://www.youtube.com/";
+                String url2 = "https://www.wintec.ac.nz/about-wintec/news/article/2018/12/02/internship-a-win-win-for-gallagher-and-wintec-it-student";
                 i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url2));
                 startActivity(i);
                 break;
             case R.id.btn_km_design_factory:
-                String url3 = "https://github.com/";
+                String url3 = "https://www.wintec.ac.nz/designfactory";
                 i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url3));
                 startActivity(i);
