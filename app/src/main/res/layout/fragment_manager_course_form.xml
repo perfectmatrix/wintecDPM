@@ -42,7 +42,7 @@
             android:background="@color/managerBlack"
             android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center"
-            android:text="Edit Course Details"
+            android:text="Course Details"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
