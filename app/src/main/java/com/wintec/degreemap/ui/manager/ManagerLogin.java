@@ -13,7 +13,7 @@ import com.wintec.degreemap.R;
 
 public class ManagerLogin extends AppCompatActivity {
 
-    EditText  mPassword;
+    EditText mPassword;
     Button btnSubmit;
 
     @Override
@@ -29,8 +29,8 @@ public class ManagerLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // If password is valid, jump to managers' homepage
-                // * Password Should Be: WinITDMP01, but for our convenience, it's now: 1
-                if (mPassword.getText().toString().equals("1")) {
+                // Password Should Be: WinITDMP01
+                if (mPassword.getText().toString().equals("WinITDMP01")) {
                     jumpTo();
                 } else {
                     Toast.makeText(getApplicationContext(),
